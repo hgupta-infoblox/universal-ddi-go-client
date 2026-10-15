@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**UpdatedAt** | Pointer to **time.Time** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
+**UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -82,20 +82,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *SourceBloxone) GetId() int32`
+`func (o *SourceBloxone) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *SourceBloxone) GetIdOk() (*int32, bool)`
+`func (o *SourceBloxone) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *SourceBloxone) SetId(v int32)`
+`func (o *SourceBloxone) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -132,20 +132,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *SourceBloxone) GetTags() map[string]map[string]interface{}`
+`func (o *SourceBloxone) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *SourceBloxone) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *SourceBloxone) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *SourceBloxone) SetTags(v map[string]map[string]interface{})`
+`func (o *SourceBloxone) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

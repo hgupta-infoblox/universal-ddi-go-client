@@ -20,22 +20,22 @@ var _ MappedNullable = &SourceNios{}
 
 // SourceNios struct for SourceNios
 type SourceNios struct {
-	Address              *string                           `json:"address,omitempty"`
-	CaCertificate        *string                           `json:"ca_certificate,omitempty"`
-	Certificate          *string                           `json:"certificate,omitempty"`
-	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	Enabled              *bool                             `json:"enabled,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	InsecureMode         *bool                             `json:"insecure_mode,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	NiosPassword         *string                           `json:"nios_password,omitempty"`
-	NiosUsername         *string                           `json:"nios_username,omitempty"`
-	RpzLogInsecureMode   *bool                             `json:"rpz_log_insecure_mode,omitempty"`
-	ScpPassword          *string                           `json:"scp_password,omitempty"`
-	ScpUsername          *string                           `json:"scp_username,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	Address              *string                `json:"address,omitempty"`
+	CaCertificate        *string                `json:"ca_certificate,omitempty"`
+	Certificate          *string                `json:"certificate,omitempty"`
+	CreatedAt            *time.Time             `json:"created_at,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	InsecureMode         *bool                  `json:"insecure_mode,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	NiosPassword         *string                `json:"nios_password,omitempty"`
+	NiosUsername         *string                `json:"nios_username,omitempty"`
+	RpzLogInsecureMode   *bool                  `json:"rpz_log_insecure_mode,omitempty"`
+	ScpPassword          *string                `json:"scp_password,omitempty"`
+	ScpUsername          *string                `json:"scp_username,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -251,9 +251,9 @@ func (o *SourceNios) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *SourceNios) GetId() int32 {
+func (o *SourceNios) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -261,7 +261,7 @@ func (o *SourceNios) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceNios) GetIdOk() (*int32, bool) {
+func (o *SourceNios) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -277,8 +277,8 @@ func (o *SourceNios) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SourceNios) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *SourceNios) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -507,9 +507,9 @@ func (o *SourceNios) SetScpUsername(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *SourceNios) GetTags() map[string]map[string]interface{} {
+func (o *SourceNios) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -517,9 +517,9 @@ func (o *SourceNios) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceNios) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *SourceNios) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -533,8 +533,8 @@ func (o *SourceNios) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *SourceNios) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *SourceNios) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

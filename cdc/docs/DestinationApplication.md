@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Application** | Pointer to **int32** |  | [optional] 
+**Application** | Pointer to **int64** |  | [optional] 
 **Context** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **OutputDataFormat** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApplication
 
-`func (o *DestinationApplication) GetApplication() int32`
+`func (o *DestinationApplication) GetApplication() int64`
 
 GetApplication returns the Application field if non-nil, zero value otherwise.
 
 ### GetApplicationOk
 
-`func (o *DestinationApplication) GetApplicationOk() (*int32, bool)`
+`func (o *DestinationApplication) GetApplicationOk() (*int64, bool)`
 
 GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApplication
 
-`func (o *DestinationApplication) SetApplication(v int32)`
+`func (o *DestinationApplication) SetApplication(v int64)`
 
 SetApplication sets Application field to given value.
 
@@ -161,20 +161,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *DestinationApplication) GetId() int32`
+`func (o *DestinationApplication) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *DestinationApplication) GetIdOk() (*int32, bool)`
+`func (o *DestinationApplication) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *DestinationApplication) SetId(v int32)`
+`func (o *DestinationApplication) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -236,20 +236,20 @@ HasOutputDataFormat returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *DestinationApplication) GetTags() map[string]map[string]interface{}`
+`func (o *DestinationApplication) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *DestinationApplication) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *DestinationApplication) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *DestinationApplication) SetTags(v map[string]map[string]interface{})`
+`func (o *DestinationApplication) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

@@ -44,7 +44,7 @@ type SourceApiAPI interface {
 		@param id Source Identifier
 		@return SourceApiAPIDeleteSourceNiosRequest
 	*/
-	DeleteSourceNios(ctx context.Context, id int32) SourceApiAPIDeleteSourceNiosRequest
+	DeleteSourceNios(ctx context.Context, id int64) SourceApiAPIDeleteSourceNiosRequest
 
 	// DeleteSourceNiosExecute executes the request
 	DeleteSourceNiosExecute(r SourceApiAPIDeleteSourceNiosRequest) (*http.Response, error)
@@ -121,7 +121,7 @@ type SourceApiAPI interface {
 		@param id Source Identifier
 		@return SourceApiAPIReadSourceBloxoneRequest
 	*/
-	ReadSourceBloxone(ctx context.Context, id int32) SourceApiAPIReadSourceBloxoneRequest
+	ReadSourceBloxone(ctx context.Context, id int64) SourceApiAPIReadSourceBloxoneRequest
 
 	// ReadSourceBloxoneExecute executes the request
 	//  @return SourceBloxoneReadResponse
@@ -135,7 +135,7 @@ type SourceApiAPI interface {
 		@param id Source Identifier
 		@return SourceApiAPIReadSourceNiosRequest
 	*/
-	ReadSourceNios(ctx context.Context, id int32) SourceApiAPIReadSourceNiosRequest
+	ReadSourceNios(ctx context.Context, id int64) SourceApiAPIReadSourceNiosRequest
 
 	// ReadSourceNiosExecute executes the request
 	//  @return SourceNiosReadResponse
@@ -149,7 +149,7 @@ type SourceApiAPI interface {
 		@param id Source Identifier
 		@return SourceApiAPIReadSourceScheduleRequest
 	*/
-	ReadSourceSchedule(ctx context.Context, id int32) SourceApiAPIReadSourceScheduleRequest
+	ReadSourceSchedule(ctx context.Context, id int64) SourceApiAPIReadSourceScheduleRequest
 
 	// ReadSourceScheduleExecute executes the request
 	//  @return SourceScheduleReadResponse
@@ -163,7 +163,7 @@ type SourceApiAPI interface {
 		@param id Source Identifier
 		@return SourceApiAPIUpdateSourceNiosRequest
 	*/
-	UpdateSourceNios(ctx context.Context, id int32) SourceApiAPIUpdateSourceNiosRequest
+	UpdateSourceNios(ctx context.Context, id int64) SourceApiAPIUpdateSourceNiosRequest
 
 	// UpdateSourceNiosExecute executes the request
 	//  @return SourceNiosUpdateResponse
@@ -280,7 +280,7 @@ func (a *SourceApiAPIService) CreateSourceNiosExecute(r SourceApiAPICreateSource
 type SourceApiAPIDeleteSourceNiosRequest struct {
 	ctx        context.Context
 	ApiService SourceApiAPI
-	id         int32
+	id         int64
 }
 
 func (r SourceApiAPIDeleteSourceNiosRequest) Execute() (*http.Response, error) {
@@ -296,7 +296,7 @@ Use this method to delete a NIOS source in data connector.
 	@param id Source Identifier
 	@return SourceApiAPIDeleteSourceNiosRequest
 */
-func (a *SourceApiAPIService) DeleteSourceNios(ctx context.Context, id int32) SourceApiAPIDeleteSourceNiosRequest {
+func (a *SourceApiAPIService) DeleteSourceNios(ctx context.Context, id int64) SourceApiAPIDeleteSourceNiosRequest {
 	return SourceApiAPIDeleteSourceNiosRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -467,6 +467,10 @@ type SourceApiAPIListSourceRequest struct {
 	ApiService SourceApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -480,6 +484,30 @@ func (r SourceApiAPIListSourceRequest) Filter(filter string) SourceApiAPIListSou
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r SourceApiAPIListSourceRequest) Fields(fields string) SourceApiAPIListSourceRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r SourceApiAPIListSourceRequest) Offset(offset int32) SourceApiAPIListSourceRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r SourceApiAPIListSourceRequest) Limit(limit int32) SourceApiAPIListSourceRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r SourceApiAPIListSourceRequest) PageToken(pageToken string) SourceApiAPIListSourceRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r SourceApiAPIListSourceRequest) OrderBy(orderBy string) SourceApiAPIListSourceRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -542,6 +570,18 @@ func (a *SourceApiAPIService) ListSourceExecute(r SourceApiAPIListSourceRequest)
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -600,6 +640,10 @@ type SourceApiAPIListSourceBloxoneRequest struct {
 	ApiService SourceApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -613,6 +657,30 @@ func (r SourceApiAPIListSourceBloxoneRequest) Filter(filter string) SourceApiAPI
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r SourceApiAPIListSourceBloxoneRequest) Fields(fields string) SourceApiAPIListSourceBloxoneRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r SourceApiAPIListSourceBloxoneRequest) Offset(offset int32) SourceApiAPIListSourceBloxoneRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r SourceApiAPIListSourceBloxoneRequest) Limit(limit int32) SourceApiAPIListSourceBloxoneRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r SourceApiAPIListSourceBloxoneRequest) PageToken(pageToken string) SourceApiAPIListSourceBloxoneRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r SourceApiAPIListSourceBloxoneRequest) OrderBy(orderBy string) SourceApiAPIListSourceBloxoneRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -675,6 +743,18 @@ func (a *SourceApiAPIService) ListSourceBloxoneExecute(r SourceApiAPIListSourceB
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -733,6 +813,10 @@ type SourceApiAPIListSourceNiosRequest struct {
 	ApiService SourceApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -746,6 +830,30 @@ func (r SourceApiAPIListSourceNiosRequest) Filter(filter string) SourceApiAPILis
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r SourceApiAPIListSourceNiosRequest) Fields(fields string) SourceApiAPIListSourceNiosRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r SourceApiAPIListSourceNiosRequest) Offset(offset int32) SourceApiAPIListSourceNiosRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r SourceApiAPIListSourceNiosRequest) Limit(limit int32) SourceApiAPIListSourceNiosRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r SourceApiAPIListSourceNiosRequest) PageToken(pageToken string) SourceApiAPIListSourceNiosRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r SourceApiAPIListSourceNiosRequest) OrderBy(orderBy string) SourceApiAPIListSourceNiosRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -808,6 +916,18 @@ func (a *SourceApiAPIService) ListSourceNiosExecute(r SourceApiAPIListSourceNios
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -866,6 +986,10 @@ type SourceApiAPIListSourceScheduleRequest struct {
 	ApiService SourceApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -879,6 +1003,30 @@ func (r SourceApiAPIListSourceScheduleRequest) Filter(filter string) SourceApiAP
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r SourceApiAPIListSourceScheduleRequest) Fields(fields string) SourceApiAPIListSourceScheduleRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r SourceApiAPIListSourceScheduleRequest) Offset(offset int32) SourceApiAPIListSourceScheduleRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r SourceApiAPIListSourceScheduleRequest) Limit(limit int32) SourceApiAPIListSourceScheduleRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r SourceApiAPIListSourceScheduleRequest) PageToken(pageToken string) SourceApiAPIListSourceScheduleRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r SourceApiAPIListSourceScheduleRequest) OrderBy(orderBy string) SourceApiAPIListSourceScheduleRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -941,6 +1089,18 @@ func (a *SourceApiAPIService) ListSourceScheduleExecute(r SourceApiAPIListSource
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -997,7 +1157,7 @@ func (a *SourceApiAPIService) ListSourceScheduleExecute(r SourceApiAPIListSource
 type SourceApiAPIReadSourceBloxoneRequest struct {
 	ctx        context.Context
 	ApiService SourceApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -1020,7 +1180,7 @@ Use this method to retrieve Bloxone source configurations in data connector.
 	@param id Source Identifier
 	@return SourceApiAPIReadSourceBloxoneRequest
 */
-func (a *SourceApiAPIService) ReadSourceBloxone(ctx context.Context, id int32) SourceApiAPIReadSourceBloxoneRequest {
+func (a *SourceApiAPIService) ReadSourceBloxone(ctx context.Context, id int64) SourceApiAPIReadSourceBloxoneRequest {
 	return SourceApiAPIReadSourceBloxoneRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1104,7 +1264,7 @@ func (a *SourceApiAPIService) ReadSourceBloxoneExecute(r SourceApiAPIReadSourceB
 type SourceApiAPIReadSourceNiosRequest struct {
 	ctx        context.Context
 	ApiService SourceApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -1127,7 +1287,7 @@ Use this method to retrieve NIOS source configurations in data connector.
 	@param id Source Identifier
 	@return SourceApiAPIReadSourceNiosRequest
 */
-func (a *SourceApiAPIService) ReadSourceNios(ctx context.Context, id int32) SourceApiAPIReadSourceNiosRequest {
+func (a *SourceApiAPIService) ReadSourceNios(ctx context.Context, id int64) SourceApiAPIReadSourceNiosRequest {
 	return SourceApiAPIReadSourceNiosRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1211,7 +1371,7 @@ func (a *SourceApiAPIService) ReadSourceNiosExecute(r SourceApiAPIReadSourceNios
 type SourceApiAPIReadSourceScheduleRequest struct {
 	ctx        context.Context
 	ApiService SourceApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -1234,7 +1394,7 @@ Use this method to retrieve schedule source configurations in data connector.
 	@param id Source Identifier
 	@return SourceApiAPIReadSourceScheduleRequest
 */
-func (a *SourceApiAPIService) ReadSourceSchedule(ctx context.Context, id int32) SourceApiAPIReadSourceScheduleRequest {
+func (a *SourceApiAPIService) ReadSourceSchedule(ctx context.Context, id int64) SourceApiAPIReadSourceScheduleRequest {
 	return SourceApiAPIReadSourceScheduleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1318,7 +1478,7 @@ func (a *SourceApiAPIService) ReadSourceScheduleExecute(r SourceApiAPIReadSource
 type SourceApiAPIUpdateSourceNiosRequest struct {
 	ctx        context.Context
 	ApiService SourceApiAPI
-	id         int32
+	id         int64
 	body       *SourceNios
 }
 
@@ -1340,7 +1500,7 @@ Use this method to update a NIOS source in data connector.
 	@param id Source Identifier
 	@return SourceApiAPIUpdateSourceNiosRequest
 */
-func (a *SourceApiAPIService) UpdateSourceNios(ctx context.Context, id int32) SourceApiAPIUpdateSourceNiosRequest {
+func (a *SourceApiAPIService) UpdateSourceNios(ctx context.Context, id int64) SourceApiAPIUpdateSourceNiosRequest {
 	return SourceApiAPIUpdateSourceNiosRequest{
 		ApiService: a,
 		ctx:        ctx,

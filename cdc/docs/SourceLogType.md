@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LogFields** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**LogFields** | Pointer to **[]string** |  | [optional] 
 **LogSubtypes** | Pointer to **[]string** |  | [optional] 
 **LogType** | Pointer to **string** |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLogFields
 
-`func (o *SourceLogType) GetLogFields() map[string]map[string]interface{}`
+`func (o *SourceLogType) GetLogFields() []string`
 
 GetLogFields returns the LogFields field if non-nil, zero value otherwise.
 
 ### GetLogFieldsOk
 
-`func (o *SourceLogType) GetLogFieldsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *SourceLogType) GetLogFieldsOk() (*[]string, bool)`
 
 GetLogFieldsOk returns a tuple with the LogFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogFields
 
-`func (o *SourceLogType) SetLogFields(v map[string]map[string]interface{})`
+`func (o *SourceLogType) SetLogFields(v []string)`
 
 SetLogFields sets LogFields field to given value.
 

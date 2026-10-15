@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProductId** | Pointer to **int32** |  | [optional] 
-**ScriptIds** | Pointer to **[]int32** |  | [optional] 
+**ProductId** | Pointer to **int64** |  | [optional] 
+**ScriptIds** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetProductId
 
-`func (o *ApplicationsProductDataReadResponse) GetProductId() int32`
+`func (o *ApplicationsProductDataReadResponse) GetProductId() int64`
 
 GetProductId returns the ProductId field if non-nil, zero value otherwise.
 
 ### GetProductIdOk
 
-`func (o *ApplicationsProductDataReadResponse) GetProductIdOk() (*int32, bool)`
+`func (o *ApplicationsProductDataReadResponse) GetProductIdOk() (*int64, bool)`
 
 GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProductId
 
-`func (o *ApplicationsProductDataReadResponse) SetProductId(v int32)`
+`func (o *ApplicationsProductDataReadResponse) SetProductId(v int64)`
 
 SetProductId sets ProductId field to given value.
 
@@ -53,20 +53,20 @@ HasProductId returns a boolean if a field has been set.
 
 ### GetScriptIds
 
-`func (o *ApplicationsProductDataReadResponse) GetScriptIds() []int32`
+`func (o *ApplicationsProductDataReadResponse) GetScriptIds() []int64`
 
 GetScriptIds returns the ScriptIds field if non-nil, zero value otherwise.
 
 ### GetScriptIdsOk
 
-`func (o *ApplicationsProductDataReadResponse) GetScriptIdsOk() (*[]int32, bool)`
+`func (o *ApplicationsProductDataReadResponse) GetScriptIdsOk() (*[]int64, bool)`
 
 GetScriptIdsOk returns a tuple with the ScriptIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScriptIds
 
-`func (o *ApplicationsProductDataReadResponse) SetScriptIds(v []int32)`
+`func (o *ApplicationsProductDataReadResponse) SetScriptIds(v []int64)`
 
 SetScriptIds sets ScriptIds field to given value.
 

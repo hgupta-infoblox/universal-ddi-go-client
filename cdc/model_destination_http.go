@@ -20,19 +20,19 @@ var _ MappedNullable = &DestinationHttp{}
 
 // DestinationHttp struct for DestinationHttp
 type DestinationHttp struct {
-	Address              *string                           `json:"address,omitempty"`
-	Authentication       *string                           `json:"authentication,omitempty"`
-	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
-	CredentialId         *string                           `json:"credential_id,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	Enabled              *bool                             `json:"enabled,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	InsecureMode         *bool                             `json:"insecure_mode,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	OutputDataFormat     *string                           `json:"output_data_format,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	TransportProtocol    *string                           `json:"transport_protocol,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	Address              *string                `json:"address,omitempty"`
+	Authentication       *string                `json:"authentication,omitempty"`
+	CreatedAt            *time.Time             `json:"created_at,omitempty"`
+	CredentialId         *string                `json:"credential_id,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	InsecureMode         *bool                  `json:"insecure_mode,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	OutputDataFormat     *string                `json:"output_data_format,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	TransportProtocol    *string                `json:"transport_protocol,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -248,9 +248,9 @@ func (o *DestinationHttp) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *DestinationHttp) GetId() int32 {
+func (o *DestinationHttp) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -258,7 +258,7 @@ func (o *DestinationHttp) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationHttp) GetIdOk() (*int32, bool) {
+func (o *DestinationHttp) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -274,8 +274,8 @@ func (o *DestinationHttp) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *DestinationHttp) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *DestinationHttp) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -376,9 +376,9 @@ func (o *DestinationHttp) SetOutputDataFormat(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *DestinationHttp) GetTags() map[string]map[string]interface{} {
+func (o *DestinationHttp) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -386,9 +386,9 @@ func (o *DestinationHttp) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationHttp) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *DestinationHttp) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -402,8 +402,8 @@ func (o *DestinationHttp) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *DestinationHttp) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *DestinationHttp) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

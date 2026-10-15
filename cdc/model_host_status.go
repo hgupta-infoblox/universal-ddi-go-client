@@ -26,7 +26,7 @@ type HostStatus struct {
 	// High-availability role of this host for the flow (e.g. active, standby) when destination HA is enabled. Empty when HA is not applicable.
 	HaState *string `json:"ha_state,omitempty"`
 	// Numeric identifier of the on-prem host as known to the data connector service.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// Human-readable status message for the flow on this host.
 	Message *string `json:"message,omitempty"`
 	// On-prem host identifier (ophid) assigned by the platform.
@@ -156,9 +156,9 @@ func (o *HostStatus) SetHaState(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *HostStatus) GetId() int32 {
+func (o *HostStatus) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -166,7 +166,7 @@ func (o *HostStatus) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HostStatus) GetIdOk() (*int32, bool) {
+func (o *HostStatus) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -182,8 +182,8 @@ func (o *HostStatus) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *HostStatus) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *HostStatus) SetId(v int64) {
 	o.Id = &v
 }
 

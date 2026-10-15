@@ -20,17 +20,17 @@ var _ MappedNullable = &DestinationReporting{}
 
 // DestinationReporting struct for DestinationReporting
 type DestinationReporting struct {
-	Address                   *string                           `json:"address,omitempty"`
-	CreatedAt                 *time.Time                        `json:"created_at,omitempty"`
-	Description               *string                           `json:"description,omitempty"`
-	Enabled                   *bool                             `json:"enabled,omitempty"`
-	Id                        *int32                            `json:"id,omitempty"`
-	Name                      *string                           `json:"name,omitempty"`
-	Password                  *string                           `json:"password,omitempty"`
-	ReportingApplianceAddress *string                           `json:"reporting_appliance_address,omitempty"`
-	Tags                      map[string]map[string]interface{} `json:"tags,omitempty"`
-	UpdatedAt                 *time.Time                        `json:"updated_at,omitempty"`
-	Username                  *string                           `json:"username,omitempty"`
+	Address                   *string                `json:"address,omitempty"`
+	CreatedAt                 *time.Time             `json:"created_at,omitempty"`
+	Description               *string                `json:"description,omitempty"`
+	Enabled                   *bool                  `json:"enabled,omitempty"`
+	Id                        *int64                 `json:"id,omitempty"`
+	Name                      *string                `json:"name,omitempty"`
+	Password                  *string                `json:"password,omitempty"`
+	ReportingApplianceAddress *string                `json:"reporting_appliance_address,omitempty"`
+	Tags                      map[string]interface{} `json:"tags,omitempty"`
+	UpdatedAt                 *time.Time             `json:"updated_at,omitempty"`
+	Username                  *string                `json:"username,omitempty"`
 	AdditionalProperties      map[string]interface{}
 }
 
@@ -182,9 +182,9 @@ func (o *DestinationReporting) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *DestinationReporting) GetId() int32 {
+func (o *DestinationReporting) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -192,7 +192,7 @@ func (o *DestinationReporting) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationReporting) GetIdOk() (*int32, bool) {
+func (o *DestinationReporting) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -208,8 +208,8 @@ func (o *DestinationReporting) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *DestinationReporting) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *DestinationReporting) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -310,9 +310,9 @@ func (o *DestinationReporting) SetReportingApplianceAddress(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *DestinationReporting) GetTags() map[string]map[string]interface{} {
+func (o *DestinationReporting) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -320,9 +320,9 @@ func (o *DestinationReporting) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationReporting) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *DestinationReporting) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -336,8 +336,8 @@ func (o *DestinationReporting) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *DestinationReporting) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *DestinationReporting) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

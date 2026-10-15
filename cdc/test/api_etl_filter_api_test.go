@@ -111,7 +111,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterFqdn(context.Background(), id).Execute()
 
@@ -124,7 +124,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterHostname(context.Background(), id).Execute()
 
@@ -137,7 +137,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterIpNetwork(context.Background(), id).Execute()
 
@@ -150,7 +150,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterOphid(context.Background(), id).Execute()
 
@@ -163,7 +163,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterRecordType(context.Background(), id).Execute()
 
@@ -176,7 +176,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterRegex(context.Background(), id).Execute()
 
@@ -189,7 +189,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterThreatClassProperty(context.Background(), id).Execute()
 
@@ -399,7 +399,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterFqdn(context.Background(), id).Execute()
 
@@ -413,7 +413,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterHostname(context.Background(), id).Execute()
 
@@ -427,7 +427,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterIpNetwork(context.Background(), id).Execute()
 
@@ -441,7 +441,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterLocalZones(context.Background(), id).Execute()
 
@@ -455,7 +455,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterOphid(context.Background(), id).Execute()
 
@@ -469,7 +469,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterRecordType(context.Background(), id).Execute()
 
@@ -483,7 +483,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterRegex(context.Background(), id).Execute()
 
@@ -497,7 +497,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.ReadEtlFilterThreatClassProperty(context.Background(), id).Execute()
 
@@ -511,7 +511,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterFqdn(context.Background(), id).Execute()
 
@@ -525,7 +525,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterHostname(context.Background(), id).Execute()
 
@@ -539,7 +539,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterIpNetwork(context.Background(), id).Execute()
 
@@ -553,7 +553,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterOphid(context.Background(), id).Execute()
 
@@ -567,7 +567,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterRecordType(context.Background(), id).Execute()
 
@@ -581,7 +581,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterRegex(context.Background(), id).Execute()
 
@@ -595,7 +595,7 @@ func TestEtlFilterApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.EtlFilterApiAPI.UpdateEtlFilterThreatClassProperty(context.Background(), id).Execute()
 

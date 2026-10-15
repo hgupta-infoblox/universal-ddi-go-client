@@ -51,7 +51,7 @@ func TestFlowApiV2APIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.FlowApiV2API.DeleteFlowDataV2(context.Background(), id).Execute()
 
@@ -64,7 +64,7 @@ func TestFlowApiV2APIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.FlowApiV2API.DeleteFlowV2(context.Background(), id).Execute()
 
@@ -123,7 +123,7 @@ func TestFlowApiV2APIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.FlowApiV2API.ReadFlowDataV2(context.Background(), id).Execute()
 
@@ -137,7 +137,7 @@ func TestFlowApiV2APIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.FlowApiV2API.ReadFlowV2(context.Background(), id).Execute()
 
@@ -163,7 +163,7 @@ func TestFlowApiV2APIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.FlowApiV2API.UpdateFlowDataV2(context.Background(), id).Execute()
 

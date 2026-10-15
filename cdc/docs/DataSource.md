@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **time.Time** |  | [optional] 
+**CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **SourceFields** | Pointer to [**[]SourceField**](SourceField.md) |  | [optional] 
 **SourceSubtypes** | Pointer to **[]string** |  | [optional] 
 **SourceType** | Pointer to [**SourceType**](SourceType.md) |  | [optional] [default to SOURCETYPE_UNKNOWN]
 **Title** | Pointer to **string** |  | [optional] 
-**UpdatedAt** | Pointer to **time.Time** |  | [optional] 
+**UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
 

@@ -24,8 +24,8 @@ type ScriptData struct {
 	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
 	CreatedBy            *string                           `json:"created_by,omitempty"`
 	Data                 map[string]map[string]interface{} `json:"data,omitempty"`
-	FileId               *int32                            `json:"file_id,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
+	FileId               *int64                            `json:"file_id,omitempty"`
+	Id                   *int64                            `json:"id,omitempty"`
 	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -178,9 +178,9 @@ func (o *ScriptData) SetData(v map[string]map[string]interface{}) {
 }
 
 // GetFileId returns the FileId field value if set, zero value otherwise.
-func (o *ScriptData) GetFileId() int32 {
+func (o *ScriptData) GetFileId() int64 {
 	if o == nil || IsNil(o.FileId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FileId
@@ -188,7 +188,7 @@ func (o *ScriptData) GetFileId() int32 {
 
 // GetFileIdOk returns a tuple with the FileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScriptData) GetFileIdOk() (*int32, bool) {
+func (o *ScriptData) GetFileIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.FileId) {
 		return nil, false
 	}
@@ -204,15 +204,15 @@ func (o *ScriptData) HasFileId() bool {
 	return false
 }
 
-// SetFileId gets a reference to the given int32 and assigns it to the FileId field.
-func (o *ScriptData) SetFileId(v int32) {
+// SetFileId gets a reference to the given int64 and assigns it to the FileId field.
+func (o *ScriptData) SetFileId(v int64) {
 	o.FileId = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ScriptData) GetId() int32 {
+func (o *ScriptData) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -220,7 +220,7 @@ func (o *ScriptData) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScriptData) GetIdOk() (*int32, bool) {
+func (o *ScriptData) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -236,8 +236,8 @@ func (o *ScriptData) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ScriptData) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ScriptData) SetId(v int64) {
 	o.Id = &v
 }
 

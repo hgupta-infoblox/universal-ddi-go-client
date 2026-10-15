@@ -21,8 +21,8 @@ var _ MappedNullable = &ApplicationsProductData{}
 // ApplicationsProductData struct for ApplicationsProductData
 type ApplicationsProductData struct {
 	CreatedAt            *time.Time `json:"created_at,omitempty"`
-	ProductId            *int32     `json:"product_id,omitempty"`
-	ScriptId             *int32     `json:"script_id,omitempty"`
+	ProductId            *int64     `json:"product_id,omitempty"`
+	ScriptId             *int64     `json:"script_id,omitempty"`
 	UpdatedAt            *time.Time `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -79,9 +79,9 @@ func (o *ApplicationsProductData) SetCreatedAt(v time.Time) {
 }
 
 // GetProductId returns the ProductId field value if set, zero value otherwise.
-func (o *ApplicationsProductData) GetProductId() int32 {
+func (o *ApplicationsProductData) GetProductId() int64 {
 	if o == nil || IsNil(o.ProductId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ProductId
@@ -89,7 +89,7 @@ func (o *ApplicationsProductData) GetProductId() int32 {
 
 // GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsProductData) GetProductIdOk() (*int32, bool) {
+func (o *ApplicationsProductData) GetProductIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ProductId) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *ApplicationsProductData) HasProductId() bool {
 	return false
 }
 
-// SetProductId gets a reference to the given int32 and assigns it to the ProductId field.
-func (o *ApplicationsProductData) SetProductId(v int32) {
+// SetProductId gets a reference to the given int64 and assigns it to the ProductId field.
+func (o *ApplicationsProductData) SetProductId(v int64) {
 	o.ProductId = &v
 }
 
 // GetScriptId returns the ScriptId field value if set, zero value otherwise.
-func (o *ApplicationsProductData) GetScriptId() int32 {
+func (o *ApplicationsProductData) GetScriptId() int64 {
 	if o == nil || IsNil(o.ScriptId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ScriptId
@@ -121,7 +121,7 @@ func (o *ApplicationsProductData) GetScriptId() int32 {
 
 // GetScriptIdOk returns a tuple with the ScriptId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsProductData) GetScriptIdOk() (*int32, bool) {
+func (o *ApplicationsProductData) GetScriptIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ScriptId) {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *ApplicationsProductData) HasScriptId() bool {
 	return false
 }
 
-// SetScriptId gets a reference to the given int32 and assigns it to the ScriptId field.
-func (o *ApplicationsProductData) SetScriptId(v int32) {
+// SetScriptId gets a reference to the given int64 and assigns it to the ScriptId field.
+func (o *ApplicationsProductData) SetScriptId(v int64) {
 	o.ScriptId = &v
 }
 

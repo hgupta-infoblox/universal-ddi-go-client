@@ -173,7 +173,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Flow Identifier
+	id := int64(789) // int64 | Flow Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.FlowApiV2API.DeleteFlowDataV2(context.Background(), id).Execute()
@@ -190,7 +190,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Flow Identifier | 
+**id** | **int64** | Flow Identifier | 
 
 ### Other Parameters
 
@@ -240,7 +240,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Flow Identifier
+	id := int64(789) // int64 | Flow Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.FlowApiV2API.DeleteFlowV2(context.Background(), id).Execute()
@@ -257,7 +257,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Flow Identifier | 
+**id** | **int64** | Flow Identifier | 
 
 ### Other Parameters
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 ## ListFlowDataV2
 
-> FlowDataListResponseV2 ListFlowDataV2(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> FlowDataListResponseV2 ListFlowDataV2(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List flows in data connector.
 
@@ -460,6 +460,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -483,7 +487,7 @@ Name | Type | Description  | Notes
 
 ## ListFlowV2
 
-> FlowListResponseV2 ListFlowV2(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> FlowListResponseV2 ListFlowV2(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List data connector flows with joined lookup fields and runtime status.
 
@@ -528,6 +532,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -571,7 +579,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Flow Identifier
+	id := int64(789) // int64 | Flow Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.FlowApiV2API.ReadFlowDataV2(context.Background(), id).Execute()
@@ -590,7 +598,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Flow Identifier | 
+**id** | **int64** | Flow Identifier | 
 
 ### Other Parameters
 
@@ -641,7 +649,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Flow Identifier
+	id := int64(789) // int64 | Flow Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.FlowApiV2API.ReadFlowV2(context.Background(), id).Execute()
@@ -660,7 +668,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Flow Identifier | 
+**id** | **int64** | Flow Identifier | 
 
 ### Other Parameters
 
@@ -776,7 +784,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Flow Identifier
+	id := int64(789) // int64 | Flow Identifier
 	body := *cdc.NewFlowDataV2() // FlowDataV2 | 
 
 	apiClient := cdc.NewAPIClient()
@@ -796,7 +804,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Flow Identifier | 
+**id** | **int64** | Flow Identifier | 
 
 ### Other Parameters
 

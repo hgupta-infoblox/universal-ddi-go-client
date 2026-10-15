@@ -19,7 +19,7 @@ var _ MappedNullable = &EtlFilterThreatClassPropertyListDeleteRequest{}
 
 // EtlFilterThreatClassPropertyListDeleteRequest struct for EtlFilterThreatClassPropertyListDeleteRequest
 type EtlFilterThreatClassPropertyListDeleteRequest struct {
-	Ids                  []int32 `json:"ids,omitempty"`
+	Ids                  []int64 `json:"ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,9 +43,9 @@ func NewEtlFilterThreatClassPropertyListDeleteRequestWithDefaults() *EtlFilterTh
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise.
-func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIds() []int32 {
+func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIds() []int64 {
 	if o == nil || IsNil(o.Ids) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Ids
@@ -53,7 +53,7 @@ func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIds() []int32 {
 
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIdsOk() ([]int32, bool) {
+func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Ids) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *EtlFilterThreatClassPropertyListDeleteRequest) HasIds() bool {
 	return false
 }
 
-// SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *EtlFilterThreatClassPropertyListDeleteRequest) SetIds(v []int32) {
+// SetIds gets a reference to the given []int64 and assigns it to the Ids field.
+func (o *EtlFilterThreatClassPropertyListDeleteRequest) SetIds(v []int64) {
 	o.Ids = v
 }
 

@@ -122,7 +122,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterFqdnRequest
 	*/
-	DeleteEtlFilterFqdn(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterFqdnRequest
+	DeleteEtlFilterFqdn(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterFqdnRequest
 
 	// DeleteEtlFilterFqdnExecute executes the request
 	DeleteEtlFilterFqdnExecute(r EtlFilterApiAPIDeleteEtlFilterFqdnRequest) (*http.Response, error)
@@ -135,7 +135,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterHostnameRequest
 	*/
-	DeleteEtlFilterHostname(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterHostnameRequest
+	DeleteEtlFilterHostname(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterHostnameRequest
 
 	// DeleteEtlFilterHostnameExecute executes the request
 	DeleteEtlFilterHostnameExecute(r EtlFilterApiAPIDeleteEtlFilterHostnameRequest) (*http.Response, error)
@@ -148,7 +148,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest
 	*/
-	DeleteEtlFilterIpNetwork(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest
+	DeleteEtlFilterIpNetwork(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest
 
 	// DeleteEtlFilterIpNetworkExecute executes the request
 	DeleteEtlFilterIpNetworkExecute(r EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest) (*http.Response, error)
@@ -161,7 +161,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterOphidRequest
 	*/
-	DeleteEtlFilterOphid(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterOphidRequest
+	DeleteEtlFilterOphid(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterOphidRequest
 
 	// DeleteEtlFilterOphidExecute executes the request
 	DeleteEtlFilterOphidExecute(r EtlFilterApiAPIDeleteEtlFilterOphidRequest) (*http.Response, error)
@@ -174,7 +174,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest
 	*/
-	DeleteEtlFilterRecordType(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest
+	DeleteEtlFilterRecordType(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest
 
 	// DeleteEtlFilterRecordTypeExecute executes the request
 	DeleteEtlFilterRecordTypeExecute(r EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest) (*http.Response, error)
@@ -187,7 +187,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterRegexRequest
 	*/
-	DeleteEtlFilterRegex(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterRegexRequest
+	DeleteEtlFilterRegex(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterRegexRequest
 
 	// DeleteEtlFilterRegexExecute executes the request
 	DeleteEtlFilterRegexExecute(r EtlFilterApiAPIDeleteEtlFilterRegexRequest) (*http.Response, error)
@@ -200,7 +200,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest
 	*/
-	DeleteEtlFilterThreatClassProperty(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest
+	DeleteEtlFilterThreatClassProperty(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest
 
 	// DeleteEtlFilterThreatClassPropertyExecute executes the request
 	DeleteEtlFilterThreatClassPropertyExecute(r EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest) (*http.Response, error)
@@ -427,7 +427,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterFqdnRequest
 	*/
-	ReadEtlFilterFqdn(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterFqdnRequest
+	ReadEtlFilterFqdn(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterFqdnRequest
 
 	// ReadEtlFilterFqdnExecute executes the request
 	//  @return EtlFilterFqdnReadResponse
@@ -441,7 +441,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterHostnameRequest
 	*/
-	ReadEtlFilterHostname(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterHostnameRequest
+	ReadEtlFilterHostname(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterHostnameRequest
 
 	// ReadEtlFilterHostnameExecute executes the request
 	//  @return EtlFilterHostnameReadResponse
@@ -455,7 +455,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterIpNetworkRequest
 	*/
-	ReadEtlFilterIpNetwork(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterIpNetworkRequest
+	ReadEtlFilterIpNetwork(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterIpNetworkRequest
 
 	// ReadEtlFilterIpNetworkExecute executes the request
 	//  @return EtlFilterIpNetworkReadResponse
@@ -469,7 +469,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterLocalZonesRequest
 	*/
-	ReadEtlFilterLocalZones(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterLocalZonesRequest
+	ReadEtlFilterLocalZones(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterLocalZonesRequest
 
 	// ReadEtlFilterLocalZonesExecute executes the request
 	//  @return EtlFilterLocalZonesReadResponse
@@ -483,7 +483,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterOphidRequest
 	*/
-	ReadEtlFilterOphid(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterOphidRequest
+	ReadEtlFilterOphid(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterOphidRequest
 
 	// ReadEtlFilterOphidExecute executes the request
 	//  @return EtlFilterOphidReadResponse
@@ -497,7 +497,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterRecordTypeRequest
 	*/
-	ReadEtlFilterRecordType(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterRecordTypeRequest
+	ReadEtlFilterRecordType(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterRecordTypeRequest
 
 	// ReadEtlFilterRecordTypeExecute executes the request
 	//  @return EtlFilterRecordTypeReadResponse
@@ -511,7 +511,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterRegexRequest
 	*/
-	ReadEtlFilterRegex(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterRegexRequest
+	ReadEtlFilterRegex(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterRegexRequest
 
 	// ReadEtlFilterRegexExecute executes the request
 	//  @return EtlFilterRegexReadResponse
@@ -525,7 +525,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest
 	*/
-	ReadEtlFilterThreatClassProperty(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest
+	ReadEtlFilterThreatClassProperty(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest
 
 	// ReadEtlFilterThreatClassPropertyExecute executes the request
 	//  @return EtlFilterThreatClassPropertyReadResponse
@@ -539,7 +539,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterFqdnRequest
 	*/
-	UpdateEtlFilterFqdn(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterFqdnRequest
+	UpdateEtlFilterFqdn(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterFqdnRequest
 
 	// UpdateEtlFilterFqdnExecute executes the request
 	//  @return EtlFilterFqdnUpdateResponse
@@ -553,7 +553,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterHostnameRequest
 	*/
-	UpdateEtlFilterHostname(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterHostnameRequest
+	UpdateEtlFilterHostname(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterHostnameRequest
 
 	// UpdateEtlFilterHostnameExecute executes the request
 	//  @return EtlFilterHostnameUpdateResponse
@@ -567,7 +567,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest
 	*/
-	UpdateEtlFilterIpNetwork(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest
+	UpdateEtlFilterIpNetwork(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest
 
 	// UpdateEtlFilterIpNetworkExecute executes the request
 	//  @return EtlFilterIpNetworkUpdateResponse
@@ -581,7 +581,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterOphidRequest
 	*/
-	UpdateEtlFilterOphid(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterOphidRequest
+	UpdateEtlFilterOphid(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterOphidRequest
 
 	// UpdateEtlFilterOphidExecute executes the request
 	//  @return EtlFilterOphidUpdateResponse
@@ -595,7 +595,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest
 	*/
-	UpdateEtlFilterRecordType(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest
+	UpdateEtlFilterRecordType(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest
 
 	// UpdateEtlFilterRecordTypeExecute executes the request
 	//  @return EtlFilterRecordTypeUpdateResponse
@@ -609,7 +609,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterRegexRequest
 	*/
-	UpdateEtlFilterRegex(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterRegexRequest
+	UpdateEtlFilterRegex(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterRegexRequest
 
 	// UpdateEtlFilterRegexExecute executes the request
 	//  @return EtlFilterRegexUpdateResponse
@@ -623,7 +623,7 @@ type EtlFilterApiAPI interface {
 		@param id ETL Filter Identifier
 		@return EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest
 	*/
-	UpdateEtlFilterThreatClassProperty(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest
+	UpdateEtlFilterThreatClassProperty(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest
 
 	// UpdateEtlFilterThreatClassPropertyExecute executes the request
 	//  @return EtlFilterThreatClassPropertyUpdateResponse
@@ -1364,7 +1364,7 @@ func (a *EtlFilterApiAPIService) CreateEtlFilterThreatClassPropertyExecute(r Etl
 type EtlFilterApiAPIDeleteEtlFilterFqdnRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterFqdnRequest) Execute() (*http.Response, error) {
@@ -1380,7 +1380,7 @@ Use this method to delete an ETL FQDN filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterFqdnRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterFqdn(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterFqdnRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterFqdn(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterFqdnRequest {
 	return EtlFilterApiAPIDeleteEtlFilterFqdnRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1453,7 +1453,7 @@ func (a *EtlFilterApiAPIService) DeleteEtlFilterFqdnExecute(r EtlFilterApiAPIDel
 type EtlFilterApiAPIDeleteEtlFilterHostnameRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterHostnameRequest) Execute() (*http.Response, error) {
@@ -1469,7 +1469,7 @@ Use this method to delete ETL hostname filters in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterHostnameRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterHostname(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterHostnameRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterHostname(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterHostnameRequest {
 	return EtlFilterApiAPIDeleteEtlFilterHostnameRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1542,7 +1542,7 @@ func (a *EtlFilterApiAPIService) DeleteEtlFilterHostnameExecute(r EtlFilterApiAP
 type EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest) Execute() (*http.Response, error) {
@@ -1558,7 +1558,7 @@ Use this method to delete an ETL IP network filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterIpNetwork(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterIpNetwork(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest {
 	return EtlFilterApiAPIDeleteEtlFilterIpNetworkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1631,7 +1631,7 @@ func (a *EtlFilterApiAPIService) DeleteEtlFilterIpNetworkExecute(r EtlFilterApiA
 type EtlFilterApiAPIDeleteEtlFilterOphidRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterOphidRequest) Execute() (*http.Response, error) {
@@ -1647,7 +1647,7 @@ Use this method to delete ETL ophid filters in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterOphidRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterOphid(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterOphidRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterOphid(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterOphidRequest {
 	return EtlFilterApiAPIDeleteEtlFilterOphidRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1720,7 +1720,7 @@ func (a *EtlFilterApiAPIService) DeleteEtlFilterOphidExecute(r EtlFilterApiAPIDe
 type EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest) Execute() (*http.Response, error) {
@@ -1736,7 +1736,7 @@ Use this method to delete an ETL DNS Record Type filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterRecordType(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterRecordType(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest {
 	return EtlFilterApiAPIDeleteEtlFilterRecordTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1809,7 +1809,7 @@ func (a *EtlFilterApiAPIService) DeleteEtlFilterRecordTypeExecute(r EtlFilterApi
 type EtlFilterApiAPIDeleteEtlFilterRegexRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterRegexRequest) Execute() (*http.Response, error) {
@@ -1825,7 +1825,7 @@ Use this method to delete ETL regex filters in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterRegexRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterRegex(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterRegexRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterRegex(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterRegexRequest {
 	return EtlFilterApiAPIDeleteEtlFilterRegexRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1898,7 +1898,7 @@ func (a *EtlFilterApiAPIService) DeleteEtlFilterRegexExecute(r EtlFilterApiAPIDe
 type EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 }
 
 func (r EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest) Execute() (*http.Response, error) {
@@ -1914,7 +1914,7 @@ Use this method to delete ETL Threat Class Property filters in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest
 */
-func (a *EtlFilterApiAPIService) DeleteEtlFilterThreatClassProperty(ctx context.Context, id int32) EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest {
+func (a *EtlFilterApiAPIService) DeleteEtlFilterThreatClassProperty(ctx context.Context, id int64) EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest {
 	return EtlFilterApiAPIDeleteEtlFilterThreatClassPropertyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2661,6 +2661,10 @@ type EtlFilterApiAPIListEtlFilterRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2674,6 +2678,30 @@ func (r EtlFilterApiAPIListEtlFilterRequest) Filter(filter string) EtlFilterApiA
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2736,6 +2764,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterExecute(r EtlFilterApiAPIListEtlFi
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2794,6 +2834,10 @@ type EtlFilterApiAPIListEtlFilterFqdnRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2807,6 +2851,30 @@ func (r EtlFilterApiAPIListEtlFilterFqdnRequest) Filter(filter string) EtlFilter
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterFqdnRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterFqdnRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterFqdnRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterFqdnRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterFqdnRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterFqdnRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterFqdnRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterFqdnRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterFqdnRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterFqdnRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2869,6 +2937,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterFqdnExecute(r EtlFilterApiAPIListE
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2927,6 +3007,10 @@ type EtlFilterApiAPIListEtlFilterHostnameRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2940,6 +3024,30 @@ func (r EtlFilterApiAPIListEtlFilterHostnameRequest) Filter(filter string) EtlFi
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterHostnameRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterHostnameRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterHostnameRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterHostnameRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterHostnameRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterHostnameRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterHostnameRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterHostnameRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterHostnameRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterHostnameRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3002,6 +3110,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterHostnameExecute(r EtlFilterApiAPIL
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3060,6 +3180,10 @@ type EtlFilterApiAPIListEtlFilterIngressRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3073,6 +3197,30 @@ func (r EtlFilterApiAPIListEtlFilterIngressRequest) Filter(filter string) EtlFil
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterIngressRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterIngressRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterIngressRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterIngressRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterIngressRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterIngressRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterIngressRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterIngressRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterIngressRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterIngressRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3135,6 +3283,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterIngressExecute(r EtlFilterApiAPILi
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3193,6 +3353,10 @@ type EtlFilterApiAPIListEtlFilterIpNetworkRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3206,6 +3370,30 @@ func (r EtlFilterApiAPIListEtlFilterIpNetworkRequest) Filter(filter string) EtlF
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterIpNetworkRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterIpNetworkRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterIpNetworkRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterIpNetworkRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterIpNetworkRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterIpNetworkRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterIpNetworkRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterIpNetworkRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterIpNetworkRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterIpNetworkRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3268,6 +3456,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterIpNetworkExecute(r EtlFilterApiAPI
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3326,6 +3526,10 @@ type EtlFilterApiAPIListEtlFilterLocalZonesRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3339,6 +3543,30 @@ func (r EtlFilterApiAPIListEtlFilterLocalZonesRequest) Filter(filter string) Etl
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterLocalZonesRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterLocalZonesRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterLocalZonesRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterLocalZonesRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterLocalZonesRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterLocalZonesRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterLocalZonesRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterLocalZonesRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterLocalZonesRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterLocalZonesRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3401,6 +3629,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterLocalZonesExecute(r EtlFilterApiAP
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3459,6 +3699,10 @@ type EtlFilterApiAPIListEtlFilterOphidRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3472,6 +3716,30 @@ func (r EtlFilterApiAPIListEtlFilterOphidRequest) Filter(filter string) EtlFilte
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterOphidRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterOphidRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterOphidRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterOphidRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterOphidRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterOphidRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterOphidRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterOphidRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterOphidRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterOphidRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3534,6 +3802,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterOphidExecute(r EtlFilterApiAPIList
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3592,6 +3872,10 @@ type EtlFilterApiAPIListEtlFilterRecordTypeRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3605,6 +3889,30 @@ func (r EtlFilterApiAPIListEtlFilterRecordTypeRequest) Filter(filter string) Etl
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterRecordTypeRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterRecordTypeRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterRecordTypeRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterRecordTypeRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterRecordTypeRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterRecordTypeRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterRecordTypeRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterRecordTypeRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterRecordTypeRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterRecordTypeRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3667,6 +3975,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterRecordTypeExecute(r EtlFilterApiAP
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3725,6 +4045,10 @@ type EtlFilterApiAPIListEtlFilterRegexRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3738,6 +4062,30 @@ func (r EtlFilterApiAPIListEtlFilterRegexRequest) Filter(filter string) EtlFilte
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterRegexRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterRegexRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterRegexRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterRegexRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterRegexRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterRegexRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterRegexRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterRegexRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterRegexRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterRegexRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3800,6 +4148,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterRegexExecute(r EtlFilterApiAPIList
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3858,6 +4218,10 @@ type EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest struct {
 	ApiService EtlFilterApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3871,6 +4235,30 @@ func (r EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest) Filter(filter st
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest) Fields(fields string) EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest) Offset(offset int32) EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest) Limit(limit int32) EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest) PageToken(pageToken string) EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest) OrderBy(orderBy string) EtlFilterApiAPIListEtlFilterThreatClassPropertyRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3933,6 +4321,18 @@ func (a *EtlFilterApiAPIService) ListEtlFilterThreatClassPropertyExecute(r EtlFi
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3989,7 +4389,7 @@ func (a *EtlFilterApiAPIService) ListEtlFilterThreatClassPropertyExecute(r EtlFi
 type EtlFilterApiAPIReadEtlFilterFqdnRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4012,7 +4412,7 @@ Use this method to retrieve ETL FQDN filter configurations in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterFqdnRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterFqdn(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterFqdnRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterFqdn(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterFqdnRequest {
 	return EtlFilterApiAPIReadEtlFilterFqdnRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4096,7 +4496,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterFqdnExecute(r EtlFilterApiAPIReadE
 type EtlFilterApiAPIReadEtlFilterHostnameRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4119,7 +4519,7 @@ Use this method to retrieve ETL hostname filter configurations in data connector
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterHostnameRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterHostname(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterHostnameRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterHostname(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterHostnameRequest {
 	return EtlFilterApiAPIReadEtlFilterHostnameRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4203,7 +4603,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterHostnameExecute(r EtlFilterApiAPIR
 type EtlFilterApiAPIReadEtlFilterIpNetworkRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4226,7 +4626,7 @@ Use this method to retrieve ETL IP network filter configurations in data connect
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterIpNetworkRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterIpNetwork(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterIpNetworkRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterIpNetwork(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterIpNetworkRequest {
 	return EtlFilterApiAPIReadEtlFilterIpNetworkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4310,7 +4710,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterIpNetworkExecute(r EtlFilterApiAPI
 type EtlFilterApiAPIReadEtlFilterLocalZonesRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4333,7 +4733,7 @@ Use this method to retrieve ETL Local Zones filter configurations in data connec
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterLocalZonesRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterLocalZones(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterLocalZonesRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterLocalZones(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterLocalZonesRequest {
 	return EtlFilterApiAPIReadEtlFilterLocalZonesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4417,7 +4817,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterLocalZonesExecute(r EtlFilterApiAP
 type EtlFilterApiAPIReadEtlFilterOphidRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4440,7 +4840,7 @@ Use this method to retrieve ETL ophid filter configurations in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterOphidRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterOphid(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterOphidRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterOphid(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterOphidRequest {
 	return EtlFilterApiAPIReadEtlFilterOphidRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4524,7 +4924,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterOphidExecute(r EtlFilterApiAPIRead
 type EtlFilterApiAPIReadEtlFilterRecordTypeRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4547,7 +4947,7 @@ Use this method to retrieve ETL DNS Record Type filter configurations in data co
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterRecordTypeRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterRecordType(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterRecordTypeRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterRecordType(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterRecordTypeRequest {
 	return EtlFilterApiAPIReadEtlFilterRecordTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4631,7 +5031,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterRecordTypeExecute(r EtlFilterApiAP
 type EtlFilterApiAPIReadEtlFilterRegexRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4654,7 +5054,7 @@ Use this method to retrieve ETL regex filter configurations in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterRegexRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterRegex(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterRegexRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterRegex(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterRegexRequest {
 	return EtlFilterApiAPIReadEtlFilterRegexRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4738,7 +5138,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterRegexExecute(r EtlFilterApiAPIRead
 type EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4761,7 +5161,7 @@ Use this method to retrieve ETL Threat Class Property filter configurations in d
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest
 */
-func (a *EtlFilterApiAPIService) ReadEtlFilterThreatClassProperty(ctx context.Context, id int32) EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest {
+func (a *EtlFilterApiAPIService) ReadEtlFilterThreatClassProperty(ctx context.Context, id int64) EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest {
 	return EtlFilterApiAPIReadEtlFilterThreatClassPropertyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4845,7 +5245,7 @@ func (a *EtlFilterApiAPIService) ReadEtlFilterThreatClassPropertyExecute(r EtlFi
 type EtlFilterApiAPIUpdateEtlFilterFqdnRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterFqdn
 }
 
@@ -4867,7 +5267,7 @@ Use this method to update an ETL FQDN filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterFqdnRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterFqdn(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterFqdnRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterFqdn(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterFqdnRequest {
 	return EtlFilterApiAPIUpdateEtlFilterFqdnRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4953,7 +5353,7 @@ func (a *EtlFilterApiAPIService) UpdateEtlFilterFqdnExecute(r EtlFilterApiAPIUpd
 type EtlFilterApiAPIUpdateEtlFilterHostnameRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterHostname
 }
 
@@ -4975,7 +5375,7 @@ Use this method to update an ETL hostname filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterHostnameRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterHostname(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterHostnameRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterHostname(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterHostnameRequest {
 	return EtlFilterApiAPIUpdateEtlFilterHostnameRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5061,7 +5461,7 @@ func (a *EtlFilterApiAPIService) UpdateEtlFilterHostnameExecute(r EtlFilterApiAP
 type EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterIpNetwork
 }
 
@@ -5083,7 +5483,7 @@ Use this method to update an ETL IP network filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterIpNetwork(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterIpNetwork(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest {
 	return EtlFilterApiAPIUpdateEtlFilterIpNetworkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5169,7 +5569,7 @@ func (a *EtlFilterApiAPIService) UpdateEtlFilterIpNetworkExecute(r EtlFilterApiA
 type EtlFilterApiAPIUpdateEtlFilterOphidRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterOphid
 }
 
@@ -5191,7 +5591,7 @@ Use this method to update an ETL ophid filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterOphidRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterOphid(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterOphidRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterOphid(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterOphidRequest {
 	return EtlFilterApiAPIUpdateEtlFilterOphidRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5277,7 +5677,7 @@ func (a *EtlFilterApiAPIService) UpdateEtlFilterOphidExecute(r EtlFilterApiAPIUp
 type EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterRecordType
 }
 
@@ -5299,7 +5699,7 @@ Use this method to update an ETL DNS Record Type filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterRecordType(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterRecordType(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest {
 	return EtlFilterApiAPIUpdateEtlFilterRecordTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5385,7 +5785,7 @@ func (a *EtlFilterApiAPIService) UpdateEtlFilterRecordTypeExecute(r EtlFilterApi
 type EtlFilterApiAPIUpdateEtlFilterRegexRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterRegex
 }
 
@@ -5407,7 +5807,7 @@ Use this method to update an ETL regex filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterRegexRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterRegex(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterRegexRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterRegex(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterRegexRequest {
 	return EtlFilterApiAPIUpdateEtlFilterRegexRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5493,7 +5893,7 @@ func (a *EtlFilterApiAPIService) UpdateEtlFilterRegexExecute(r EtlFilterApiAPIUp
 type EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest struct {
 	ctx        context.Context
 	ApiService EtlFilterApiAPI
-	id         int32
+	id         int64
 	body       *EtlFilterThreatClassProperty
 }
 
@@ -5515,7 +5915,7 @@ Use this method to update an ETL Threat Class Property filter in data connector.
 	@param id ETL Filter Identifier
 	@return EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest
 */
-func (a *EtlFilterApiAPIService) UpdateEtlFilterThreatClassProperty(ctx context.Context, id int32) EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest {
+func (a *EtlFilterApiAPIService) UpdateEtlFilterThreatClassProperty(ctx context.Context, id int64) EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest {
 	return EtlFilterApiAPIUpdateEtlFilterThreatClassPropertyRequest{
 		ApiService: a,
 		ctx:        ctx,

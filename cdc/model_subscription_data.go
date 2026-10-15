@@ -23,11 +23,11 @@ type SubscriptionData struct {
 	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
 	Description          *string                           `json:"description,omitempty"`
 	Enabled              *bool                             `json:"enabled,omitempty"`
-	FileId               []int32                           `json:"file_id,omitempty"`
+	FileId               []int64                           `json:"file_id,omitempty"`
 	Id                   *string                           `json:"id,omitempty"`
 	Name                 *string                           `json:"name,omitempty"`
 	Status               *SubscriptionStatus               `json:"status,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
+	Tags                 map[string]interface{}            `json:"tags,omitempty"`
 	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
 	Variables            map[string]map[string]interface{} `json:"variables,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -153,9 +153,9 @@ func (o *SubscriptionData) SetEnabled(v bool) {
 }
 
 // GetFileId returns the FileId field value if set, zero value otherwise.
-func (o *SubscriptionData) GetFileId() []int32 {
+func (o *SubscriptionData) GetFileId() []int64 {
 	if o == nil || IsNil(o.FileId) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.FileId
@@ -163,7 +163,7 @@ func (o *SubscriptionData) GetFileId() []int32 {
 
 // GetFileIdOk returns a tuple with the FileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubscriptionData) GetFileIdOk() ([]int32, bool) {
+func (o *SubscriptionData) GetFileIdOk() ([]int64, bool) {
 	if o == nil || IsNil(o.FileId) {
 		return nil, false
 	}
@@ -179,8 +179,8 @@ func (o *SubscriptionData) HasFileId() bool {
 	return false
 }
 
-// SetFileId gets a reference to the given []int32 and assigns it to the FileId field.
-func (o *SubscriptionData) SetFileId(v []int32) {
+// SetFileId gets a reference to the given []int64 and assigns it to the FileId field.
+func (o *SubscriptionData) SetFileId(v []int64) {
 	o.FileId = v
 }
 
@@ -281,9 +281,9 @@ func (o *SubscriptionData) SetStatus(v SubscriptionStatus) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *SubscriptionData) GetTags() map[string]map[string]interface{} {
+func (o *SubscriptionData) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -291,9 +291,9 @@ func (o *SubscriptionData) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubscriptionData) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *SubscriptionData) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -307,8 +307,8 @@ func (o *SubscriptionData) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *SubscriptionData) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *SubscriptionData) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

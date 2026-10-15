@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ids** | Pointer to **[]int32** |  | [optional] 
+**Ids** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIds
 
-`func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIds() []int32`
+`func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIds() []int64`
 
 GetIds returns the Ids field if non-nil, zero value otherwise.
 
 ### GetIdsOk
 
-`func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIdsOk() (*[]int32, bool)`
+`func (o *EtlFilterThreatClassPropertyListDeleteRequest) GetIdsOk() (*[]int64, bool)`
 
 GetIdsOk returns a tuple with the Ids field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIds
 
-`func (o *EtlFilterThreatClassPropertyListDeleteRequest) SetIds(v []int32)`
+`func (o *EtlFilterThreatClassPropertyListDeleteRequest) SetIds(v []int64)`
 
 SetIds sets Ids field to given value.
 

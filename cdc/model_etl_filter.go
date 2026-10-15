@@ -20,16 +20,16 @@ var _ MappedNullable = &EtlFilter{}
 
 // EtlFilter struct for EtlFilter
 type EtlFilter struct {
-	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
-	Data                 []string                          `json:"data,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	Enabled              *bool                             `json:"enabled,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	IngressPolicyAction  *string                           `json:"ingress_policy_action,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	Type                 *string                           `json:"type,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	CreatedAt            *time.Time             `json:"created_at,omitempty"`
+	Data                 []string               `json:"data,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	IngressPolicyAction  *string                `json:"ingress_policy_action,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -181,9 +181,9 @@ func (o *EtlFilter) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *EtlFilter) GetId() int32 {
+func (o *EtlFilter) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -191,7 +191,7 @@ func (o *EtlFilter) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EtlFilter) GetIdOk() (*int32, bool) {
+func (o *EtlFilter) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -207,8 +207,8 @@ func (o *EtlFilter) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *EtlFilter) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *EtlFilter) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -277,9 +277,9 @@ func (o *EtlFilter) SetName(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *EtlFilter) GetTags() map[string]map[string]interface{} {
+func (o *EtlFilter) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -287,9 +287,9 @@ func (o *EtlFilter) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EtlFilter) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *EtlFilter) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -303,8 +303,8 @@ func (o *EtlFilter) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *EtlFilter) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *EtlFilter) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

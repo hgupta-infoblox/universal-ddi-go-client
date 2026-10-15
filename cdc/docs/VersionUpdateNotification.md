@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountId** | Pointer to **string** |  | [optional] 
 **ProductName** | Pointer to **string** |  | [optional] 
-**ScriptId** | Pointer to **int32** |  | [optional] 
+**ScriptId** | Pointer to **int64** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasProductName returns a boolean if a field has been set.
 
 ### GetScriptId
 
-`func (o *VersionUpdateNotification) GetScriptId() int32`
+`func (o *VersionUpdateNotification) GetScriptId() int64`
 
 GetScriptId returns the ScriptId field if non-nil, zero value otherwise.
 
 ### GetScriptIdOk
 
-`func (o *VersionUpdateNotification) GetScriptIdOk() (*int32, bool)`
+`func (o *VersionUpdateNotification) GetScriptIdOk() (*int64, bool)`
 
 GetScriptIdOk returns a tuple with the ScriptId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScriptId
 
-`func (o *VersionUpdateNotification) SetScriptId(v int32)`
+`func (o *VersionUpdateNotification) SetScriptId(v int64)`
 
 SetScriptId sets ScriptId field to given value.
 

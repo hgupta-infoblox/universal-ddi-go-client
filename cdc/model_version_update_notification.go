@@ -21,7 +21,7 @@ var _ MappedNullable = &VersionUpdateNotification{}
 type VersionUpdateNotification struct {
 	AccountId            *string `json:"account_id,omitempty"`
 	ProductName          *string `json:"product_name,omitempty"`
-	ScriptId             *int32  `json:"script_id,omitempty"`
+	ScriptId             *int64  `json:"script_id,omitempty"`
 	Version              *string `json:"version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -110,9 +110,9 @@ func (o *VersionUpdateNotification) SetProductName(v string) {
 }
 
 // GetScriptId returns the ScriptId field value if set, zero value otherwise.
-func (o *VersionUpdateNotification) GetScriptId() int32 {
+func (o *VersionUpdateNotification) GetScriptId() int64 {
 	if o == nil || IsNil(o.ScriptId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ScriptId
@@ -120,7 +120,7 @@ func (o *VersionUpdateNotification) GetScriptId() int32 {
 
 // GetScriptIdOk returns a tuple with the ScriptId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VersionUpdateNotification) GetScriptIdOk() (*int32, bool) {
+func (o *VersionUpdateNotification) GetScriptIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ScriptId) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *VersionUpdateNotification) HasScriptId() bool {
 	return false
 }
 
-// SetScriptId gets a reference to the given int32 and assigns it to the ScriptId field.
-func (o *VersionUpdateNotification) SetScriptId(v int32) {
+// SetScriptId gets a reference to the given int64 and assigns it to the ScriptId field.
+func (o *VersionUpdateNotification) SetScriptId(v int64) {
 	o.ScriptId = &v
 }
 

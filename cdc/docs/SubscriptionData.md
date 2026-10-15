@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**FileId** | Pointer to **[]int32** |  | [optional] 
+**FileId** | Pointer to **[]int64** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**SubscriptionStatus**](SubscriptionStatus.md) |  | [optional] [default to SUBSCRIPTIONSTATUS_UNKNOWN]
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Variables** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 
@@ -111,20 +111,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetFileId
 
-`func (o *SubscriptionData) GetFileId() []int32`
+`func (o *SubscriptionData) GetFileId() []int64`
 
 GetFileId returns the FileId field if non-nil, zero value otherwise.
 
 ### GetFileIdOk
 
-`func (o *SubscriptionData) GetFileIdOk() (*[]int32, bool)`
+`func (o *SubscriptionData) GetFileIdOk() (*[]int64, bool)`
 
 GetFileIdOk returns a tuple with the FileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFileId
 
-`func (o *SubscriptionData) SetFileId(v []int32)`
+`func (o *SubscriptionData) SetFileId(v []int64)`
 
 SetFileId sets FileId field to given value.
 
@@ -211,20 +211,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *SubscriptionData) GetTags() map[string]map[string]interface{}`
+`func (o *SubscriptionData) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *SubscriptionData) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *SubscriptionData) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *SubscriptionData) SetTags(v map[string]map[string]interface{})`
+`func (o *SubscriptionData) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

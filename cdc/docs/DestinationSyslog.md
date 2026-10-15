@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **InsecureMode** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OutputDataFormat** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **TransportProtocol** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
@@ -164,20 +164,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *DestinationSyslog) GetId() int32`
+`func (o *DestinationSyslog) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *DestinationSyslog) GetIdOk() (*int32, bool)`
+`func (o *DestinationSyslog) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *DestinationSyslog) SetId(v int32)`
+`func (o *DestinationSyslog) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -264,20 +264,20 @@ HasOutputDataFormat returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *DestinationSyslog) GetPort() int32`
+`func (o *DestinationSyslog) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *DestinationSyslog) GetPortOk() (*int32, bool)`
+`func (o *DestinationSyslog) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *DestinationSyslog) SetPort(v int32)`
+`func (o *DestinationSyslog) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 
@@ -289,20 +289,20 @@ HasPort returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *DestinationSyslog) GetTags() map[string]map[string]interface{}`
+`func (o *DestinationSyslog) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *DestinationSyslog) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *DestinationSyslog) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *DestinationSyslog) SetTags(v map[string]map[string]interface{})`
+`func (o *DestinationSyslog) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

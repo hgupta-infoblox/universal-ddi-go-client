@@ -20,15 +20,15 @@ var _ MappedNullable = &DestinationApplication{}
 
 // DestinationApplication struct for DestinationApplication
 type DestinationApplication struct {
-	Application          *int32                            `json:"application,omitempty"`
+	Application          *int64                            `json:"application,omitempty"`
 	Context              map[string]map[string]interface{} `json:"context,omitempty"`
 	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
 	Description          *string                           `json:"description,omitempty"`
 	Enabled              *bool                             `json:"enabled,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
+	Id                   *int64                            `json:"id,omitempty"`
 	Name                 *string                           `json:"name,omitempty"`
 	OutputDataFormat     *string                           `json:"output_data_format,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
+	Tags                 map[string]interface{}            `json:"tags,omitempty"`
 	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -53,9 +53,9 @@ func NewDestinationApplicationWithDefaults() *DestinationApplication {
 }
 
 // GetApplication returns the Application field value if set, zero value otherwise.
-func (o *DestinationApplication) GetApplication() int32 {
+func (o *DestinationApplication) GetApplication() int64 {
 	if o == nil || IsNil(o.Application) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Application
@@ -63,7 +63,7 @@ func (o *DestinationApplication) GetApplication() int32 {
 
 // GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationApplication) GetApplicationOk() (*int32, bool) {
+func (o *DestinationApplication) GetApplicationOk() (*int64, bool) {
 	if o == nil || IsNil(o.Application) {
 		return nil, false
 	}
@@ -79,8 +79,8 @@ func (o *DestinationApplication) HasApplication() bool {
 	return false
 }
 
-// SetApplication gets a reference to the given int32 and assigns it to the Application field.
-func (o *DestinationApplication) SetApplication(v int32) {
+// SetApplication gets a reference to the given int64 and assigns it to the Application field.
+func (o *DestinationApplication) SetApplication(v int64) {
 	o.Application = &v
 }
 
@@ -213,9 +213,9 @@ func (o *DestinationApplication) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *DestinationApplication) GetId() int32 {
+func (o *DestinationApplication) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -223,7 +223,7 @@ func (o *DestinationApplication) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationApplication) GetIdOk() (*int32, bool) {
+func (o *DestinationApplication) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -239,8 +239,8 @@ func (o *DestinationApplication) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *DestinationApplication) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *DestinationApplication) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -309,9 +309,9 @@ func (o *DestinationApplication) SetOutputDataFormat(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *DestinationApplication) GetTags() map[string]map[string]interface{} {
+func (o *DestinationApplication) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -319,9 +319,9 @@ func (o *DestinationApplication) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationApplication) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *DestinationApplication) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -335,8 +335,8 @@ func (o *DestinationApplication) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *DestinationApplication) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *DestinationApplication) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

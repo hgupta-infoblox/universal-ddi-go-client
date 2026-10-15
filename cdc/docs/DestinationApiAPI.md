@@ -528,7 +528,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.DestinationApiAPI.DeleteDestinationApplication(context.Background(), id).Execute()
@@ -545,7 +545,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -595,7 +595,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.DestinationApiAPI.DeleteDestinationHttp(context.Background(), id).Execute()
@@ -612,7 +612,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -662,7 +662,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.DestinationApiAPI.DeleteDestinationReporting(context.Background(), id).Execute()
@@ -679,7 +679,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -729,7 +729,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.DestinationApiAPI.DeleteDestinationSplunk(context.Background(), id).Execute()
@@ -746,7 +746,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -796,7 +796,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(789) // int64 | 
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.DestinationApiAPI.DeleteDestinationSplunkCloud(context.Background(), id).Execute()
@@ -813,7 +813,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -863,7 +863,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.DestinationApiAPI.DeleteDestinationSyslog(context.Background(), id).Execute()
@@ -880,7 +880,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -1230,7 +1230,7 @@ Name | Type | Description  | Notes
 
 ## ListDestination
 
-> DestinationListResponse ListDestination(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationListResponse ListDestination(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List destinations defined for a given account
 
@@ -1275,6 +1275,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1298,7 +1302,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationApplication
 
-> DestinationApplicationListResponse ListDestinationApplication(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationApplicationListResponse ListDestinationApplication(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List application destination servers
 
@@ -1343,6 +1347,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1366,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationBloxone
 
-> DestinationBloxoneListResponse ListDestinationBloxone(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationBloxoneListResponse ListDestinationBloxone(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List Bloxone destinations
 
@@ -1411,6 +1419,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1434,7 +1446,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationHttp
 
-> DestinationHttpListResponse ListDestinationHttp(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationHttpListResponse ListDestinationHttp(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List Http destination servers
 
@@ -1479,6 +1491,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1502,7 +1518,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationReporting
 
-> DestinationReportingListResponse ListDestinationReporting(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationReportingListResponse ListDestinationReporting(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List NIOS reporting destinations
 
@@ -1547,6 +1563,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1570,7 +1590,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationSplunk
 
-> DestinationSplunkListResponse ListDestinationSplunk(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationSplunkListResponse ListDestinationSplunk(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List Splunk destination servers
 
@@ -1615,6 +1635,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1638,7 +1662,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationSplunkCloud
 
-> DestinationSplunkCloudListResponse ListDestinationSplunkCloud(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationSplunkCloudListResponse ListDestinationSplunkCloud(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List Splunk Cloud destination servers
 
@@ -1683,6 +1707,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1706,7 +1734,7 @@ Name | Type | Description  | Notes
 
 ## ListDestinationSyslog
 
-> DestinationSyslogListResponse ListDestinationSyslog(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> DestinationSyslogListResponse ListDestinationSyslog(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List Syslog destination servers
 
@@ -1751,6 +1779,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1794,7 +1826,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationApplication(context.Background(), id).Execute()
@@ -1813,7 +1845,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -1864,7 +1896,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationBloxone(context.Background(), id).Execute()
@@ -1883,7 +1915,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -1935,7 +1967,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationHttp(context.Background(), id).Execute()
@@ -1954,7 +1986,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2005,7 +2037,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationReporting(context.Background(), id).Execute()
@@ -2024,7 +2056,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2076,7 +2108,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationSplunk(context.Background(), id).Execute()
@@ -2095,7 +2127,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2146,7 +2178,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationSplunkCloud(context.Background(), id).Execute()
@@ -2165,7 +2197,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2216,7 +2248,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.DestinationApiAPI.ReadDestinationSyslog(context.Background(), id).Execute()
@@ -2235,7 +2267,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2286,7 +2318,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 	body := *cdc.NewDestinationApplication() // DestinationApplication | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2306,7 +2338,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2357,7 +2389,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 	body := *cdc.NewDestinationHttp() // DestinationHttp | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2377,7 +2409,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2428,7 +2460,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 	body := *cdc.NewDestinationReporting() // DestinationReporting | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2448,7 +2480,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2499,7 +2531,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 	body := *cdc.NewDestinationSplunk() // DestinationSplunk | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2519,7 +2551,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2570,7 +2602,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 	body := *cdc.NewDestinationSplunkCloud() // DestinationSplunkCloud | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2590,7 +2622,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 
@@ -2641,7 +2673,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | Destination Identifier
+	id := int64(789) // int64 | Destination Identifier
 	body := *cdc.NewDestinationSyslog() // DestinationSyslog | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2661,7 +2693,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Destination Identifier | 
+**id** | **int64** | Destination Identifier | 
 
 ### Other Parameters
 

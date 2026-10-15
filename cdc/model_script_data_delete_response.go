@@ -19,7 +19,7 @@ var _ MappedNullable = &ScriptDataDeleteResponse{}
 
 // ScriptDataDeleteResponse struct for ScriptDataDeleteResponse
 type ScriptDataDeleteResponse struct {
-	FileId               *int32 `json:"file_id,omitempty"`
+	FileId               *int64 `json:"file_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,9 +43,9 @@ func NewScriptDataDeleteResponseWithDefaults() *ScriptDataDeleteResponse {
 }
 
 // GetFileId returns the FileId field value if set, zero value otherwise.
-func (o *ScriptDataDeleteResponse) GetFileId() int32 {
+func (o *ScriptDataDeleteResponse) GetFileId() int64 {
 	if o == nil || IsNil(o.FileId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FileId
@@ -53,7 +53,7 @@ func (o *ScriptDataDeleteResponse) GetFileId() int32 {
 
 // GetFileIdOk returns a tuple with the FileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScriptDataDeleteResponse) GetFileIdOk() (*int32, bool) {
+func (o *ScriptDataDeleteResponse) GetFileIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.FileId) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *ScriptDataDeleteResponse) HasFileId() bool {
 	return false
 }
 
-// SetFileId gets a reference to the given int32 and assigns it to the FileId field.
-func (o *ScriptDataDeleteResponse) SetFileId(v int32) {
+// SetFileId gets a reference to the given int64 and assigns it to the FileId field.
+func (o *ScriptDataDeleteResponse) SetFileId(v int64) {
 	o.FileId = &v
 }
 

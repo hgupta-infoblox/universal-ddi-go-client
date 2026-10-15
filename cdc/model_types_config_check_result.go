@@ -24,7 +24,7 @@ type TypesConfigCheckResult struct {
 	// Service check type.
 	ConfigCheckType *string `json:"config_check_type,omitempty"`
 	// Grade of the check result, scored between 1 - 3 where 3 is Optimal, 2 is Good, 1 is Average.
-	Grade *int32 `json:"grade,omitempty"`
+	Grade *int64 `json:"grade,omitempty"`
 	// URI of the resource that was checked.
 	ResourceUri *string `json:"resource_uri,omitempty"`
 	// The check result.
@@ -116,9 +116,9 @@ func (o *TypesConfigCheckResult) SetConfigCheckType(v string) {
 }
 
 // GetGrade returns the Grade field value if set, zero value otherwise.
-func (o *TypesConfigCheckResult) GetGrade() int32 {
+func (o *TypesConfigCheckResult) GetGrade() int64 {
 	if o == nil || IsNil(o.Grade) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Grade
@@ -126,7 +126,7 @@ func (o *TypesConfigCheckResult) GetGrade() int32 {
 
 // GetGradeOk returns a tuple with the Grade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TypesConfigCheckResult) GetGradeOk() (*int32, bool) {
+func (o *TypesConfigCheckResult) GetGradeOk() (*int64, bool) {
 	if o == nil || IsNil(o.Grade) {
 		return nil, false
 	}
@@ -142,8 +142,8 @@ func (o *TypesConfigCheckResult) HasGrade() bool {
 	return false
 }
 
-// SetGrade gets a reference to the given int32 and assigns it to the Grade field.
-func (o *TypesConfigCheckResult) SetGrade(v int32) {
+// SetGrade gets a reference to the given int64 and assigns it to the Grade field.
+func (o *TypesConfigCheckResult) SetGrade(v int64) {
 	o.Grade = &v
 }
 

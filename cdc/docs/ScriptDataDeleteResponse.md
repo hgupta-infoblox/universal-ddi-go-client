@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FileId** | Pointer to **int32** |  | [optional] 
+**FileId** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetFileId
 
-`func (o *ScriptDataDeleteResponse) GetFileId() int32`
+`func (o *ScriptDataDeleteResponse) GetFileId() int64`
 
 GetFileId returns the FileId field if non-nil, zero value otherwise.
 
 ### GetFileIdOk
 
-`func (o *ScriptDataDeleteResponse) GetFileIdOk() (*int32, bool)`
+`func (o *ScriptDataDeleteResponse) GetFileIdOk() (*int64, bool)`
 
 GetFileIdOk returns a tuple with the FileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFileId
 
-`func (o *ScriptDataDeleteResponse) SetFileId(v int32)`
+`func (o *ScriptDataDeleteResponse) SetFileId(v int64)`
 
 SetFileId sets FileId field to given value.
 

@@ -44,7 +44,7 @@ type ApplicationApiAPI interface {
 		@param id Application Identifier
 		@return ApplicationApiAPIDeleteApplicationDataRequest
 	*/
-	DeleteApplicationData(ctx context.Context, id int32) ApplicationApiAPIDeleteApplicationDataRequest
+	DeleteApplicationData(ctx context.Context, id int64) ApplicationApiAPIDeleteApplicationDataRequest
 
 	// DeleteApplicationDataExecute executes the request
 	DeleteApplicationDataExecute(r ApplicationApiAPIDeleteApplicationDataRequest) (*http.Response, error)
@@ -108,7 +108,7 @@ type ApplicationApiAPI interface {
 		@param id Application Identifier
 		@return ApplicationApiAPIReadApplicationDataRequest
 	*/
-	ReadApplicationData(ctx context.Context, id int32) ApplicationApiAPIReadApplicationDataRequest
+	ReadApplicationData(ctx context.Context, id int64) ApplicationApiAPIReadApplicationDataRequest
 
 	// ReadApplicationDataExecute executes the request
 	//  @return ApplicationDataReadResponse
@@ -122,7 +122,7 @@ type ApplicationApiAPI interface {
 		@param id Application Identifier
 		@return ApplicationApiAPIUpdateApplicationDataRequest
 	*/
-	UpdateApplicationData(ctx context.Context, id int32) ApplicationApiAPIUpdateApplicationDataRequest
+	UpdateApplicationData(ctx context.Context, id int64) ApplicationApiAPIUpdateApplicationDataRequest
 
 	// UpdateApplicationDataExecute executes the request
 	//  @return ApplicationDataUpdateResponse
@@ -239,7 +239,7 @@ func (a *ApplicationApiAPIService) CreateApplicationDataExecute(r ApplicationApi
 type ApplicationApiAPIDeleteApplicationDataRequest struct {
 	ctx        context.Context
 	ApiService ApplicationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r ApplicationApiAPIDeleteApplicationDataRequest) Execute() (*http.Response, error) {
@@ -255,7 +255,7 @@ Use this method to delete application configurations in data connector.
 	@param id Application Identifier
 	@return ApplicationApiAPIDeleteApplicationDataRequest
 */
-func (a *ApplicationApiAPIService) DeleteApplicationData(ctx context.Context, id int32) ApplicationApiAPIDeleteApplicationDataRequest {
+func (a *ApplicationApiAPIService) DeleteApplicationData(ctx context.Context, id int64) ApplicationApiAPIDeleteApplicationDataRequest {
 	return ApplicationApiAPIDeleteApplicationDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -330,6 +330,10 @@ type ApplicationApiAPIListApplicationRequest struct {
 	ApiService ApplicationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -343,6 +347,30 @@ func (r ApplicationApiAPIListApplicationRequest) Filter(filter string) Applicati
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r ApplicationApiAPIListApplicationRequest) Fields(fields string) ApplicationApiAPIListApplicationRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r ApplicationApiAPIListApplicationRequest) Offset(offset int32) ApplicationApiAPIListApplicationRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r ApplicationApiAPIListApplicationRequest) Limit(limit int32) ApplicationApiAPIListApplicationRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r ApplicationApiAPIListApplicationRequest) PageToken(pageToken string) ApplicationApiAPIListApplicationRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r ApplicationApiAPIListApplicationRequest) OrderBy(orderBy string) ApplicationApiAPIListApplicationRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -405,6 +433,18 @@ func (a *ApplicationApiAPIService) ListApplicationExecute(r ApplicationApiAPILis
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -463,6 +503,10 @@ type ApplicationApiAPIListApplicationDataRequest struct {
 	ApiService ApplicationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -476,6 +520,30 @@ func (r ApplicationApiAPIListApplicationDataRequest) Filter(filter string) Appli
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r ApplicationApiAPIListApplicationDataRequest) Fields(fields string) ApplicationApiAPIListApplicationDataRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r ApplicationApiAPIListApplicationDataRequest) Offset(offset int32) ApplicationApiAPIListApplicationDataRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r ApplicationApiAPIListApplicationDataRequest) Limit(limit int32) ApplicationApiAPIListApplicationDataRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r ApplicationApiAPIListApplicationDataRequest) PageToken(pageToken string) ApplicationApiAPIListApplicationDataRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r ApplicationApiAPIListApplicationDataRequest) OrderBy(orderBy string) ApplicationApiAPIListApplicationDataRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -537,6 +605,18 @@ func (a *ApplicationApiAPIService) ListApplicationDataExecute(r ApplicationApiAP
 	}
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
+	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
 	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
@@ -794,7 +874,7 @@ func (a *ApplicationApiAPIService) PublishVersionUpdateNotificationExecute(r App
 type ApplicationApiAPIReadApplicationDataRequest struct {
 	ctx        context.Context
 	ApiService ApplicationApiAPI
-	id         int32
+	id         int64
 	filter     *string
 	fields     *string
 }
@@ -824,7 +904,7 @@ Use this method to retrieve application configurations in data connector.
 	@param id Application Identifier
 	@return ApplicationApiAPIReadApplicationDataRequest
 */
-func (a *ApplicationApiAPIService) ReadApplicationData(ctx context.Context, id int32) ApplicationApiAPIReadApplicationDataRequest {
+func (a *ApplicationApiAPIService) ReadApplicationData(ctx context.Context, id int64) ApplicationApiAPIReadApplicationDataRequest {
 	return ApplicationApiAPIReadApplicationDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -911,7 +991,7 @@ func (a *ApplicationApiAPIService) ReadApplicationDataExecute(r ApplicationApiAP
 type ApplicationApiAPIUpdateApplicationDataRequest struct {
 	ctx        context.Context
 	ApiService ApplicationApiAPI
-	id         int32
+	id         int64
 	body       *ApplicationData
 }
 
@@ -933,7 +1013,7 @@ Use this method to update application configurations in data connector.
 	@param id Application Identifier
 	@return ApplicationApiAPIUpdateApplicationDataRequest
 */
-func (a *ApplicationApiAPIService) UpdateApplicationData(ctx context.Context, id int32) ApplicationApiAPIUpdateApplicationDataRequest {
+func (a *ApplicationApiAPIService) UpdateApplicationData(ctx context.Context, id int64) ApplicationApiAPIUpdateApplicationDataRequest {
 	return ApplicationApiAPIUpdateApplicationDataRequest{
 		ApiService: a,
 		ctx:        ctx,

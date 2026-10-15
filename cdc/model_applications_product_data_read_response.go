@@ -19,8 +19,8 @@ var _ MappedNullable = &ApplicationsProductDataReadResponse{}
 
 // ApplicationsProductDataReadResponse struct for ApplicationsProductDataReadResponse
 type ApplicationsProductDataReadResponse struct {
-	ProductId            *int32  `json:"product_id,omitempty"`
-	ScriptIds            []int32 `json:"script_ids,omitempty"`
+	ProductId            *int64  `json:"product_id,omitempty"`
+	ScriptIds            []int64 `json:"script_ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewApplicationsProductDataReadResponseWithDefaults() *ApplicationsProductDa
 }
 
 // GetProductId returns the ProductId field value if set, zero value otherwise.
-func (o *ApplicationsProductDataReadResponse) GetProductId() int32 {
+func (o *ApplicationsProductDataReadResponse) GetProductId() int64 {
 	if o == nil || IsNil(o.ProductId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ProductId
@@ -54,7 +54,7 @@ func (o *ApplicationsProductDataReadResponse) GetProductId() int32 {
 
 // GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsProductDataReadResponse) GetProductIdOk() (*int32, bool) {
+func (o *ApplicationsProductDataReadResponse) GetProductIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ProductId) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *ApplicationsProductDataReadResponse) HasProductId() bool {
 	return false
 }
 
-// SetProductId gets a reference to the given int32 and assigns it to the ProductId field.
-func (o *ApplicationsProductDataReadResponse) SetProductId(v int32) {
+// SetProductId gets a reference to the given int64 and assigns it to the ProductId field.
+func (o *ApplicationsProductDataReadResponse) SetProductId(v int64) {
 	o.ProductId = &v
 }
 
 // GetScriptIds returns the ScriptIds field value if set, zero value otherwise.
-func (o *ApplicationsProductDataReadResponse) GetScriptIds() []int32 {
+func (o *ApplicationsProductDataReadResponse) GetScriptIds() []int64 {
 	if o == nil || IsNil(o.ScriptIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.ScriptIds
@@ -86,7 +86,7 @@ func (o *ApplicationsProductDataReadResponse) GetScriptIds() []int32 {
 
 // GetScriptIdsOk returns a tuple with the ScriptIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsProductDataReadResponse) GetScriptIdsOk() ([]int32, bool) {
+func (o *ApplicationsProductDataReadResponse) GetScriptIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.ScriptIds) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ApplicationsProductDataReadResponse) HasScriptIds() bool {
 	return false
 }
 
-// SetScriptIds gets a reference to the given []int32 and assigns it to the ScriptIds field.
-func (o *ApplicationsProductDataReadResponse) SetScriptIds(v []int32) {
+// SetScriptIds gets a reference to the given []int64 and assigns it to the ScriptIds field.
+func (o *ApplicationsProductDataReadResponse) SetScriptIds(v []int64) {
 	o.ScriptIds = v
 }
 

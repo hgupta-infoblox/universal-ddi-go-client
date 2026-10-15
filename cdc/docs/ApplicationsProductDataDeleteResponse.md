@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProductId** | Pointer to **int32** |  | [optional] 
+**ProductId** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetProductId
 
-`func (o *ApplicationsProductDataDeleteResponse) GetProductId() int32`
+`func (o *ApplicationsProductDataDeleteResponse) GetProductId() int64`
 
 GetProductId returns the ProductId field if non-nil, zero value otherwise.
 
 ### GetProductIdOk
 
-`func (o *ApplicationsProductDataDeleteResponse) GetProductIdOk() (*int32, bool)`
+`func (o *ApplicationsProductDataDeleteResponse) GetProductIdOk() (*int64, bool)`
 
 GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProductId
 
-`func (o *ApplicationsProductDataDeleteResponse) SetProductId(v int32)`
+`func (o *ApplicationsProductDataDeleteResponse) SetProductId(v int64)`
 
 SetProductId sets ProductId field to given value.
 

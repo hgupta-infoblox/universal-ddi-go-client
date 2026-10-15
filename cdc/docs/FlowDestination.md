@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | Whether the destination is enabled. | [optional] 
-**Id** | Pointer to **int32** | Numeric identifier of the destination. | [optional] [readonly] 
+**Id** | Pointer to **int64** | Numeric identifier of the destination. | [optional] [readonly] 
 **Name** | Pointer to **string** | Display name of the destination. | [optional] 
 **OutputDataFormat** | Pointer to **string** | Wire format the destination is configured to emit (e.g. json, cef, leef). | [optional] 
 **TransportProtocol** | Pointer to **string** | Transport protocol used by the destination (e.g. tcp, udp, https). | [optional] 
@@ -57,20 +57,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *FlowDestination) GetId() int32`
+`func (o *FlowDestination) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *FlowDestination) GetIdOk() (*int32, bool)`
+`func (o *FlowDestination) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *FlowDestination) SetId(v int32)`
+`func (o *FlowDestination) SetId(v int64)`
 
 SetId sets Id field to given value.
 

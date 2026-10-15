@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **ReportingApplianceAddress** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Username** | Pointer to **string** |  | [optional] 
 
@@ -137,20 +137,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *DestinationReporting) GetId() int32`
+`func (o *DestinationReporting) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *DestinationReporting) GetIdOk() (*int32, bool)`
+`func (o *DestinationReporting) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *DestinationReporting) SetId(v int32)`
+`func (o *DestinationReporting) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -237,20 +237,20 @@ HasReportingApplianceAddress returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *DestinationReporting) GetTags() map[string]map[string]interface{}`
+`func (o *DestinationReporting) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *DestinationReporting) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *DestinationReporting) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *DestinationReporting) SetTags(v map[string]map[string]interface{})`
+`func (o *DestinationReporting) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

@@ -24,7 +24,7 @@ type CdcHost struct {
 	Description          *string    `json:"description,omitempty"`
 	Enabled              *bool      `json:"enabled,omitempty"`
 	HostId               *string    `json:"host_id,omitempty"`
-	Id                   *int32     `json:"id,omitempty"`
+	Id                   *int64     `json:"id,omitempty"`
 	Name                 *string    `json:"name,omitempty"`
 	UpdatedAt            *time.Time `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -178,9 +178,9 @@ func (o *CdcHost) SetHostId(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *CdcHost) GetId() int32 {
+func (o *CdcHost) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -188,7 +188,7 @@ func (o *CdcHost) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CdcHost) GetIdOk() (*int32, bool) {
+func (o *CdcHost) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -204,8 +204,8 @@ func (o *CdcHost) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *CdcHost) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *CdcHost) SetId(v int64) {
 	o.Id = &v
 }
 

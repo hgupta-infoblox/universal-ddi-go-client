@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **FilterSource** | Pointer to [**FilterSource**](FilterSource.md) |  | [optional] [default to FILTERSOURCE_DEFAULT]
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **IngressPolicyAction** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
@@ -161,20 +161,20 @@ HasFilterSource returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *EtlFilterHostname) GetId() int32`
+`func (o *EtlFilterHostname) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *EtlFilterHostname) GetIdOk() (*int32, bool)`
+`func (o *EtlFilterHostname) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *EtlFilterHostname) SetId(v int32)`
+`func (o *EtlFilterHostname) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -236,20 +236,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *EtlFilterHostname) GetTags() map[string]map[string]interface{}`
+`func (o *EtlFilterHostname) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *EtlFilterHostname) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *EtlFilterHostname) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *EtlFilterHostname) SetTags(v map[string]map[string]interface{})`
+`func (o *EtlFilterHostname) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

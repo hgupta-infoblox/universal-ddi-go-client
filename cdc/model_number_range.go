@@ -19,8 +19,8 @@ var _ MappedNullable = &NumberRange{}
 
 // NumberRange struct for NumberRange
 type NumberRange struct {
-	Max                  *int32 `json:"max,omitempty"`
-	Min                  *int32 `json:"min,omitempty"`
+	Max                  *int64 `json:"max,omitempty"`
+	Min                  *int64 `json:"min,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewNumberRangeWithDefaults() *NumberRange {
 }
 
 // GetMax returns the Max field value if set, zero value otherwise.
-func (o *NumberRange) GetMax() int32 {
+func (o *NumberRange) GetMax() int64 {
 	if o == nil || IsNil(o.Max) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Max
@@ -54,7 +54,7 @@ func (o *NumberRange) GetMax() int32 {
 
 // GetMaxOk returns a tuple with the Max field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumberRange) GetMaxOk() (*int32, bool) {
+func (o *NumberRange) GetMaxOk() (*int64, bool) {
 	if o == nil || IsNil(o.Max) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *NumberRange) HasMax() bool {
 	return false
 }
 
-// SetMax gets a reference to the given int32 and assigns it to the Max field.
-func (o *NumberRange) SetMax(v int32) {
+// SetMax gets a reference to the given int64 and assigns it to the Max field.
+func (o *NumberRange) SetMax(v int64) {
 	o.Max = &v
 }
 
 // GetMin returns the Min field value if set, zero value otherwise.
-func (o *NumberRange) GetMin() int32 {
+func (o *NumberRange) GetMin() int64 {
 	if o == nil || IsNil(o.Min) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Min
@@ -86,7 +86,7 @@ func (o *NumberRange) GetMin() int32 {
 
 // GetMinOk returns a tuple with the Min field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumberRange) GetMinOk() (*int32, bool) {
+func (o *NumberRange) GetMinOk() (*int64, bool) {
 	if o == nil || IsNil(o.Min) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *NumberRange) HasMin() bool {
 	return false
 }
 
-// SetMin gets a reference to the given int32 and assigns it to the Min field.
-func (o *NumberRange) SetMin(v int32) {
+// SetMin gets a reference to the given int64 and assigns it to the Min field.
+func (o *NumberRange) SetMin(v int64) {
 	o.Min = &v
 }
 

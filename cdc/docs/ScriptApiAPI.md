@@ -169,7 +169,7 @@ import (
 )
 
 func main() {
-	productId := int32(56) // int32 | 
+	productId := int64(789) // int64 | 
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.ScriptApiAPI.DeleteApplicationsProductData(context.Background(), productId).Execute()
@@ -188,7 +188,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**productId** | **int32** |  | 
+**productId** | **int64** |  | 
 
 ### Other Parameters
 
@@ -238,7 +238,7 @@ import (
 )
 
 func main() {
-	fileId := int32(56) // int32 | 
+	fileId := int64(789) // int64 | 
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.ScriptApiAPI.DeleteScriptData(context.Background(), fileId).Execute()
@@ -257,7 +257,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fileId** | **int32** |  | 
+**fileId** | **int64** |  | 
 
 ### Other Parameters
 
@@ -307,7 +307,7 @@ import (
 )
 
 func main() {
-	productId := int32(56) // int32 | 
+	productId := int64(789) // int64 | 
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.ScriptApiAPI.ReadApplicationsProductData(context.Background(), productId).Execute()
@@ -326,7 +326,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**productId** | **int32** |  | 
+**productId** | **int64** |  | 
 
 ### Other Parameters
 
@@ -376,7 +376,7 @@ import (
 )
 
 func main() {
-	fileId := int32(56) // int32 | 
+	fileId := int64(789) // int64 | 
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.ScriptApiAPI.ReadScriptData(context.Background(), fileId).Execute()
@@ -395,7 +395,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fileId** | **int32** |  | 
+**fileId** | **int64** |  | 
 
 ### Other Parameters
 
@@ -445,7 +445,7 @@ import (
 )
 
 func main() {
-	productId := int32(56) // int32 | 
+	productId := int64(789) // int64 | 
 	body := *cdc.NewApplicationsProductData() // ApplicationsProductData | 
 
 	apiClient := cdc.NewAPIClient()
@@ -465,7 +465,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**productId** | **int32** |  | 
+**productId** | **int64** |  | 
 
 ### Other Parameters
 
@@ -516,7 +516,7 @@ import (
 )
 
 func main() {
-	fileId := int32(56) // int32 | 
+	fileId := int64(789) // int64 | 
 	body := *cdc.NewScriptData() // ScriptData | 
 
 	apiClient := cdc.NewAPIClient()
@@ -536,7 +536,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fileId** | **int32** |  | 
+**fileId** | **int64** |  | 
 
 ### Other Parameters
 

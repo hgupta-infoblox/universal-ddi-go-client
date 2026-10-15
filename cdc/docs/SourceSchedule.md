@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**UpdatedAt** | Pointer to **time.Time** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
+**UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -82,20 +82,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *SourceSchedule) GetId() int32`
+`func (o *SourceSchedule) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *SourceSchedule) GetIdOk() (*int32, bool)`
+`func (o *SourceSchedule) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *SourceSchedule) SetId(v int32)`
+`func (o *SourceSchedule) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -132,20 +132,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *SourceSchedule) GetTags() map[string]map[string]interface{}`
+`func (o *SourceSchedule) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *SourceSchedule) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *SourceSchedule) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *SourceSchedule) SetTags(v map[string]map[string]interface{})`
+`func (o *SourceSchedule) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

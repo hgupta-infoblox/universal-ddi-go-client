@@ -5,31 +5,31 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CdcHostNames** | Pointer to **[]string** | Resolved names of the on-prem hosts referenced by &#39;cdc_hosts&#39;. Read-only; not filterable. | [optional] 
-**CdcHosts** | Pointer to **[]int32** | Identifiers (ophids) of the on-prem hosts on which this flow is deployed. | [optional] 
+**CdcHosts** | Pointer to **[]int64** | Identifiers (ophids) of the on-prem hosts on which this flow is deployed. | [optional] 
 **CdcServiceNames** | Pointer to **[]string** | Resolved names of the CDC services referenced by &#39;cdc_services&#39;. Read-only; not filterable. | [optional] 
 **CdcServices** | Pointer to **[]string** | Identifiers of the on-prem CDC services carrying this flow. | [optional] 
-**CreatedAt** | Pointer to **time.Time** | Timestamp at which the flow was created. | [optional] 
+**CreatedAt** | Pointer to **time.Time** | Timestamp at which the flow was created. | [optional] [readonly] 
 **Description** | Pointer to **string** | Free-form description of the flow. | [optional] 
 **DestinationHa** | Pointer to **bool** | Whether destination high availability is enabled for this flow. When true, one host acts as active and another as standby (see HostStatus.ha_state). | [optional] 
 **Destinations** | Pointer to [**[]FlowDestination**](FlowDestination.md) | Destinations attached to the flow. Each entry carries the destination id and its resolved name, type, transport and output format. Not filterable. | [optional] 
 **Enabled** | Pointer to **bool** | Whether the flow is enabled. Disabled flows are configured but do not process data. | [optional] 
 **EtlFilterNames** | Pointer to **[]string** | Resolved names of the ETL filters referenced by &#39;etl_filters&#39;. Read-only; not filterable. | [optional] 
-**EtlFilters** | Pointer to **[]int32** | Identifiers of the ETL filters attached to this flow. | [optional] 
+**EtlFilters** | Pointer to **[]int64** | Identifiers of the ETL filters attached to this flow. | [optional] 
 **FilterExpression** | Pointer to **string** | Optional filter expression applied to the flow. Not filterable. | [optional] 
-**Id** | Pointer to **int32** | Numeric identifier of the flow. | [optional] [readonly] 
+**Id** | Pointer to **int64** | Numeric identifier of the flow. | [optional] [readonly] 
 **Name** | Pointer to **string** | Human-readable name of the flow. | [optional] 
 **ScheduleOption** | Pointer to **string** | Named schedule option applied to the flow. | [optional] 
 **ScriptSchedule** | Pointer to **string** | Optional cron-style schedule applied to script-based flows. Not filterable. | [optional] 
-**Source** | Pointer to **int32** | Numeric identifier of the source resource attached to this flow. | [optional] 
+**Source** | Pointer to **int64** | Numeric identifier of the source resource attached to this flow. | [optional] 
 **SourceDataTypes** | Pointer to **[]string** | Source data type identifiers selected on the source for this flow. | [optional] 
 **SourceEnabled** | Pointer to **bool** | Resolved &#39;enabled&#39; state of the referenced source. Read-only. | [optional] 
 **SourceLogTypes** | Pointer to [**[]SourceLogType**](SourceLogType.md) | Source log types (with optional subtypes) selected for this flow. | [optional] 
 **SourceName** | Pointer to **string** | Resolved name of the source referenced by &#39;source&#39;. Read-only; not filterable. | [optional] 
 **SourceType** | Pointer to **string** | Resolved type of the source referenced by &#39;source&#39; (e.g. bloxone, nios, schedule). Read-only; not filterable. | [optional] 
 **Status** | Pointer to [**FlowStatus**](FlowStatus.md) | Live runtime status of the flow aggregated across all hosts on which it is deployed. Values are agent-emitted and are not part of a stable enum. | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **Type** | Pointer to **string** | Category of the flow, derived from the underlying source type. | [optional] 
-**UpdatedAt** | Pointer to **time.Time** | Timestamp at which the flow was last updated. | [optional] 
+**UpdatedAt** | Pointer to **time.Time** | Timestamp at which the flow was last updated. | [optional] [readonly] 
 
 ## Methods
 
@@ -77,20 +77,20 @@ HasCdcHostNames returns a boolean if a field has been set.
 
 ### GetCdcHosts
 
-`func (o *FlowV2) GetCdcHosts() []int32`
+`func (o *FlowV2) GetCdcHosts() []int64`
 
 GetCdcHosts returns the CdcHosts field if non-nil, zero value otherwise.
 
 ### GetCdcHostsOk
 
-`func (o *FlowV2) GetCdcHostsOk() (*[]int32, bool)`
+`func (o *FlowV2) GetCdcHostsOk() (*[]int64, bool)`
 
 GetCdcHostsOk returns a tuple with the CdcHosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCdcHosts
 
-`func (o *FlowV2) SetCdcHosts(v []int32)`
+`func (o *FlowV2) SetCdcHosts(v []int64)`
 
 SetCdcHosts sets CdcHosts field to given value.
 
@@ -302,20 +302,20 @@ HasEtlFilterNames returns a boolean if a field has been set.
 
 ### GetEtlFilters
 
-`func (o *FlowV2) GetEtlFilters() []int32`
+`func (o *FlowV2) GetEtlFilters() []int64`
 
 GetEtlFilters returns the EtlFilters field if non-nil, zero value otherwise.
 
 ### GetEtlFiltersOk
 
-`func (o *FlowV2) GetEtlFiltersOk() (*[]int32, bool)`
+`func (o *FlowV2) GetEtlFiltersOk() (*[]int64, bool)`
 
 GetEtlFiltersOk returns a tuple with the EtlFilters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEtlFilters
 
-`func (o *FlowV2) SetEtlFilters(v []int32)`
+`func (o *FlowV2) SetEtlFilters(v []int64)`
 
 SetEtlFilters sets EtlFilters field to given value.
 
@@ -352,20 +352,20 @@ HasFilterExpression returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *FlowV2) GetId() int32`
+`func (o *FlowV2) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *FlowV2) GetIdOk() (*int32, bool)`
+`func (o *FlowV2) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *FlowV2) SetId(v int32)`
+`func (o *FlowV2) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -452,20 +452,20 @@ HasScriptSchedule returns a boolean if a field has been set.
 
 ### GetSource
 
-`func (o *FlowV2) GetSource() int32`
+`func (o *FlowV2) GetSource() int64`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *FlowV2) GetSourceOk() (*int32, bool)`
+`func (o *FlowV2) GetSourceOk() (*int64, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *FlowV2) SetSource(v int32)`
+`func (o *FlowV2) SetSource(v int64)`
 
 SetSource sets Source field to given value.
 
@@ -627,20 +627,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *FlowV2) GetTags() map[string]map[string]interface{}`
+`func (o *FlowV2) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *FlowV2) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *FlowV2) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *FlowV2) SetTags(v map[string]map[string]interface{})`
+`func (o *FlowV2) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

@@ -121,7 +121,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIDeleteDestinationApplicationRequest
 	*/
-	DeleteDestinationApplication(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationApplicationRequest
+	DeleteDestinationApplication(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationApplicationRequest
 
 	// DeleteDestinationApplicationExecute executes the request
 	DeleteDestinationApplicationExecute(r DestinationApiAPIDeleteDestinationApplicationRequest) (*http.Response, error)
@@ -134,7 +134,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIDeleteDestinationHttpRequest
 	*/
-	DeleteDestinationHttp(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationHttpRequest
+	DeleteDestinationHttp(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationHttpRequest
 
 	// DeleteDestinationHttpExecute executes the request
 	DeleteDestinationHttpExecute(r DestinationApiAPIDeleteDestinationHttpRequest) (*http.Response, error)
@@ -147,7 +147,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIDeleteDestinationReportingRequest
 	*/
-	DeleteDestinationReporting(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationReportingRequest
+	DeleteDestinationReporting(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationReportingRequest
 
 	// DeleteDestinationReportingExecute executes the request
 	DeleteDestinationReportingExecute(r DestinationApiAPIDeleteDestinationReportingRequest) (*http.Response, error)
@@ -160,7 +160,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIDeleteDestinationSplunkRequest
 	*/
-	DeleteDestinationSplunk(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationSplunkRequest
+	DeleteDestinationSplunk(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationSplunkRequest
 
 	// DeleteDestinationSplunkExecute executes the request
 	DeleteDestinationSplunkExecute(r DestinationApiAPIDeleteDestinationSplunkRequest) (*http.Response, error)
@@ -173,7 +173,7 @@ type DestinationApiAPI interface {
 		@param id
 		@return DestinationApiAPIDeleteDestinationSplunkCloudRequest
 	*/
-	DeleteDestinationSplunkCloud(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationSplunkCloudRequest
+	DeleteDestinationSplunkCloud(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationSplunkCloudRequest
 
 	// DeleteDestinationSplunkCloudExecute executes the request
 	DeleteDestinationSplunkCloudExecute(r DestinationApiAPIDeleteDestinationSplunkCloudRequest) (*http.Response, error)
@@ -186,7 +186,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIDeleteDestinationSyslogRequest
 	*/
-	DeleteDestinationSyslog(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationSyslogRequest
+	DeleteDestinationSyslog(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationSyslogRequest
 
 	// DeleteDestinationSyslogExecute executes the request
 	DeleteDestinationSyslogExecute(r DestinationApiAPIDeleteDestinationSyslogRequest) (*http.Response, error)
@@ -363,7 +363,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationApplicationRequest
 	*/
-	ReadDestinationApplication(ctx context.Context, id int32) DestinationApiAPIReadDestinationApplicationRequest
+	ReadDestinationApplication(ctx context.Context, id int64) DestinationApiAPIReadDestinationApplicationRequest
 
 	// ReadDestinationApplicationExecute executes the request
 	//  @return DestinationApplicationReadResponse
@@ -377,7 +377,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationBloxoneRequest
 	*/
-	ReadDestinationBloxone(ctx context.Context, id int32) DestinationApiAPIReadDestinationBloxoneRequest
+	ReadDestinationBloxone(ctx context.Context, id int64) DestinationApiAPIReadDestinationBloxoneRequest
 
 	// ReadDestinationBloxoneExecute executes the request
 	//  @return DestinationBloxoneReadResponse
@@ -391,7 +391,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationHttpRequest
 	*/
-	ReadDestinationHttp(ctx context.Context, id int32) DestinationApiAPIReadDestinationHttpRequest
+	ReadDestinationHttp(ctx context.Context, id int64) DestinationApiAPIReadDestinationHttpRequest
 
 	// ReadDestinationHttpExecute executes the request
 	//  @return DestinationHttpReadResponse
@@ -405,7 +405,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationReportingRequest
 	*/
-	ReadDestinationReporting(ctx context.Context, id int32) DestinationApiAPIReadDestinationReportingRequest
+	ReadDestinationReporting(ctx context.Context, id int64) DestinationApiAPIReadDestinationReportingRequest
 
 	// ReadDestinationReportingExecute executes the request
 	//  @return DestinationReportingReadResponse
@@ -419,7 +419,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationSplunkRequest
 	*/
-	ReadDestinationSplunk(ctx context.Context, id int32) DestinationApiAPIReadDestinationSplunkRequest
+	ReadDestinationSplunk(ctx context.Context, id int64) DestinationApiAPIReadDestinationSplunkRequest
 
 	// ReadDestinationSplunkExecute executes the request
 	//  @return DestinationSplunkReadResponse
@@ -433,7 +433,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationSplunkCloudRequest
 	*/
-	ReadDestinationSplunkCloud(ctx context.Context, id int32) DestinationApiAPIReadDestinationSplunkCloudRequest
+	ReadDestinationSplunkCloud(ctx context.Context, id int64) DestinationApiAPIReadDestinationSplunkCloudRequest
 
 	// ReadDestinationSplunkCloudExecute executes the request
 	//  @return DestinationSplunkCloudReadResponse
@@ -447,7 +447,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIReadDestinationSyslogRequest
 	*/
-	ReadDestinationSyslog(ctx context.Context, id int32) DestinationApiAPIReadDestinationSyslogRequest
+	ReadDestinationSyslog(ctx context.Context, id int64) DestinationApiAPIReadDestinationSyslogRequest
 
 	// ReadDestinationSyslogExecute executes the request
 	//  @return DestinationSyslogReadResponse
@@ -461,7 +461,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIUpdateDestinationApplicationRequest
 	*/
-	UpdateDestinationApplication(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationApplicationRequest
+	UpdateDestinationApplication(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationApplicationRequest
 
 	// UpdateDestinationApplicationExecute executes the request
 	//  @return DestinationApplicationUpdateResponse
@@ -475,7 +475,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIUpdateDestinationHttpRequest
 	*/
-	UpdateDestinationHttp(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationHttpRequest
+	UpdateDestinationHttp(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationHttpRequest
 
 	// UpdateDestinationHttpExecute executes the request
 	//  @return DestinationHttpUpdateResponse
@@ -489,7 +489,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIUpdateDestinationReportingRequest
 	*/
-	UpdateDestinationReporting(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationReportingRequest
+	UpdateDestinationReporting(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationReportingRequest
 
 	// UpdateDestinationReportingExecute executes the request
 	//  @return DestinationReportingUpdateResponse
@@ -503,7 +503,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIUpdateDestinationSplunkRequest
 	*/
-	UpdateDestinationSplunk(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationSplunkRequest
+	UpdateDestinationSplunk(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationSplunkRequest
 
 	// UpdateDestinationSplunkExecute executes the request
 	//  @return DestinationSplunkUpdateResponse
@@ -517,7 +517,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIUpdateDestinationSplunkCloudRequest
 	*/
-	UpdateDestinationSplunkCloud(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationSplunkCloudRequest
+	UpdateDestinationSplunkCloud(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationSplunkCloudRequest
 
 	// UpdateDestinationSplunkCloudExecute executes the request
 	//  @return DestinationSplunkCloudUpdateResponse
@@ -531,7 +531,7 @@ type DestinationApiAPI interface {
 		@param id Destination Identifier
 		@return DestinationApiAPIUpdateDestinationSyslogRequest
 	*/
-	UpdateDestinationSyslog(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationSyslogRequest
+	UpdateDestinationSyslog(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationSyslogRequest
 
 	// UpdateDestinationSyslogExecute executes the request
 	//  @return DestinationSyslogUpdateResponse
@@ -1229,6 +1229,16 @@ func (a *DestinationApiAPIService) CreateDestinationSyslogExecute(r DestinationA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if len(a.Client.Cfg.DefaultTags) > 0 && r.body != nil {
+		if r.body.Tags == nil {
+			r.body.Tags = make(map[string]interface{})
+		}
+		for k, v := range a.Client.Cfg.DefaultTags {
+			if _, ok := r.body.Tags[k]; !ok {
+				r.body.Tags[k] = v
+			}
+		}
+	}
 	// body params
 	localVarPostBody = r.body
 	req, err := a.Client.PrepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1264,7 +1274,7 @@ func (a *DestinationApiAPIService) CreateDestinationSyslogExecute(r DestinationA
 type DestinationApiAPIDeleteDestinationApplicationRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r DestinationApiAPIDeleteDestinationApplicationRequest) Execute() (*http.Response, error) {
@@ -1280,7 +1290,7 @@ Use this method to delete an application destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIDeleteDestinationApplicationRequest
 */
-func (a *DestinationApiAPIService) DeleteDestinationApplication(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationApplicationRequest {
+func (a *DestinationApiAPIService) DeleteDestinationApplication(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationApplicationRequest {
 	return DestinationApiAPIDeleteDestinationApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1353,7 +1363,7 @@ func (a *DestinationApiAPIService) DeleteDestinationApplicationExecute(r Destina
 type DestinationApiAPIDeleteDestinationHttpRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r DestinationApiAPIDeleteDestinationHttpRequest) Execute() (*http.Response, error) {
@@ -1369,7 +1379,7 @@ Use this method to delete Http destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIDeleteDestinationHttpRequest
 */
-func (a *DestinationApiAPIService) DeleteDestinationHttp(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationHttpRequest {
+func (a *DestinationApiAPIService) DeleteDestinationHttp(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationHttpRequest {
 	return DestinationApiAPIDeleteDestinationHttpRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1442,7 +1452,7 @@ func (a *DestinationApiAPIService) DeleteDestinationHttpExecute(r DestinationApi
 type DestinationApiAPIDeleteDestinationReportingRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r DestinationApiAPIDeleteDestinationReportingRequest) Execute() (*http.Response, error) {
@@ -1458,7 +1468,7 @@ Use this method to delete a NIOS reporting destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIDeleteDestinationReportingRequest
 */
-func (a *DestinationApiAPIService) DeleteDestinationReporting(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationReportingRequest {
+func (a *DestinationApiAPIService) DeleteDestinationReporting(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationReportingRequest {
 	return DestinationApiAPIDeleteDestinationReportingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1531,7 +1541,7 @@ func (a *DestinationApiAPIService) DeleteDestinationReportingExecute(r Destinati
 type DestinationApiAPIDeleteDestinationSplunkRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r DestinationApiAPIDeleteDestinationSplunkRequest) Execute() (*http.Response, error) {
@@ -1547,7 +1557,7 @@ Use this method to delete a Splunk destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIDeleteDestinationSplunkRequest
 */
-func (a *DestinationApiAPIService) DeleteDestinationSplunk(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationSplunkRequest {
+func (a *DestinationApiAPIService) DeleteDestinationSplunk(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationSplunkRequest {
 	return DestinationApiAPIDeleteDestinationSplunkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1620,7 +1630,7 @@ func (a *DestinationApiAPIService) DeleteDestinationSplunkExecute(r DestinationA
 type DestinationApiAPIDeleteDestinationSplunkCloudRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r DestinationApiAPIDeleteDestinationSplunkCloudRequest) Execute() (*http.Response, error) {
@@ -1636,7 +1646,7 @@ Use this method to delete a Splunk Cloud destination server in data connector.
 	@param id
 	@return DestinationApiAPIDeleteDestinationSplunkCloudRequest
 */
-func (a *DestinationApiAPIService) DeleteDestinationSplunkCloud(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationSplunkCloudRequest {
+func (a *DestinationApiAPIService) DeleteDestinationSplunkCloud(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationSplunkCloudRequest {
 	return DestinationApiAPIDeleteDestinationSplunkCloudRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1709,7 +1719,7 @@ func (a *DestinationApiAPIService) DeleteDestinationSplunkCloudExecute(r Destina
 type DestinationApiAPIDeleteDestinationSyslogRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 }
 
 func (r DestinationApiAPIDeleteDestinationSyslogRequest) Execute() (*http.Response, error) {
@@ -1725,7 +1735,7 @@ Use this method to delete a Syslog destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIDeleteDestinationSyslogRequest
 */
-func (a *DestinationApiAPIService) DeleteDestinationSyslog(ctx context.Context, id int32) DestinationApiAPIDeleteDestinationSyslogRequest {
+func (a *DestinationApiAPIService) DeleteDestinationSyslog(ctx context.Context, id int64) DestinationApiAPIDeleteDestinationSyslogRequest {
 	return DestinationApiAPIDeleteDestinationSyslogRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2280,6 +2290,10 @@ type DestinationApiAPIListDestinationRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2293,6 +2307,30 @@ func (r DestinationApiAPIListDestinationRequest) Filter(filter string) Destinati
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationRequest) Fields(fields string) DestinationApiAPIListDestinationRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationRequest) Offset(offset int32) DestinationApiAPIListDestinationRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationRequest) Limit(limit int32) DestinationApiAPIListDestinationRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationRequest) PageToken(pageToken string) DestinationApiAPIListDestinationRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2355,6 +2393,18 @@ func (a *DestinationApiAPIService) ListDestinationExecute(r DestinationApiAPILis
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2413,6 +2463,10 @@ type DestinationApiAPIListDestinationApplicationRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2426,6 +2480,30 @@ func (r DestinationApiAPIListDestinationApplicationRequest) Filter(filter string
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationApplicationRequest) Fields(fields string) DestinationApiAPIListDestinationApplicationRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationApplicationRequest) Offset(offset int32) DestinationApiAPIListDestinationApplicationRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationApplicationRequest) Limit(limit int32) DestinationApiAPIListDestinationApplicationRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationApplicationRequest) PageToken(pageToken string) DestinationApiAPIListDestinationApplicationRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationApplicationRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationApplicationRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2488,6 +2566,18 @@ func (a *DestinationApiAPIService) ListDestinationApplicationExecute(r Destinati
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2546,6 +2636,10 @@ type DestinationApiAPIListDestinationBloxoneRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2559,6 +2653,30 @@ func (r DestinationApiAPIListDestinationBloxoneRequest) Filter(filter string) De
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationBloxoneRequest) Fields(fields string) DestinationApiAPIListDestinationBloxoneRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationBloxoneRequest) Offset(offset int32) DestinationApiAPIListDestinationBloxoneRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationBloxoneRequest) Limit(limit int32) DestinationApiAPIListDestinationBloxoneRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationBloxoneRequest) PageToken(pageToken string) DestinationApiAPIListDestinationBloxoneRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationBloxoneRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationBloxoneRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2621,6 +2739,18 @@ func (a *DestinationApiAPIService) ListDestinationBloxoneExecute(r DestinationAp
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2679,6 +2809,10 @@ type DestinationApiAPIListDestinationHttpRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2692,6 +2826,30 @@ func (r DestinationApiAPIListDestinationHttpRequest) Filter(filter string) Desti
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationHttpRequest) Fields(fields string) DestinationApiAPIListDestinationHttpRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationHttpRequest) Offset(offset int32) DestinationApiAPIListDestinationHttpRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationHttpRequest) Limit(limit int32) DestinationApiAPIListDestinationHttpRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationHttpRequest) PageToken(pageToken string) DestinationApiAPIListDestinationHttpRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationHttpRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationHttpRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2754,6 +2912,18 @@ func (a *DestinationApiAPIService) ListDestinationHttpExecute(r DestinationApiAP
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2812,6 +2982,10 @@ type DestinationApiAPIListDestinationReportingRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2825,6 +2999,30 @@ func (r DestinationApiAPIListDestinationReportingRequest) Filter(filter string) 
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationReportingRequest) Fields(fields string) DestinationApiAPIListDestinationReportingRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationReportingRequest) Offset(offset int32) DestinationApiAPIListDestinationReportingRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationReportingRequest) Limit(limit int32) DestinationApiAPIListDestinationReportingRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationReportingRequest) PageToken(pageToken string) DestinationApiAPIListDestinationReportingRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationReportingRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationReportingRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -2887,6 +3085,18 @@ func (a *DestinationApiAPIService) ListDestinationReportingExecute(r Destination
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -2945,6 +3155,10 @@ type DestinationApiAPIListDestinationSplunkRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -2958,6 +3172,30 @@ func (r DestinationApiAPIListDestinationSplunkRequest) Filter(filter string) Des
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationSplunkRequest) Fields(fields string) DestinationApiAPIListDestinationSplunkRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationSplunkRequest) Offset(offset int32) DestinationApiAPIListDestinationSplunkRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationSplunkRequest) Limit(limit int32) DestinationApiAPIListDestinationSplunkRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationSplunkRequest) PageToken(pageToken string) DestinationApiAPIListDestinationSplunkRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationSplunkRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationSplunkRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3020,6 +3258,18 @@ func (a *DestinationApiAPIService) ListDestinationSplunkExecute(r DestinationApi
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3078,6 +3328,10 @@ type DestinationApiAPIListDestinationSplunkCloudRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3091,6 +3345,30 @@ func (r DestinationApiAPIListDestinationSplunkCloudRequest) Filter(filter string
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationSplunkCloudRequest) Fields(fields string) DestinationApiAPIListDestinationSplunkCloudRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationSplunkCloudRequest) Offset(offset int32) DestinationApiAPIListDestinationSplunkCloudRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationSplunkCloudRequest) Limit(limit int32) DestinationApiAPIListDestinationSplunkCloudRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationSplunkCloudRequest) PageToken(pageToken string) DestinationApiAPIListDestinationSplunkCloudRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationSplunkCloudRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationSplunkCloudRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3153,6 +3431,18 @@ func (a *DestinationApiAPIService) ListDestinationSplunkCloudExecute(r Destinati
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3211,6 +3501,10 @@ type DestinationApiAPIListDestinationSyslogRequest struct {
 	ApiService DestinationApiAPI
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -3224,6 +3518,30 @@ func (r DestinationApiAPIListDestinationSyslogRequest) Filter(filter string) Des
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r DestinationApiAPIListDestinationSyslogRequest) Fields(fields string) DestinationApiAPIListDestinationSyslogRequest {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r DestinationApiAPIListDestinationSyslogRequest) Offset(offset int32) DestinationApiAPIListDestinationSyslogRequest {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r DestinationApiAPIListDestinationSyslogRequest) Limit(limit int32) DestinationApiAPIListDestinationSyslogRequest {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r DestinationApiAPIListDestinationSyslogRequest) PageToken(pageToken string) DestinationApiAPIListDestinationSyslogRequest {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r DestinationApiAPIListDestinationSyslogRequest) OrderBy(orderBy string) DestinationApiAPIListDestinationSyslogRequest {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -3286,6 +3604,18 @@ func (a *DestinationApiAPIService) ListDestinationSyslogExecute(r DestinationApi
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -3342,7 +3672,7 @@ func (a *DestinationApiAPIService) ListDestinationSyslogExecute(r DestinationApi
 type DestinationApiAPIReadDestinationApplicationRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -3365,7 +3695,7 @@ Use this method to retrieve application destination server configurations in dat
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationApplicationRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationApplication(ctx context.Context, id int32) DestinationApiAPIReadDestinationApplicationRequest {
+func (a *DestinationApiAPIService) ReadDestinationApplication(ctx context.Context, id int64) DestinationApiAPIReadDestinationApplicationRequest {
 	return DestinationApiAPIReadDestinationApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3449,7 +3779,7 @@ func (a *DestinationApiAPIService) ReadDestinationApplicationExecute(r Destinati
 type DestinationApiAPIReadDestinationBloxoneRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	filter     *string
 	fields     *string
 }
@@ -3479,7 +3809,7 @@ Use this method to retrieve Bloxone destination configurations in data connector
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationBloxoneRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationBloxone(ctx context.Context, id int32) DestinationApiAPIReadDestinationBloxoneRequest {
+func (a *DestinationApiAPIService) ReadDestinationBloxone(ctx context.Context, id int64) DestinationApiAPIReadDestinationBloxoneRequest {
 	return DestinationApiAPIReadDestinationBloxoneRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3566,7 +3896,7 @@ func (a *DestinationApiAPIService) ReadDestinationBloxoneExecute(r DestinationAp
 type DestinationApiAPIReadDestinationHttpRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -3589,7 +3919,7 @@ Use this method to retrieve Http destination server configurations in data conne
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationHttpRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationHttp(ctx context.Context, id int32) DestinationApiAPIReadDestinationHttpRequest {
+func (a *DestinationApiAPIService) ReadDestinationHttp(ctx context.Context, id int64) DestinationApiAPIReadDestinationHttpRequest {
 	return DestinationApiAPIReadDestinationHttpRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3673,7 +4003,7 @@ func (a *DestinationApiAPIService) ReadDestinationHttpExecute(r DestinationApiAP
 type DestinationApiAPIReadDestinationReportingRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	filter     *string
 	fields     *string
 }
@@ -3703,7 +4033,7 @@ Use this method to retrieve NIOS reporting destination server configurations in 
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationReportingRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationReporting(ctx context.Context, id int32) DestinationApiAPIReadDestinationReportingRequest {
+func (a *DestinationApiAPIService) ReadDestinationReporting(ctx context.Context, id int64) DestinationApiAPIReadDestinationReportingRequest {
 	return DestinationApiAPIReadDestinationReportingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3790,7 +4120,7 @@ func (a *DestinationApiAPIService) ReadDestinationReportingExecute(r Destination
 type DestinationApiAPIReadDestinationSplunkRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -3813,7 +4143,7 @@ Use this method to retrieve Splunk destination server configurations in data con
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationSplunkRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationSplunk(ctx context.Context, id int32) DestinationApiAPIReadDestinationSplunkRequest {
+func (a *DestinationApiAPIService) ReadDestinationSplunk(ctx context.Context, id int64) DestinationApiAPIReadDestinationSplunkRequest {
 	return DestinationApiAPIReadDestinationSplunkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3897,7 +4227,7 @@ func (a *DestinationApiAPIService) ReadDestinationSplunkExecute(r DestinationApi
 type DestinationApiAPIReadDestinationSplunkCloudRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -3920,7 +4250,7 @@ Use this method to retrieve Splunk Cloud destination server configurations in da
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationSplunkCloudRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationSplunkCloud(ctx context.Context, id int32) DestinationApiAPIReadDestinationSplunkCloudRequest {
+func (a *DestinationApiAPIService) ReadDestinationSplunkCloud(ctx context.Context, id int64) DestinationApiAPIReadDestinationSplunkCloudRequest {
 	return DestinationApiAPIReadDestinationSplunkCloudRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4004,7 +4334,7 @@ func (a *DestinationApiAPIService) ReadDestinationSplunkCloudExecute(r Destinati
 type DestinationApiAPIReadDestinationSyslogRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -4027,7 +4357,7 @@ Use this method to retrieve Syslog destination server configurations in data con
 	@param id Destination Identifier
 	@return DestinationApiAPIReadDestinationSyslogRequest
 */
-func (a *DestinationApiAPIService) ReadDestinationSyslog(ctx context.Context, id int32) DestinationApiAPIReadDestinationSyslogRequest {
+func (a *DestinationApiAPIService) ReadDestinationSyslog(ctx context.Context, id int64) DestinationApiAPIReadDestinationSyslogRequest {
 	return DestinationApiAPIReadDestinationSyslogRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4111,7 +4441,7 @@ func (a *DestinationApiAPIService) ReadDestinationSyslogExecute(r DestinationApi
 type DestinationApiAPIUpdateDestinationApplicationRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	body       *DestinationApplication
 }
 
@@ -4133,7 +4463,7 @@ Use this method to update an application destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIUpdateDestinationApplicationRequest
 */
-func (a *DestinationApiAPIService) UpdateDestinationApplication(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationApplicationRequest {
+func (a *DestinationApiAPIService) UpdateDestinationApplication(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationApplicationRequest {
 	return DestinationApiAPIUpdateDestinationApplicationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4219,7 +4549,7 @@ func (a *DestinationApiAPIService) UpdateDestinationApplicationExecute(r Destina
 type DestinationApiAPIUpdateDestinationHttpRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	body       *DestinationHttp
 }
 
@@ -4241,7 +4571,7 @@ Use this method to update Http destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIUpdateDestinationHttpRequest
 */
-func (a *DestinationApiAPIService) UpdateDestinationHttp(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationHttpRequest {
+func (a *DestinationApiAPIService) UpdateDestinationHttp(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationHttpRequest {
 	return DestinationApiAPIUpdateDestinationHttpRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4327,7 +4657,7 @@ func (a *DestinationApiAPIService) UpdateDestinationHttpExecute(r DestinationApi
 type DestinationApiAPIUpdateDestinationReportingRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	body       *DestinationReporting
 }
 
@@ -4349,7 +4679,7 @@ Use this method to update a NIOS reporting destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIUpdateDestinationReportingRequest
 */
-func (a *DestinationApiAPIService) UpdateDestinationReporting(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationReportingRequest {
+func (a *DestinationApiAPIService) UpdateDestinationReporting(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationReportingRequest {
 	return DestinationApiAPIUpdateDestinationReportingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4435,7 +4765,7 @@ func (a *DestinationApiAPIService) UpdateDestinationReportingExecute(r Destinati
 type DestinationApiAPIUpdateDestinationSplunkRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	body       *DestinationSplunk
 }
 
@@ -4457,7 +4787,7 @@ Use this method to update a Splunk destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIUpdateDestinationSplunkRequest
 */
-func (a *DestinationApiAPIService) UpdateDestinationSplunk(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationSplunkRequest {
+func (a *DestinationApiAPIService) UpdateDestinationSplunk(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationSplunkRequest {
 	return DestinationApiAPIUpdateDestinationSplunkRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4543,7 +4873,7 @@ func (a *DestinationApiAPIService) UpdateDestinationSplunkExecute(r DestinationA
 type DestinationApiAPIUpdateDestinationSplunkCloudRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	body       *DestinationSplunkCloud
 }
 
@@ -4565,7 +4895,7 @@ Use this method to update a Splunk Cloud destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIUpdateDestinationSplunkCloudRequest
 */
-func (a *DestinationApiAPIService) UpdateDestinationSplunkCloud(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationSplunkCloudRequest {
+func (a *DestinationApiAPIService) UpdateDestinationSplunkCloud(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationSplunkCloudRequest {
 	return DestinationApiAPIUpdateDestinationSplunkCloudRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4651,7 +4981,7 @@ func (a *DestinationApiAPIService) UpdateDestinationSplunkCloudExecute(r Destina
 type DestinationApiAPIUpdateDestinationSyslogRequest struct {
 	ctx        context.Context
 	ApiService DestinationApiAPI
-	id         int32
+	id         int64
 	body       *DestinationSyslog
 }
 
@@ -4673,7 +5003,7 @@ Use this method to update a Syslog destination server in data connector.
 	@param id Destination Identifier
 	@return DestinationApiAPIUpdateDestinationSyslogRequest
 */
-func (a *DestinationApiAPIService) UpdateDestinationSyslog(ctx context.Context, id int32) DestinationApiAPIUpdateDestinationSyslogRequest {
+func (a *DestinationApiAPIService) UpdateDestinationSyslog(ctx context.Context, id int64) DestinationApiAPIUpdateDestinationSyslogRequest {
 	return DestinationApiAPIUpdateDestinationSyslogRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4723,6 +5053,16 @@ func (a *DestinationApiAPIService) UpdateDestinationSyslogExecute(r DestinationA
 	localVarHTTPHeaderAccept := internal.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if len(a.Client.Cfg.DefaultTags) > 0 && r.body != nil {
+		if r.body.Tags == nil {
+			r.body.Tags = make(map[string]interface{})
+		}
+		for k, v := range a.Client.Cfg.DefaultTags {
+			if _, ok := r.body.Tags[k]; !ok {
+				r.body.Tags[k] = v
+			}
+		}
 	}
 	// body params
 	localVarPostBody = r.body

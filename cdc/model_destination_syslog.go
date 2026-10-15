@@ -20,19 +20,19 @@ var _ MappedNullable = &DestinationSyslog{}
 
 // DestinationSyslog struct for DestinationSyslog
 type DestinationSyslog struct {
-	Address              *string                           `json:"address,omitempty"`
-	CaCertificate        *string                           `json:"ca_certificate,omitempty"`
-	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	Enabled              *bool                             `json:"enabled,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	InsecureMode         *bool                             `json:"insecure_mode,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	OutputDataFormat     *string                           `json:"output_data_format,omitempty"`
-	Port                 *int32                            `json:"port,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	TransportProtocol    *string                           `json:"transport_protocol,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	Address              *string                `json:"address,omitempty"`
+	CaCertificate        *string                `json:"ca_certificate,omitempty"`
+	CreatedAt            *time.Time             `json:"created_at,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	InsecureMode         *bool                  `json:"insecure_mode,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	OutputDataFormat     *string                `json:"output_data_format,omitempty"`
+	Port                 *int64                 `json:"port,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	TransportProtocol    *string                `json:"transport_protocol,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -216,9 +216,9 @@ func (o *DestinationSyslog) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *DestinationSyslog) GetId() int32 {
+func (o *DestinationSyslog) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -226,7 +226,7 @@ func (o *DestinationSyslog) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationSyslog) GetIdOk() (*int32, bool) {
+func (o *DestinationSyslog) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -242,8 +242,8 @@ func (o *DestinationSyslog) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *DestinationSyslog) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *DestinationSyslog) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -344,9 +344,9 @@ func (o *DestinationSyslog) SetOutputDataFormat(v string) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *DestinationSyslog) GetPort() int32 {
+func (o *DestinationSyslog) GetPort() int64 {
 	if o == nil || IsNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -354,7 +354,7 @@ func (o *DestinationSyslog) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationSyslog) GetPortOk() (*int32, bool) {
+func (o *DestinationSyslog) GetPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
@@ -370,15 +370,15 @@ func (o *DestinationSyslog) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *DestinationSyslog) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *DestinationSyslog) SetPort(v int64) {
 	o.Port = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *DestinationSyslog) GetTags() map[string]map[string]interface{} {
+func (o *DestinationSyslog) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -386,9 +386,9 @@ func (o *DestinationSyslog) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DestinationSyslog) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *DestinationSyslog) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -402,8 +402,8 @@ func (o *DestinationSyslog) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *DestinationSyslog) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *DestinationSyslog) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

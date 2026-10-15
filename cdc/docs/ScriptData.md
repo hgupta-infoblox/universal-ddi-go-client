@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**FileId** | Pointer to **int32** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**FileId** | Pointer to **int64** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
@@ -133,20 +133,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetFileId
 
-`func (o *ScriptData) GetFileId() int32`
+`func (o *ScriptData) GetFileId() int64`
 
 GetFileId returns the FileId field if non-nil, zero value otherwise.
 
 ### GetFileIdOk
 
-`func (o *ScriptData) GetFileIdOk() (*int32, bool)`
+`func (o *ScriptData) GetFileIdOk() (*int64, bool)`
 
 GetFileIdOk returns a tuple with the FileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFileId
 
-`func (o *ScriptData) SetFileId(v int32)`
+`func (o *ScriptData) SetFileId(v int64)`
 
 SetFileId sets FileId field to given value.
 
@@ -158,20 +158,20 @@ HasFileId returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *ScriptData) GetId() int32`
+`func (o *ScriptData) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ScriptData) GetIdOk() (*int32, bool)`
+`func (o *ScriptData) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ScriptData) SetId(v int32)`
+`func (o *ScriptData) SetId(v int64)`
 
 SetId sets Id field to given value.
 

@@ -20,13 +20,13 @@ var _ MappedNullable = &Application{}
 
 // Application struct for Application
 type Application struct {
-	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	Type                 *string                           `json:"type,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	CreatedAt            *time.Time             `json:"created_at,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -114,9 +114,9 @@ func (o *Application) SetDescription(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Application) GetId() int32 {
+func (o *Application) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -124,7 +124,7 @@ func (o *Application) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetIdOk() (*int32, bool) {
+func (o *Application) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -140,8 +140,8 @@ func (o *Application) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Application) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Application) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -178,9 +178,9 @@ func (o *Application) SetName(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *Application) GetTags() map[string]map[string]interface{} {
+func (o *Application) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -188,9 +188,9 @@ func (o *Application) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *Application) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -204,8 +204,8 @@ func (o *Application) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *Application) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *Application) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

@@ -110,7 +110,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.DestinationApiAPI.DeleteDestinationApplication(context.Background(), id).Execute()
 
@@ -123,7 +123,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.DestinationApiAPI.DeleteDestinationHttp(context.Background(), id).Execute()
 
@@ -136,7 +136,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.DestinationApiAPI.DeleteDestinationReporting(context.Background(), id).Execute()
 
@@ -149,7 +149,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.DestinationApiAPI.DeleteDestinationSplunk(context.Background(), id).Execute()
 
@@ -162,7 +162,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.DestinationApiAPI.DeleteDestinationSplunkCloud(context.Background(), id).Execute()
 
@@ -175,7 +175,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.DestinationApiAPI.DeleteDestinationSyslog(context.Background(), id).Execute()
 
@@ -339,7 +339,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationApplication(context.Background(), id).Execute()
 
@@ -353,7 +353,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationBloxone(context.Background(), id).Execute()
 
@@ -367,7 +367,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationHttp(context.Background(), id).Execute()
 
@@ -381,7 +381,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationReporting(context.Background(), id).Execute()
 
@@ -395,7 +395,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationSplunk(context.Background(), id).Execute()
 
@@ -409,7 +409,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationSplunkCloud(context.Background(), id).Execute()
 
@@ -423,7 +423,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.ReadDestinationSyslog(context.Background(), id).Execute()
 
@@ -437,7 +437,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.UpdateDestinationApplication(context.Background(), id).Execute()
 
@@ -451,7 +451,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.UpdateDestinationHttp(context.Background(), id).Execute()
 
@@ -465,7 +465,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.UpdateDestinationReporting(context.Background(), id).Execute()
 
@@ -479,7 +479,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.UpdateDestinationSplunk(context.Background(), id).Execute()
 
@@ -493,7 +493,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.UpdateDestinationSplunkCloud(context.Background(), id).Execute()
 
@@ -507,7 +507,7 @@ func TestDestinationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.DestinationApiAPI.UpdateDestinationSyslog(context.Background(), id).Execute()
 

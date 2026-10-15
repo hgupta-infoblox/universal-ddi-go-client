@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Max** | Pointer to **int32** |  | [optional] 
-**Min** | Pointer to **int32** |  | [optional] 
+**Max** | Pointer to **int64** |  | [optional] 
+**Min** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMax
 
-`func (o *NumberRange) GetMax() int32`
+`func (o *NumberRange) GetMax() int64`
 
 GetMax returns the Max field if non-nil, zero value otherwise.
 
 ### GetMaxOk
 
-`func (o *NumberRange) GetMaxOk() (*int32, bool)`
+`func (o *NumberRange) GetMaxOk() (*int64, bool)`
 
 GetMaxOk returns a tuple with the Max field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMax
 
-`func (o *NumberRange) SetMax(v int32)`
+`func (o *NumberRange) SetMax(v int64)`
 
 SetMax sets Max field to given value.
 
@@ -53,20 +53,20 @@ HasMax returns a boolean if a field has been set.
 
 ### GetMin
 
-`func (o *NumberRange) GetMin() int32`
+`func (o *NumberRange) GetMin() int64`
 
 GetMin returns the Min field if non-nil, zero value otherwise.
 
 ### GetMinOk
 
-`func (o *NumberRange) GetMinOk() (*int32, bool)`
+`func (o *NumberRange) GetMinOk() (*int64, bool)`
 
 GetMinOk returns a tuple with the Min field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMin
 
-`func (o *NumberRange) SetMin(v int32)`
+`func (o *NumberRange) SetMin(v int64)`
 
 SetMin sets Min field to given value.
 

@@ -39,7 +39,7 @@ func TestHostApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.HostApiAPI.ReadCdcHost(context.Background(), id).Execute()
 

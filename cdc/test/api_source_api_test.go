@@ -39,7 +39,7 @@ func TestSourceApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.SourceApiAPI.DeleteSourceNios(context.Background(), id).Execute()
 
@@ -111,7 +111,7 @@ func TestSourceApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.SourceApiAPI.ReadSourceBloxone(context.Background(), id).Execute()
 
@@ -125,7 +125,7 @@ func TestSourceApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.SourceApiAPI.ReadSourceNios(context.Background(), id).Execute()
 
@@ -139,7 +139,7 @@ func TestSourceApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.SourceApiAPI.ReadSourceSchedule(context.Background(), id).Execute()
 
@@ -153,7 +153,7 @@ func TestSourceApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.SourceApiAPI.UpdateSourceNios(context.Background(), id).Execute()
 

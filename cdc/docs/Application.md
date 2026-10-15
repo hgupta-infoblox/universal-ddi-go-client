@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **time.Time** |  | [optional] 
+**CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**UpdatedAt** | Pointer to **time.Time** |  | [optional] 
+**UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -83,20 +83,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *Application) GetId() int32`
+`func (o *Application) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Application) GetIdOk() (*int32, bool)`
+`func (o *Application) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Application) SetId(v int32)`
+`func (o *Application) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -133,20 +133,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *Application) GetTags() map[string]map[string]interface{}`
+`func (o *Application) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *Application) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *Application) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *Application) SetTags(v map[string]map[string]interface{})`
+`func (o *Application) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

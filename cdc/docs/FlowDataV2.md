@@ -8,18 +8,18 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **DestinationHa** | Pointer to **bool** |  | [optional] [readonly] 
-**Destinations** | Pointer to **[]int32** |  | [optional] 
+**Destinations** | Pointer to **[]int64** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**EtlFilters** | Pointer to **[]int32** |  | [optional] 
+**EtlFilters** | Pointer to **[]int64** |  | [optional] 
 **FilterExpression** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **ScheduleOption** | Pointer to **string** |  | [optional] 
 **ScriptSchedule** | Pointer to **string** |  | [optional] 
-**Source** | Pointer to **int32** |  | [optional] 
+**Source** | Pointer to **int64** |  | [optional] 
 **SourceDataTypes** | Pointer to **[]string** |  | [optional] 
 **SourceLogTypes** | Pointer to [**[]SourceLogType**](SourceLogType.md) |  | [optional] 
-**Tags** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
@@ -143,20 +143,20 @@ HasDestinationHa returns a boolean if a field has been set.
 
 ### GetDestinations
 
-`func (o *FlowDataV2) GetDestinations() []int32`
+`func (o *FlowDataV2) GetDestinations() []int64`
 
 GetDestinations returns the Destinations field if non-nil, zero value otherwise.
 
 ### GetDestinationsOk
 
-`func (o *FlowDataV2) GetDestinationsOk() (*[]int32, bool)`
+`func (o *FlowDataV2) GetDestinationsOk() (*[]int64, bool)`
 
 GetDestinationsOk returns a tuple with the Destinations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinations
 
-`func (o *FlowDataV2) SetDestinations(v []int32)`
+`func (o *FlowDataV2) SetDestinations(v []int64)`
 
 SetDestinations sets Destinations field to given value.
 
@@ -193,20 +193,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEtlFilters
 
-`func (o *FlowDataV2) GetEtlFilters() []int32`
+`func (o *FlowDataV2) GetEtlFilters() []int64`
 
 GetEtlFilters returns the EtlFilters field if non-nil, zero value otherwise.
 
 ### GetEtlFiltersOk
 
-`func (o *FlowDataV2) GetEtlFiltersOk() (*[]int32, bool)`
+`func (o *FlowDataV2) GetEtlFiltersOk() (*[]int64, bool)`
 
 GetEtlFiltersOk returns a tuple with the EtlFilters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEtlFilters
 
-`func (o *FlowDataV2) SetEtlFilters(v []int32)`
+`func (o *FlowDataV2) SetEtlFilters(v []int64)`
 
 SetEtlFilters sets EtlFilters field to given value.
 
@@ -243,20 +243,20 @@ HasFilterExpression returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *FlowDataV2) GetId() int32`
+`func (o *FlowDataV2) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *FlowDataV2) GetIdOk() (*int32, bool)`
+`func (o *FlowDataV2) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *FlowDataV2) SetId(v int32)`
+`func (o *FlowDataV2) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -343,20 +343,20 @@ HasScriptSchedule returns a boolean if a field has been set.
 
 ### GetSource
 
-`func (o *FlowDataV2) GetSource() int32`
+`func (o *FlowDataV2) GetSource() int64`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *FlowDataV2) GetSourceOk() (*int32, bool)`
+`func (o *FlowDataV2) GetSourceOk() (*int64, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *FlowDataV2) SetSource(v int32)`
+`func (o *FlowDataV2) SetSource(v int64)`
 
 SetSource sets Source field to given value.
 
@@ -418,20 +418,20 @@ HasSourceLogTypes returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *FlowDataV2) GetTags() map[string]map[string]interface{}`
+`func (o *FlowDataV2) GetTags() map[string]interface{}`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *FlowDataV2) GetTagsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *FlowDataV2) GetTagsOk() (*map[string]interface{}, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *FlowDataV2) SetTags(v map[string]map[string]interface{})`
+`func (o *FlowDataV2) SetTags(v map[string]interface{})`
 
 SetTags sets Tags field to given value.
 

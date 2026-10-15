@@ -19,9 +19,9 @@ var _ MappedNullable = &SourceLogType{}
 
 // SourceLogType struct for SourceLogType
 type SourceLogType struct {
-	LogFields            map[string]map[string]interface{} `json:"log_fields,omitempty"`
-	LogSubtypes          []string                          `json:"log_subtypes,omitempty"`
-	LogType              *string                           `json:"log_type,omitempty"`
+	LogFields            []string `json:"log_fields,omitempty"`
+	LogSubtypes          []string `json:"log_subtypes,omitempty"`
+	LogType              *string  `json:"log_type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewSourceLogTypeWithDefaults() *SourceLogType {
 }
 
 // GetLogFields returns the LogFields field value if set, zero value otherwise.
-func (o *SourceLogType) GetLogFields() map[string]map[string]interface{} {
+func (o *SourceLogType) GetLogFields() []string {
 	if o == nil || IsNil(o.LogFields) {
-		var ret map[string]map[string]interface{}
+		var ret []string
 		return ret
 	}
 	return o.LogFields
@@ -55,9 +55,9 @@ func (o *SourceLogType) GetLogFields() map[string]map[string]interface{} {
 
 // GetLogFieldsOk returns a tuple with the LogFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceLogType) GetLogFieldsOk() (map[string]map[string]interface{}, bool) {
+func (o *SourceLogType) GetLogFieldsOk() ([]string, bool) {
 	if o == nil || IsNil(o.LogFields) {
-		return map[string]map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.LogFields, true
 }
@@ -71,8 +71,8 @@ func (o *SourceLogType) HasLogFields() bool {
 	return false
 }
 
-// SetLogFields gets a reference to the given map[string]map[string]interface{} and assigns it to the LogFields field.
-func (o *SourceLogType) SetLogFields(v map[string]map[string]interface{}) {
+// SetLogFields gets a reference to the given []string and assigns it to the LogFields field.
+func (o *SourceLogType) SetLogFields(v []string) {
 	o.LogFields = v
 }
 

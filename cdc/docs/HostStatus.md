@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Destination** | Pointer to [**DestinationStatus**](DestinationStatus.md) | Destination-side status for the flow on this host. | [optional] 
 **Etl** | Pointer to [**EtlStatus**](EtlStatus.md) | ETL/filter pipeline status for the flow on this host. | [optional] 
 **HaState** | Pointer to **string** | High-availability role of this host for the flow (e.g. active, standby) when destination HA is enabled. Empty when HA is not applicable. | [optional] 
-**Id** | Pointer to **int32** | Numeric identifier of the on-prem host as known to the data connector service. | [optional] [readonly] 
+**Id** | Pointer to **int64** | Numeric identifier of the on-prem host as known to the data connector service. | [optional] [readonly] 
 **Message** | Pointer to **string** | Human-readable status message for the flow on this host. | [optional] 
 **Ophid** | Pointer to **string** | On-prem host identifier (ophid) assigned by the platform. | [optional] 
 **Source** | Pointer to [**SourceStatus**](SourceStatus.md) | Source-side status for the flow on this host. | [optional] 
@@ -110,20 +110,20 @@ HasHaState returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *HostStatus) GetId() int32`
+`func (o *HostStatus) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *HostStatus) GetIdOk() (*int32, bool)`
+`func (o *HostStatus) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *HostStatus) SetId(v int32)`
+`func (o *HostStatus) SetId(v int64)`
 
 SetId sets Id field to given value.
 

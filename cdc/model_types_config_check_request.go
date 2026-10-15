@@ -19,7 +19,7 @@ var _ MappedNullable = &TypesConfigCheckRequest{}
 
 // TypesConfigCheckRequest The Config Check request.
 type TypesConfigCheckRequest struct {
-	AccountId       *int32  `json:"account_id,omitempty"`
+	AccountId       *int64  `json:"account_id,omitempty"`
 	ConfigCheckType *string `json:"config_check_type,omitempty"`
 	// Caller sets to false if wants to suppress notification.
 	Notify               *bool `json:"notify,omitempty"`
@@ -46,9 +46,9 @@ func NewTypesConfigCheckRequestWithDefaults() *TypesConfigCheckRequest {
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
-func (o *TypesConfigCheckRequest) GetAccountId() int32 {
+func (o *TypesConfigCheckRequest) GetAccountId() int64 {
 	if o == nil || IsNil(o.AccountId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AccountId
@@ -56,7 +56,7 @@ func (o *TypesConfigCheckRequest) GetAccountId() int32 {
 
 // GetAccountIdOk returns a tuple with the AccountId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TypesConfigCheckRequest) GetAccountIdOk() (*int32, bool) {
+func (o *TypesConfigCheckRequest) GetAccountIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AccountId) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *TypesConfigCheckRequest) HasAccountId() bool {
 	return false
 }
 
-// SetAccountId gets a reference to the given int32 and assigns it to the AccountId field.
-func (o *TypesConfigCheckRequest) SetAccountId(v int32) {
+// SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
+func (o *TypesConfigCheckRequest) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 

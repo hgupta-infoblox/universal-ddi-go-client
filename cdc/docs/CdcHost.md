@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **HostId** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] [readonly] 
+**Id** | Pointer to **int64** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
@@ -133,20 +133,20 @@ HasHostId returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *CdcHost) GetId() int32`
+`func (o *CdcHost) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CdcHost) GetIdOk() (*int32, bool)`
+`func (o *CdcHost) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CdcHost) SetId(v int32)`
+`func (o *CdcHost) SetId(v int64)`
 
 SetId sets Id field to given value.
 

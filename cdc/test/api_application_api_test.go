@@ -39,7 +39,7 @@ func TestApplicationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		httpRes, err := apiClient.ApplicationApiAPI.DeleteApplicationData(context.Background(), id).Execute()
 
@@ -99,7 +99,7 @@ func TestApplicationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.ApplicationApiAPI.ReadApplicationData(context.Background(), id).Execute()
 
@@ -113,7 +113,7 @@ func TestApplicationApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var id int32
+		var id int64
 
 		resp, httpRes, err := apiClient.ApplicationApiAPI.UpdateApplicationData(context.Background(), id).Execute()
 

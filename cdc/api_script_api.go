@@ -57,7 +57,7 @@ type ScriptApiAPI interface {
 		@param productId
 		@return ScriptApiAPIDeleteApplicationsProductDataRequest
 	*/
-	DeleteApplicationsProductData(ctx context.Context, productId int32) ScriptApiAPIDeleteApplicationsProductDataRequest
+	DeleteApplicationsProductData(ctx context.Context, productId int64) ScriptApiAPIDeleteApplicationsProductDataRequest
 
 	// DeleteApplicationsProductDataExecute executes the request
 	//  @return ApplicationsProductDataDeleteResponse
@@ -71,7 +71,7 @@ type ScriptApiAPI interface {
 		@param fileId
 		@return ScriptApiAPIDeleteScriptDataRequest
 	*/
-	DeleteScriptData(ctx context.Context, fileId int32) ScriptApiAPIDeleteScriptDataRequest
+	DeleteScriptData(ctx context.Context, fileId int64) ScriptApiAPIDeleteScriptDataRequest
 
 	// DeleteScriptDataExecute executes the request
 	//  @return ScriptDataDeleteResponse
@@ -85,7 +85,7 @@ type ScriptApiAPI interface {
 		@param productId
 		@return ScriptApiAPIReadApplicationsProductDataRequest
 	*/
-	ReadApplicationsProductData(ctx context.Context, productId int32) ScriptApiAPIReadApplicationsProductDataRequest
+	ReadApplicationsProductData(ctx context.Context, productId int64) ScriptApiAPIReadApplicationsProductDataRequest
 
 	// ReadApplicationsProductDataExecute executes the request
 	//  @return ApplicationsProductDataReadResponse
@@ -99,7 +99,7 @@ type ScriptApiAPI interface {
 		@param fileId
 		@return ScriptApiAPIReadScriptDataRequest
 	*/
-	ReadScriptData(ctx context.Context, fileId int32) ScriptApiAPIReadScriptDataRequest
+	ReadScriptData(ctx context.Context, fileId int64) ScriptApiAPIReadScriptDataRequest
 
 	// ReadScriptDataExecute executes the request
 	//  @return ScriptDataReadResponse
@@ -113,7 +113,7 @@ type ScriptApiAPI interface {
 		@param productId
 		@return ScriptApiAPIUpdateApplicationsProductDataRequest
 	*/
-	UpdateApplicationsProductData(ctx context.Context, productId int32) ScriptApiAPIUpdateApplicationsProductDataRequest
+	UpdateApplicationsProductData(ctx context.Context, productId int64) ScriptApiAPIUpdateApplicationsProductDataRequest
 
 	// UpdateApplicationsProductDataExecute executes the request
 	//  @return ApplicationsProductDataUpdateResponse
@@ -127,7 +127,7 @@ type ScriptApiAPI interface {
 		@param fileId
 		@return ScriptApiAPIUpdateScriptDataRequest
 	*/
-	UpdateScriptData(ctx context.Context, fileId int32) ScriptApiAPIUpdateScriptDataRequest
+	UpdateScriptData(ctx context.Context, fileId int64) ScriptApiAPIUpdateScriptDataRequest
 
 	// UpdateScriptDataExecute executes the request
 	//  @return ScriptDataUpdateResponse
@@ -348,7 +348,7 @@ func (a *ScriptApiAPIService) CreateScriptDataExecute(r ScriptApiAPICreateScript
 type ScriptApiAPIDeleteApplicationsProductDataRequest struct {
 	ctx        context.Context
 	ApiService ScriptApiAPI
-	productId  int32
+	productId  int64
 }
 
 func (r ScriptApiAPIDeleteApplicationsProductDataRequest) Execute() (*ApplicationsProductDataDeleteResponse, *http.Response, error) {
@@ -364,7 +364,7 @@ Use this method to delete a product-to-application mapping configuration in data
 	@param productId
 	@return ScriptApiAPIDeleteApplicationsProductDataRequest
 */
-func (a *ScriptApiAPIService) DeleteApplicationsProductData(ctx context.Context, productId int32) ScriptApiAPIDeleteApplicationsProductDataRequest {
+func (a *ScriptApiAPIService) DeleteApplicationsProductData(ctx context.Context, productId int64) ScriptApiAPIDeleteApplicationsProductDataRequest {
 	return ScriptApiAPIDeleteApplicationsProductDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -445,7 +445,7 @@ func (a *ScriptApiAPIService) DeleteApplicationsProductDataExecute(r ScriptApiAP
 type ScriptApiAPIDeleteScriptDataRequest struct {
 	ctx        context.Context
 	ApiService ScriptApiAPI
-	fileId     int32
+	fileId     int64
 }
 
 func (r ScriptApiAPIDeleteScriptDataRequest) Execute() (*ScriptDataDeleteResponse, *http.Response, error) {
@@ -461,7 +461,7 @@ Use this method to delete scripts configurations in data connector.
 	@param fileId
 	@return ScriptApiAPIDeleteScriptDataRequest
 */
-func (a *ScriptApiAPIService) DeleteScriptData(ctx context.Context, fileId int32) ScriptApiAPIDeleteScriptDataRequest {
+func (a *ScriptApiAPIService) DeleteScriptData(ctx context.Context, fileId int64) ScriptApiAPIDeleteScriptDataRequest {
 	return ScriptApiAPIDeleteScriptDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -542,7 +542,7 @@ func (a *ScriptApiAPIService) DeleteScriptDataExecute(r ScriptApiAPIDeleteScript
 type ScriptApiAPIReadApplicationsProductDataRequest struct {
 	ctx        context.Context
 	ApiService ScriptApiAPI
-	productId  int32
+	productId  int64
 }
 
 func (r ScriptApiAPIReadApplicationsProductDataRequest) Execute() (*ApplicationsProductDataReadResponse, *http.Response, error) {
@@ -558,7 +558,7 @@ Use this method to retrieve script ID in data connector.
 	@param productId
 	@return ScriptApiAPIReadApplicationsProductDataRequest
 */
-func (a *ScriptApiAPIService) ReadApplicationsProductData(ctx context.Context, productId int32) ScriptApiAPIReadApplicationsProductDataRequest {
+func (a *ScriptApiAPIService) ReadApplicationsProductData(ctx context.Context, productId int64) ScriptApiAPIReadApplicationsProductDataRequest {
 	return ScriptApiAPIReadApplicationsProductDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -639,7 +639,7 @@ func (a *ScriptApiAPIService) ReadApplicationsProductDataExecute(r ScriptApiAPIR
 type ScriptApiAPIReadScriptDataRequest struct {
 	ctx        context.Context
 	ApiService ScriptApiAPI
-	fileId     int32
+	fileId     int64
 }
 
 func (r ScriptApiAPIReadScriptDataRequest) Execute() (*ScriptDataReadResponse, *http.Response, error) {
@@ -655,7 +655,7 @@ Use this method to retrieve scripts configurations in data connector.
 	@param fileId
 	@return ScriptApiAPIReadScriptDataRequest
 */
-func (a *ScriptApiAPIService) ReadScriptData(ctx context.Context, fileId int32) ScriptApiAPIReadScriptDataRequest {
+func (a *ScriptApiAPIService) ReadScriptData(ctx context.Context, fileId int64) ScriptApiAPIReadScriptDataRequest {
 	return ScriptApiAPIReadScriptDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -736,7 +736,7 @@ func (a *ScriptApiAPIService) ReadScriptDataExecute(r ScriptApiAPIReadScriptData
 type ScriptApiAPIUpdateApplicationsProductDataRequest struct {
 	ctx        context.Context
 	ApiService ScriptApiAPI
-	productId  int32
+	productId  int64
 	body       *ApplicationsProductData
 }
 
@@ -758,7 +758,7 @@ Use this method to update a product-to-application mapping configuration in data
 	@param productId
 	@return ScriptApiAPIUpdateApplicationsProductDataRequest
 */
-func (a *ScriptApiAPIService) UpdateApplicationsProductData(ctx context.Context, productId int32) ScriptApiAPIUpdateApplicationsProductDataRequest {
+func (a *ScriptApiAPIService) UpdateApplicationsProductData(ctx context.Context, productId int64) ScriptApiAPIUpdateApplicationsProductDataRequest {
 	return ScriptApiAPIUpdateApplicationsProductDataRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -844,7 +844,7 @@ func (a *ScriptApiAPIService) UpdateApplicationsProductDataExecute(r ScriptApiAP
 type ScriptApiAPIUpdateScriptDataRequest struct {
 	ctx        context.Context
 	ApiService ScriptApiAPI
-	fileId     int32
+	fileId     int64
 	body       *ScriptData
 }
 
@@ -866,7 +866,7 @@ Use this method to update scripts configurations in data connector.
 	@param fileId
 	@return ScriptApiAPIUpdateScriptDataRequest
 */
-func (a *ScriptApiAPIService) UpdateScriptData(ctx context.Context, fileId int32) ScriptApiAPIUpdateScriptDataRequest {
+func (a *ScriptApiAPIService) UpdateScriptData(ctx context.Context, fileId int64) ScriptApiAPIUpdateScriptDataRequest {
 	return ScriptApiAPIUpdateScriptDataRequest{
 		ApiService: a,
 		ctx:        ctx,

@@ -19,7 +19,7 @@ var _ MappedNullable = &FlowListDeleteRequestV2{}
 
 // FlowListDeleteRequestV2 struct for FlowListDeleteRequestV2
 type FlowListDeleteRequestV2 struct {
-	Ids                  []int32 `json:"ids,omitempty"`
+	Ids                  []int64 `json:"ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,9 +43,9 @@ func NewFlowListDeleteRequestV2WithDefaults() *FlowListDeleteRequestV2 {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise.
-func (o *FlowListDeleteRequestV2) GetIds() []int32 {
+func (o *FlowListDeleteRequestV2) GetIds() []int64 {
 	if o == nil || IsNil(o.Ids) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Ids
@@ -53,7 +53,7 @@ func (o *FlowListDeleteRequestV2) GetIds() []int32 {
 
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowListDeleteRequestV2) GetIdsOk() ([]int32, bool) {
+func (o *FlowListDeleteRequestV2) GetIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Ids) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *FlowListDeleteRequestV2) HasIds() bool {
 	return false
 }
 
-// SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *FlowListDeleteRequestV2) SetIds(v []int32) {
+// SetIds gets a reference to the given []int64 and assigns it to the Ids field.
+func (o *FlowListDeleteRequestV2) SetIds(v []int64) {
 	o.Ids = v
 }
 

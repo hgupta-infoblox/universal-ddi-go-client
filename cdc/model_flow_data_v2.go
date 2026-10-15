@@ -20,23 +20,23 @@ var _ MappedNullable = &FlowDataV2{}
 
 // FlowDataV2 struct for FlowDataV2
 type FlowDataV2 struct {
-	CdcServices          []string                          `json:"cdc_services,omitempty"`
-	CreatedAt            *time.Time                        `json:"created_at,omitempty"`
-	Description          *string                           `json:"description,omitempty"`
-	DestinationHa        *bool                             `json:"destination_ha,omitempty"`
-	Destinations         []int32                           `json:"destinations,omitempty"`
-	Enabled              *bool                             `json:"enabled,omitempty"`
-	EtlFilters           []int32                           `json:"etl_filters,omitempty"`
-	FilterExpression     *string                           `json:"filter_expression,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	ScheduleOption       *string                           `json:"schedule_option,omitempty"`
-	ScriptSchedule       *string                           `json:"script_schedule,omitempty"`
-	Source               *int32                            `json:"source,omitempty"`
-	SourceDataTypes      []string                          `json:"source_data_types,omitempty"`
-	SourceLogTypes       []SourceLogType                   `json:"source_log_types,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	CdcServices          []string               `json:"cdc_services,omitempty"`
+	CreatedAt            *time.Time             `json:"created_at,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	DestinationHa        *bool                  `json:"destination_ha,omitempty"`
+	Destinations         []int64                `json:"destinations,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	EtlFilters           []int64                `json:"etl_filters,omitempty"`
+	FilterExpression     *string                `json:"filter_expression,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	ScheduleOption       *string                `json:"schedule_option,omitempty"`
+	ScriptSchedule       *string                `json:"script_schedule,omitempty"`
+	Source               *int64                 `json:"source,omitempty"`
+	SourceDataTypes      []string               `json:"source_data_types,omitempty"`
+	SourceLogTypes       []SourceLogType        `json:"source_log_types,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -188,9 +188,9 @@ func (o *FlowDataV2) SetDestinationHa(v bool) {
 }
 
 // GetDestinations returns the Destinations field value if set, zero value otherwise.
-func (o *FlowDataV2) GetDestinations() []int32 {
+func (o *FlowDataV2) GetDestinations() []int64 {
 	if o == nil || IsNil(o.Destinations) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Destinations
@@ -198,7 +198,7 @@ func (o *FlowDataV2) GetDestinations() []int32 {
 
 // GetDestinationsOk returns a tuple with the Destinations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowDataV2) GetDestinationsOk() ([]int32, bool) {
+func (o *FlowDataV2) GetDestinationsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Destinations) {
 		return nil, false
 	}
@@ -214,8 +214,8 @@ func (o *FlowDataV2) HasDestinations() bool {
 	return false
 }
 
-// SetDestinations gets a reference to the given []int32 and assigns it to the Destinations field.
-func (o *FlowDataV2) SetDestinations(v []int32) {
+// SetDestinations gets a reference to the given []int64 and assigns it to the Destinations field.
+func (o *FlowDataV2) SetDestinations(v []int64) {
 	o.Destinations = v
 }
 
@@ -252,9 +252,9 @@ func (o *FlowDataV2) SetEnabled(v bool) {
 }
 
 // GetEtlFilters returns the EtlFilters field value if set, zero value otherwise.
-func (o *FlowDataV2) GetEtlFilters() []int32 {
+func (o *FlowDataV2) GetEtlFilters() []int64 {
 	if o == nil || IsNil(o.EtlFilters) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.EtlFilters
@@ -262,7 +262,7 @@ func (o *FlowDataV2) GetEtlFilters() []int32 {
 
 // GetEtlFiltersOk returns a tuple with the EtlFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowDataV2) GetEtlFiltersOk() ([]int32, bool) {
+func (o *FlowDataV2) GetEtlFiltersOk() ([]int64, bool) {
 	if o == nil || IsNil(o.EtlFilters) {
 		return nil, false
 	}
@@ -278,8 +278,8 @@ func (o *FlowDataV2) HasEtlFilters() bool {
 	return false
 }
 
-// SetEtlFilters gets a reference to the given []int32 and assigns it to the EtlFilters field.
-func (o *FlowDataV2) SetEtlFilters(v []int32) {
+// SetEtlFilters gets a reference to the given []int64 and assigns it to the EtlFilters field.
+func (o *FlowDataV2) SetEtlFilters(v []int64) {
 	o.EtlFilters = v
 }
 
@@ -316,9 +316,9 @@ func (o *FlowDataV2) SetFilterExpression(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *FlowDataV2) GetId() int32 {
+func (o *FlowDataV2) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -326,7 +326,7 @@ func (o *FlowDataV2) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowDataV2) GetIdOk() (*int32, bool) {
+func (o *FlowDataV2) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -342,8 +342,8 @@ func (o *FlowDataV2) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *FlowDataV2) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *FlowDataV2) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -444,9 +444,9 @@ func (o *FlowDataV2) SetScriptSchedule(v string) {
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
-func (o *FlowDataV2) GetSource() int32 {
+func (o *FlowDataV2) GetSource() int64 {
 	if o == nil || IsNil(o.Source) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Source
@@ -454,7 +454,7 @@ func (o *FlowDataV2) GetSource() int32 {
 
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowDataV2) GetSourceOk() (*int32, bool) {
+func (o *FlowDataV2) GetSourceOk() (*int64, bool) {
 	if o == nil || IsNil(o.Source) {
 		return nil, false
 	}
@@ -470,8 +470,8 @@ func (o *FlowDataV2) HasSource() bool {
 	return false
 }
 
-// SetSource gets a reference to the given int32 and assigns it to the Source field.
-func (o *FlowDataV2) SetSource(v int32) {
+// SetSource gets a reference to the given int64 and assigns it to the Source field.
+func (o *FlowDataV2) SetSource(v int64) {
 	o.Source = &v
 }
 
@@ -540,9 +540,9 @@ func (o *FlowDataV2) SetSourceLogTypes(v []SourceLogType) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *FlowDataV2) GetTags() map[string]map[string]interface{} {
+func (o *FlowDataV2) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -550,9 +550,9 @@ func (o *FlowDataV2) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowDataV2) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *FlowDataV2) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -566,8 +566,8 @@ func (o *FlowDataV2) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *FlowDataV2) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *FlowDataV2) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

@@ -51,7 +51,7 @@ func TestScriptApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var productId int32
+		var productId int64
 
 		resp, httpRes, err := apiClient.ScriptApiAPI.DeleteApplicationsProductData(context.Background(), productId).Execute()
 
@@ -65,7 +65,7 @@ func TestScriptApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var fileId int32
+		var fileId int64
 
 		resp, httpRes, err := apiClient.ScriptApiAPI.DeleteScriptData(context.Background(), fileId).Execute()
 
@@ -79,7 +79,7 @@ func TestScriptApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var productId int32
+		var productId int64
 
 		resp, httpRes, err := apiClient.ScriptApiAPI.ReadApplicationsProductData(context.Background(), productId).Execute()
 
@@ -93,7 +93,7 @@ func TestScriptApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var fileId int32
+		var fileId int64
 
 		resp, httpRes, err := apiClient.ScriptApiAPI.ReadScriptData(context.Background(), fileId).Execute()
 
@@ -107,7 +107,7 @@ func TestScriptApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var productId int32
+		var productId int64
 
 		resp, httpRes, err := apiClient.ScriptApiAPI.UpdateApplicationsProductData(context.Background(), productId).Execute()
 
@@ -121,7 +121,7 @@ func TestScriptApiAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var fileId int32
+		var fileId int64
 
 		resp, httpRes, err := apiClient.ScriptApiAPI.UpdateScriptData(context.Background(), fileId).Execute()
 

@@ -20,12 +20,12 @@ var _ MappedNullable = &SourceSchedule{}
 
 // SourceSchedule struct for SourceSchedule
 type SourceSchedule struct {
-	Description          *string                           `json:"description,omitempty"`
-	Enabled              *bool                             `json:"enabled,omitempty"`
-	Id                   *int32                            `json:"id,omitempty"`
-	Name                 *string                           `json:"name,omitempty"`
-	Tags                 map[string]map[string]interface{} `json:"tags,omitempty"`
-	UpdatedAt            *time.Time                        `json:"updated_at,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Enabled              *bool                  `json:"enabled,omitempty"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Tags                 map[string]interface{} `json:"tags,omitempty"`
+	UpdatedAt            *time.Time             `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -113,9 +113,9 @@ func (o *SourceSchedule) SetEnabled(v bool) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *SourceSchedule) GetId() int32 {
+func (o *SourceSchedule) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -123,7 +123,7 @@ func (o *SourceSchedule) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceSchedule) GetIdOk() (*int32, bool) {
+func (o *SourceSchedule) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *SourceSchedule) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SourceSchedule) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *SourceSchedule) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -177,9 +177,9 @@ func (o *SourceSchedule) SetName(v string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *SourceSchedule) GetTags() map[string]map[string]interface{} {
+func (o *SourceSchedule) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -187,9 +187,9 @@ func (o *SourceSchedule) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SourceSchedule) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *SourceSchedule) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -203,8 +203,8 @@ func (o *SourceSchedule) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *SourceSchedule) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *SourceSchedule) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

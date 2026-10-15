@@ -19,7 +19,7 @@ var _ MappedNullable = &ApplicationsProductDataDeleteResponse{}
 
 // ApplicationsProductDataDeleteResponse struct for ApplicationsProductDataDeleteResponse
 type ApplicationsProductDataDeleteResponse struct {
-	ProductId            *int32 `json:"product_id,omitempty"`
+	ProductId            *int64 `json:"product_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,9 +43,9 @@ func NewApplicationsProductDataDeleteResponseWithDefaults() *ApplicationsProduct
 }
 
 // GetProductId returns the ProductId field value if set, zero value otherwise.
-func (o *ApplicationsProductDataDeleteResponse) GetProductId() int32 {
+func (o *ApplicationsProductDataDeleteResponse) GetProductId() int64 {
 	if o == nil || IsNil(o.ProductId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ProductId
@@ -53,7 +53,7 @@ func (o *ApplicationsProductDataDeleteResponse) GetProductId() int32 {
 
 // GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationsProductDataDeleteResponse) GetProductIdOk() (*int32, bool) {
+func (o *ApplicationsProductDataDeleteResponse) GetProductIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ProductId) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *ApplicationsProductDataDeleteResponse) HasProductId() bool {
 	return false
 }
 
-// SetProductId gets a reference to the given int32 and assigns it to the ProductId field.
-func (o *ApplicationsProductDataDeleteResponse) SetProductId(v int32) {
+// SetProductId gets a reference to the given int64 and assigns it to the ProductId field.
+func (o *ApplicationsProductDataDeleteResponse) SetProductId(v int64) {
 	o.ProductId = &v
 }
 

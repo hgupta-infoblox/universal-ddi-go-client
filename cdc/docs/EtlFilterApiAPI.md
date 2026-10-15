@@ -537,7 +537,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterFqdn(context.Background(), id).Execute()
@@ -554,7 +554,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -604,7 +604,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterHostname(context.Background(), id).Execute()
@@ -621,7 +621,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -671,7 +671,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterIpNetwork(context.Background(), id).Execute()
@@ -688,7 +688,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -738,7 +738,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterOphid(context.Background(), id).Execute()
@@ -755,7 +755,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -805,7 +805,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterRecordType(context.Background(), id).Execute()
@@ -822,7 +822,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -872,7 +872,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterRegex(context.Background(), id).Execute()
@@ -889,7 +889,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -939,7 +939,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	r, err := apiClient.EtlFilterApiAPI.DeleteEtlFilterThreatClassProperty(context.Background(), id).Execute()
@@ -956,7 +956,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilter
 
-> EtlFilterListResponse ListEtlFilter(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterListResponse ListEtlFilter(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL filters defined for a given account
 
@@ -1479,6 +1479,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1502,7 +1506,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterFqdn
 
-> EtlFilterFqdnListResponse ListEtlFilterFqdn(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterFqdnListResponse ListEtlFilterFqdn(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL FQDN filters
 
@@ -1547,6 +1551,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1570,7 +1578,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterHostname
 
-> EtlFilterHostnameListResponse ListEtlFilterHostname(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterHostnameListResponse ListEtlFilterHostname(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL hostname filters
 
@@ -1615,6 +1623,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1638,7 +1650,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterIngress
 
-> EtlFilterListResponse ListEtlFilterIngress(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterListResponse ListEtlFilterIngress(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ingress ETL filters
 
@@ -1683,6 +1695,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1706,7 +1722,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterIpNetwork
 
-> EtlFilterIpNetworkListResponse ListEtlFilterIpNetwork(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterIpNetworkListResponse ListEtlFilterIpNetwork(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL IP network  filters
 
@@ -1751,6 +1767,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1774,7 +1794,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterLocalZones
 
-> EtlFilterLocalZonesListResponse ListEtlFilterLocalZones(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterLocalZonesListResponse ListEtlFilterLocalZones(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL Local Zone filters
 
@@ -1819,6 +1839,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1842,7 +1866,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterOphid
 
-> EtlFilterOphidListResponse ListEtlFilterOphid(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterOphidListResponse ListEtlFilterOphid(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL ophid filters
 
@@ -1887,6 +1911,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1910,7 +1938,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterRecordType
 
-> EtlFilterRecordTypeListResponse ListEtlFilterRecordType(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterRecordTypeListResponse ListEtlFilterRecordType(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL DNS Record Type filters
 
@@ -1955,6 +1983,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -1978,7 +2010,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterRegex
 
-> EtlFilterRegexListResponse ListEtlFilterRegex(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterRegexListResponse ListEtlFilterRegex(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL regex  filters
 
@@ -2023,6 +2055,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -2046,7 +2082,7 @@ Name | Type | Description  | Notes
 
 ## ListEtlFilterThreatClassProperty
 
-> EtlFilterThreatClassPropertyListResponse ListEtlFilterThreatClassProperty(ctx).Filter(filter).Fields(fields).Tfilter(tfilter).TorderBy(torderBy).Execute()
+> EtlFilterThreatClassPropertyListResponse ListEtlFilterThreatClassProperty(ctx).Filter(filter).Fields(fields).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Tfilter(tfilter).TorderBy(torderBy).Execute()
 
 List ETL Threat Class Property filters
 
@@ -2091,6 +2127,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter** | **string** |   A collection of response resources can be filtered by a logical expression string that includes JSON tag references to values in each resource, literal values, and logical operators. If a resource does not have the specified tag, its value is assumed to be null.  Literal values include numbers (integer and floating-point), and quoted (both single- or double-quoted) literal strings, and &#39;null&#39;. The following operators are commonly used in filter expressions:  |  Op   |  Description               |  |  --   |  -----------               |  |  &#x3D;&#x3D;   |  Equal                     |  |  !&#x3D;   |  Not Equal                 |  |  &gt;    |  Greater Than              |  |   &gt;&#x3D;  |  Greater Than or Equal To  |  |  &lt;    |  Less Than                 |  |  &lt;&#x3D;   |  Less Than or Equal To     |  |  and  |  Logical AND               |  |  ~    |  Matches Regex             |  |  !~   |  Does Not Match Regex      |  |  or   |  Logical OR                |  |  not  |  Logical NOT               |  |  ()   |  Groupping Operators       |         | 
 **fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**offset** | **int32** |   The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.          | 
+**limit** | **int32** |   The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.          | 
+**pageToken** | **string** |   The service-defined string used to identify a page of resources. A null value indicates the first page.          | 
+**orderBy** | **string** |   A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.         | 
 **tfilter** | **string** | This parameter is used for filtering by tags. | 
 **torderBy** | **string** | This parameter is used for sorting by tags. | 
 
@@ -2134,7 +2174,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterFqdn(context.Background(), id).Execute()
@@ -2153,7 +2193,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2204,7 +2244,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterHostname(context.Background(), id).Execute()
@@ -2223,7 +2263,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2274,7 +2314,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterIpNetwork(context.Background(), id).Execute()
@@ -2293,7 +2333,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2344,7 +2384,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterLocalZones(context.Background(), id).Execute()
@@ -2363,7 +2403,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2414,7 +2454,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterOphid(context.Background(), id).Execute()
@@ -2433,7 +2473,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2484,7 +2524,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterRecordType(context.Background(), id).Execute()
@@ -2503,7 +2543,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2554,7 +2594,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterRegex(context.Background(), id).Execute()
@@ -2573,7 +2613,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2624,7 +2664,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 
 	apiClient := cdc.NewAPIClient()
 	resp, r, err := apiClient.EtlFilterApiAPI.ReadEtlFilterThreatClassProperty(context.Background(), id).Execute()
@@ -2643,7 +2683,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2694,7 +2734,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterFqdn() // EtlFilterFqdn | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2714,7 +2754,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2765,7 +2805,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterHostname() // EtlFilterHostname | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2785,7 +2825,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2836,7 +2876,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterIpNetwork() // EtlFilterIpNetwork | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2856,7 +2896,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2907,7 +2947,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterOphid() // EtlFilterOphid | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2927,7 +2967,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -2978,7 +3018,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterRecordType() // EtlFilterRecordType | 
 
 	apiClient := cdc.NewAPIClient()
@@ -2998,7 +3038,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -3049,7 +3089,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterRegex() // EtlFilterRegex | 
 
 	apiClient := cdc.NewAPIClient()
@@ -3069,7 +3109,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 
@@ -3120,7 +3160,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | ETL Filter Identifier
+	id := int64(789) // int64 | ETL Filter Identifier
 	body := *cdc.NewEtlFilterThreatClassProperty() // EtlFilterThreatClassProperty | 
 
 	apiClient := cdc.NewAPIClient()
@@ -3140,7 +3180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ETL Filter Identifier | 
+**id** | **int64** | ETL Filter Identifier | 
 
 ### Other Parameters
 

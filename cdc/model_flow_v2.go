@@ -23,7 +23,7 @@ type FlowV2 struct {
 	// Resolved names of the on-prem hosts referenced by 'cdc_hosts'. Read-only; not filterable.
 	CdcHostNames []string `json:"cdc_host_names,omitempty"`
 	// Identifiers (ophids) of the on-prem hosts on which this flow is deployed.
-	CdcHosts []int32 `json:"cdc_hosts,omitempty"`
+	CdcHosts []int64 `json:"cdc_hosts,omitempty"`
 	// Resolved names of the CDC services referenced by 'cdc_services'. Read-only; not filterable.
 	CdcServiceNames []string `json:"cdc_service_names,omitempty"`
 	// Identifiers of the on-prem CDC services carrying this flow.
@@ -41,11 +41,11 @@ type FlowV2 struct {
 	// Resolved names of the ETL filters referenced by 'etl_filters'. Read-only; not filterable.
 	EtlFilterNames []string `json:"etl_filter_names,omitempty"`
 	// Identifiers of the ETL filters attached to this flow.
-	EtlFilters []int32 `json:"etl_filters,omitempty"`
+	EtlFilters []int64 `json:"etl_filters,omitempty"`
 	// Optional filter expression applied to the flow. Not filterable.
 	FilterExpression *string `json:"filter_expression,omitempty"`
 	// Numeric identifier of the flow.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// Human-readable name of the flow.
 	Name *string `json:"name,omitempty"`
 	// Named schedule option applied to the flow.
@@ -53,7 +53,7 @@ type FlowV2 struct {
 	// Optional cron-style schedule applied to script-based flows. Not filterable.
 	ScriptSchedule *string `json:"script_schedule,omitempty"`
 	// Numeric identifier of the source resource attached to this flow.
-	Source *int32 `json:"source,omitempty"`
+	Source *int64 `json:"source,omitempty"`
 	// Source data type identifiers selected on the source for this flow.
 	SourceDataTypes []string `json:"source_data_types,omitempty"`
 	// Resolved 'enabled' state of the referenced source. Read-only.
@@ -65,8 +65,8 @@ type FlowV2 struct {
 	// Resolved type of the source referenced by 'source' (e.g. bloxone, nios, schedule). Read-only; not filterable.
 	SourceType *string `json:"source_type,omitempty"`
 	// Live runtime status of the flow aggregated across all hosts on which it is deployed. Values are agent-emitted and are not part of a stable enum.
-	Status *FlowStatus                       `json:"status,omitempty"`
-	Tags   map[string]map[string]interface{} `json:"tags,omitempty"`
+	Status *FlowStatus            `json:"status,omitempty"`
+	Tags   map[string]interface{} `json:"tags,omitempty"`
 	// Category of the flow, derived from the underlying source type.
 	Type *string `json:"type,omitempty"`
 	// Timestamp at which the flow was last updated.
@@ -126,9 +126,9 @@ func (o *FlowV2) SetCdcHostNames(v []string) {
 }
 
 // GetCdcHosts returns the CdcHosts field value if set, zero value otherwise.
-func (o *FlowV2) GetCdcHosts() []int32 {
+func (o *FlowV2) GetCdcHosts() []int64 {
 	if o == nil || IsNil(o.CdcHosts) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.CdcHosts
@@ -136,7 +136,7 @@ func (o *FlowV2) GetCdcHosts() []int32 {
 
 // GetCdcHostsOk returns a tuple with the CdcHosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowV2) GetCdcHostsOk() ([]int32, bool) {
+func (o *FlowV2) GetCdcHostsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.CdcHosts) {
 		return nil, false
 	}
@@ -152,8 +152,8 @@ func (o *FlowV2) HasCdcHosts() bool {
 	return false
 }
 
-// SetCdcHosts gets a reference to the given []int32 and assigns it to the CdcHosts field.
-func (o *FlowV2) SetCdcHosts(v []int32) {
+// SetCdcHosts gets a reference to the given []int64 and assigns it to the CdcHosts field.
+func (o *FlowV2) SetCdcHosts(v []int64) {
 	o.CdcHosts = v
 }
 
@@ -414,9 +414,9 @@ func (o *FlowV2) SetEtlFilterNames(v []string) {
 }
 
 // GetEtlFilters returns the EtlFilters field value if set, zero value otherwise.
-func (o *FlowV2) GetEtlFilters() []int32 {
+func (o *FlowV2) GetEtlFilters() []int64 {
 	if o == nil || IsNil(o.EtlFilters) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.EtlFilters
@@ -424,7 +424,7 @@ func (o *FlowV2) GetEtlFilters() []int32 {
 
 // GetEtlFiltersOk returns a tuple with the EtlFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowV2) GetEtlFiltersOk() ([]int32, bool) {
+func (o *FlowV2) GetEtlFiltersOk() ([]int64, bool) {
 	if o == nil || IsNil(o.EtlFilters) {
 		return nil, false
 	}
@@ -440,8 +440,8 @@ func (o *FlowV2) HasEtlFilters() bool {
 	return false
 }
 
-// SetEtlFilters gets a reference to the given []int32 and assigns it to the EtlFilters field.
-func (o *FlowV2) SetEtlFilters(v []int32) {
+// SetEtlFilters gets a reference to the given []int64 and assigns it to the EtlFilters field.
+func (o *FlowV2) SetEtlFilters(v []int64) {
 	o.EtlFilters = v
 }
 
@@ -478,9 +478,9 @@ func (o *FlowV2) SetFilterExpression(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *FlowV2) GetId() int32 {
+func (o *FlowV2) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -488,7 +488,7 @@ func (o *FlowV2) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowV2) GetIdOk() (*int32, bool) {
+func (o *FlowV2) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -504,8 +504,8 @@ func (o *FlowV2) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *FlowV2) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *FlowV2) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -606,9 +606,9 @@ func (o *FlowV2) SetScriptSchedule(v string) {
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
-func (o *FlowV2) GetSource() int32 {
+func (o *FlowV2) GetSource() int64 {
 	if o == nil || IsNil(o.Source) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Source
@@ -616,7 +616,7 @@ func (o *FlowV2) GetSource() int32 {
 
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowV2) GetSourceOk() (*int32, bool) {
+func (o *FlowV2) GetSourceOk() (*int64, bool) {
 	if o == nil || IsNil(o.Source) {
 		return nil, false
 	}
@@ -632,8 +632,8 @@ func (o *FlowV2) HasSource() bool {
 	return false
 }
 
-// SetSource gets a reference to the given int32 and assigns it to the Source field.
-func (o *FlowV2) SetSource(v int32) {
+// SetSource gets a reference to the given int64 and assigns it to the Source field.
+func (o *FlowV2) SetSource(v int64) {
 	o.Source = &v
 }
 
@@ -830,9 +830,9 @@ func (o *FlowV2) SetStatus(v FlowStatus) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *FlowV2) GetTags() map[string]map[string]interface{} {
+func (o *FlowV2) GetTags() map[string]interface{} {
 	if o == nil || IsNil(o.Tags) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Tags
@@ -840,9 +840,9 @@ func (o *FlowV2) GetTags() map[string]map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlowV2) GetTagsOk() (map[string]map[string]interface{}, bool) {
+func (o *FlowV2) GetTagsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Tags) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Tags, true
 }
@@ -856,8 +856,8 @@ func (o *FlowV2) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given map[string]map[string]interface{} and assigns it to the Tags field.
-func (o *FlowV2) SetTags(v map[string]map[string]interface{}) {
+// SetTags gets a reference to the given map[string]interface{} and assigns it to the Tags field.
+func (o *FlowV2) SetTags(v map[string]interface{}) {
 	o.Tags = v
 }
 

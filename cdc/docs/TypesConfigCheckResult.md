@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalInfo** | Pointer to **string** | Provides more info about the potential problem. | [optional] 
 **ConfigCheckType** | Pointer to **string** | Service check type. | [optional] 
-**Grade** | Pointer to **int32** | Grade of the check result, scored between 1 - 3 where 3 is Optimal, 2 is Good, 1 is Average. | [optional] 
+**Grade** | Pointer to **int64** | Grade of the check result, scored between 1 - 3 where 3 is Optimal, 2 is Good, 1 is Average. | [optional] 
 **ResourceUri** | Pointer to **string** | URI of the resource that was checked. | [optional] 
 **ResultCode** | Pointer to **string** | The check result. | [optional] 
 
@@ -81,20 +81,20 @@ HasConfigCheckType returns a boolean if a field has been set.
 
 ### GetGrade
 
-`func (o *TypesConfigCheckResult) GetGrade() int32`
+`func (o *TypesConfigCheckResult) GetGrade() int64`
 
 GetGrade returns the Grade field if non-nil, zero value otherwise.
 
 ### GetGradeOk
 
-`func (o *TypesConfigCheckResult) GetGradeOk() (*int32, bool)`
+`func (o *TypesConfigCheckResult) GetGradeOk() (*int64, bool)`
 
 GetGradeOk returns a tuple with the Grade field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGrade
 
-`func (o *TypesConfigCheckResult) SetGrade(v int32)`
+`func (o *TypesConfigCheckResult) SetGrade(v int64)`
 
 SetGrade sets Grade field to given value.
 

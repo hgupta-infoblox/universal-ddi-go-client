@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
-**ProductId** | Pointer to **int32** |  | [optional] 
-**ScriptId** | Pointer to **int32** |  | [optional] 
+**ProductId** | Pointer to **int64** |  | [optional] 
+**ScriptId** | Pointer to **int64** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 
 ## Methods
@@ -55,20 +55,20 @@ HasCreatedAt returns a boolean if a field has been set.
 
 ### GetProductId
 
-`func (o *ApplicationsProductData) GetProductId() int32`
+`func (o *ApplicationsProductData) GetProductId() int64`
 
 GetProductId returns the ProductId field if non-nil, zero value otherwise.
 
 ### GetProductIdOk
 
-`func (o *ApplicationsProductData) GetProductIdOk() (*int32, bool)`
+`func (o *ApplicationsProductData) GetProductIdOk() (*int64, bool)`
 
 GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProductId
 
-`func (o *ApplicationsProductData) SetProductId(v int32)`
+`func (o *ApplicationsProductData) SetProductId(v int64)`
 
 SetProductId sets ProductId field to given value.
 
@@ -80,20 +80,20 @@ HasProductId returns a boolean if a field has been set.
 
 ### GetScriptId
 
-`func (o *ApplicationsProductData) GetScriptId() int32`
+`func (o *ApplicationsProductData) GetScriptId() int64`
 
 GetScriptId returns the ScriptId field if non-nil, zero value otherwise.
 
 ### GetScriptIdOk
 
-`func (o *ApplicationsProductData) GetScriptIdOk() (*int32, bool)`
+`func (o *ApplicationsProductData) GetScriptIdOk() (*int64, bool)`
 
 GetScriptIdOk returns a tuple with the ScriptId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScriptId
 
-`func (o *ApplicationsProductData) SetScriptId(v int32)`
+`func (o *ApplicationsProductData) SetScriptId(v int64)`
 
 SetScriptId sets ScriptId field to given value.
 

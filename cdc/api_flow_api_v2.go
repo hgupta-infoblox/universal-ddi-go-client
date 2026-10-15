@@ -57,7 +57,7 @@ type FlowApiV2API interface {
 		@param id Flow Identifier
 		@return FlowApiV2APIDeleteFlowDataV2Request
 	*/
-	DeleteFlowDataV2(ctx context.Context, id int32) FlowApiV2APIDeleteFlowDataV2Request
+	DeleteFlowDataV2(ctx context.Context, id int64) FlowApiV2APIDeleteFlowDataV2Request
 
 	// DeleteFlowDataV2Execute executes the request
 	DeleteFlowDataV2Execute(r FlowApiV2APIDeleteFlowDataV2Request) (*http.Response, error)
@@ -70,7 +70,7 @@ type FlowApiV2API interface {
 		@param id Flow Identifier
 		@return FlowApiV2APIDeleteFlowV2Request
 	*/
-	DeleteFlowV2(ctx context.Context, id int32) FlowApiV2APIDeleteFlowV2Request
+	DeleteFlowV2(ctx context.Context, id int64) FlowApiV2APIDeleteFlowV2Request
 
 	// DeleteFlowV2Execute executes the request
 	DeleteFlowV2Execute(r FlowApiV2APIDeleteFlowV2Request) (*http.Response, error)
@@ -133,7 +133,7 @@ type FlowApiV2API interface {
 		@param id Flow Identifier
 		@return FlowApiV2APIReadFlowDataV2Request
 	*/
-	ReadFlowDataV2(ctx context.Context, id int32) FlowApiV2APIReadFlowDataV2Request
+	ReadFlowDataV2(ctx context.Context, id int64) FlowApiV2APIReadFlowDataV2Request
 
 	// ReadFlowDataV2Execute executes the request
 	//  @return FlowDataReadResponseV2
@@ -147,7 +147,7 @@ type FlowApiV2API interface {
 		@param id Flow Identifier
 		@return FlowApiV2APIReadFlowV2Request
 	*/
-	ReadFlowV2(ctx context.Context, id int32) FlowApiV2APIReadFlowV2Request
+	ReadFlowV2(ctx context.Context, id int64) FlowApiV2APIReadFlowV2Request
 
 	// ReadFlowV2Execute executes the request
 	//  @return FlowReadResponseV2
@@ -174,7 +174,7 @@ type FlowApiV2API interface {
 		@param id Flow Identifier
 		@return FlowApiV2APIUpdateFlowDataV2Request
 	*/
-	UpdateFlowDataV2(ctx context.Context, id int32) FlowApiV2APIUpdateFlowDataV2Request
+	UpdateFlowDataV2(ctx context.Context, id int64) FlowApiV2APIUpdateFlowDataV2Request
 
 	// UpdateFlowDataV2Execute executes the request
 	//  @return FlowDataUpdateResponseV2
@@ -255,6 +255,16 @@ func (a *FlowApiV2APIService) CreateFlowDataV2Execute(r FlowApiV2APICreateFlowDa
 	localVarHTTPHeaderAccept := internal.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if len(a.Client.Cfg.DefaultTags) > 0 && r.body != nil {
+		if r.body.Tags == nil {
+			r.body.Tags = make(map[string]interface{})
+		}
+		for k, v := range a.Client.Cfg.DefaultTags {
+			if _, ok := r.body.Tags[k]; !ok {
+				r.body.Tags[k] = v
+			}
+		}
 	}
 	// body params
 	localVarPostBody = r.body
@@ -395,7 +405,7 @@ func (a *FlowApiV2APIService) CreateTestEventExecute(r FlowApiV2APICreateTestEve
 type FlowApiV2APIDeleteFlowDataV2Request struct {
 	ctx        context.Context
 	ApiService FlowApiV2API
-	id         int32
+	id         int64
 }
 
 func (r FlowApiV2APIDeleteFlowDataV2Request) Execute() (*http.Response, error) {
@@ -411,7 +421,7 @@ Use this method to delete a flow in data connector.
 	@param id Flow Identifier
 	@return FlowApiV2APIDeleteFlowDataV2Request
 */
-func (a *FlowApiV2APIService) DeleteFlowDataV2(ctx context.Context, id int32) FlowApiV2APIDeleteFlowDataV2Request {
+func (a *FlowApiV2APIService) DeleteFlowDataV2(ctx context.Context, id int64) FlowApiV2APIDeleteFlowDataV2Request {
 	return FlowApiV2APIDeleteFlowDataV2Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -484,7 +494,7 @@ func (a *FlowApiV2APIService) DeleteFlowDataV2Execute(r FlowApiV2APIDeleteFlowDa
 type FlowApiV2APIDeleteFlowV2Request struct {
 	ctx        context.Context
 	ApiService FlowApiV2API
-	id         int32
+	id         int64
 }
 
 func (r FlowApiV2APIDeleteFlowV2Request) Execute() (*http.Response, error) {
@@ -500,7 +510,7 @@ Deletes the flow identified by {id}. The underlying container configurations on 
 	@param id Flow Identifier
 	@return FlowApiV2APIDeleteFlowV2Request
 */
-func (a *FlowApiV2APIService) DeleteFlowV2(ctx context.Context, id int32) FlowApiV2APIDeleteFlowV2Request {
+func (a *FlowApiV2APIService) DeleteFlowV2(ctx context.Context, id int64) FlowApiV2APIDeleteFlowV2Request {
 	return FlowApiV2APIDeleteFlowV2Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -767,6 +777,10 @@ type FlowApiV2APIListFlowDataV2Request struct {
 	ApiService FlowApiV2API
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -780,6 +794,30 @@ func (r FlowApiV2APIListFlowDataV2Request) Filter(filter string) FlowApiV2APILis
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r FlowApiV2APIListFlowDataV2Request) Fields(fields string) FlowApiV2APIListFlowDataV2Request {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r FlowApiV2APIListFlowDataV2Request) Offset(offset int32) FlowApiV2APIListFlowDataV2Request {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r FlowApiV2APIListFlowDataV2Request) Limit(limit int32) FlowApiV2APIListFlowDataV2Request {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r FlowApiV2APIListFlowDataV2Request) PageToken(pageToken string) FlowApiV2APIListFlowDataV2Request {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r FlowApiV2APIListFlowDataV2Request) OrderBy(orderBy string) FlowApiV2APIListFlowDataV2Request {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -842,6 +880,18 @@ func (a *FlowApiV2APIService) ListFlowDataV2Execute(r FlowApiV2APIListFlowDataV2
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -900,6 +950,10 @@ type FlowApiV2APIListFlowV2Request struct {
 	ApiService FlowApiV2API
 	filter     *string
 	fields     *string
+	offset     *int32
+	limit      *int32
+	pageToken  *string
+	orderBy    *string
 	tfilter    *string
 	torderBy   *string
 }
@@ -913,6 +967,30 @@ func (r FlowApiV2APIListFlowV2Request) Filter(filter string) FlowApiV2APIListFlo
 // A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.
 func (r FlowApiV2APIListFlowV2Request) Fields(fields string) FlowApiV2APIListFlowV2Request {
 	r.fields = &fields
+	return r
+}
+
+// The integer index (zero-origin) of the offset into a collection of resources. If omitted or null the value is assumed to be &#39;0&#39;.
+func (r FlowApiV2APIListFlowV2Request) Offset(offset int32) FlowApiV2APIListFlowV2Request {
+	r.offset = &offset
+	return r
+}
+
+// The integer number of resources to be returned in the response. The service may impose maximum value. If omitted the service may impose a default value.
+func (r FlowApiV2APIListFlowV2Request) Limit(limit int32) FlowApiV2APIListFlowV2Request {
+	r.limit = &limit
+	return r
+}
+
+// The service-defined string used to identify a page of resources. A null value indicates the first page.
+func (r FlowApiV2APIListFlowV2Request) PageToken(pageToken string) FlowApiV2APIListFlowV2Request {
+	r.pageToken = &pageToken
+	return r
+}
+
+// A collection of response resources can be sorted by their JSON tags. For a &#39;flat&#39; resource, the tag name is straightforward. If sorting is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, its value is assumed to be null.)  Specify this parameter as a comma-separated list of JSON tag names. The sort direction can be specified by a suffix separated by whitespace before the tag name. The suffix &#39;asc&#39; sorts the data in ascending order. The suffix &#39;desc&#39; sorts the data in descending order. If no suffix is specified the data is sorted in ascending order.
+func (r FlowApiV2APIListFlowV2Request) OrderBy(orderBy string) FlowApiV2APIListFlowV2Request {
+	r.orderBy = &orderBy
 	return r
 }
 
@@ -975,6 +1053,18 @@ func (a *FlowApiV2APIService) ListFlowV2Execute(r FlowApiV2APIListFlowV2Request)
 	if r.fields != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_fields", r.fields, "")
 	}
+	if r.offset != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_offset", r.offset, "")
+	}
+	if r.limit != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_limit", r.limit, "")
+	}
+	if r.pageToken != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_page_token", r.pageToken, "")
+	}
+	if r.orderBy != nil {
+		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_order_by", r.orderBy, "")
+	}
 	if r.tfilter != nil {
 		internal.ParameterAddToHeaderOrQuery(localVarQueryParams, "_tfilter", r.tfilter, "")
 	}
@@ -1031,7 +1121,7 @@ func (a *FlowApiV2APIService) ListFlowV2Execute(r FlowApiV2APIListFlowV2Request)
 type FlowApiV2APIReadFlowDataV2Request struct {
 	ctx        context.Context
 	ApiService FlowApiV2API
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -1054,7 +1144,7 @@ Use this method to retrieve a flow configuration in data connector.
 	@param id Flow Identifier
 	@return FlowApiV2APIReadFlowDataV2Request
 */
-func (a *FlowApiV2APIService) ReadFlowDataV2(ctx context.Context, id int32) FlowApiV2APIReadFlowDataV2Request {
+func (a *FlowApiV2APIService) ReadFlowDataV2(ctx context.Context, id int64) FlowApiV2APIReadFlowDataV2Request {
 	return FlowApiV2APIReadFlowDataV2Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -1138,7 +1228,7 @@ func (a *FlowApiV2APIService) ReadFlowDataV2Execute(r FlowApiV2APIReadFlowDataV2
 type FlowApiV2APIReadFlowV2Request struct {
 	ctx        context.Context
 	ApiService FlowApiV2API
-	id         int32
+	id         int64
 	fields     *string
 }
 
@@ -1161,7 +1251,7 @@ Returns the flow identified by {id} in a denormalized 'display' shape: source/de
 	@param id Flow Identifier
 	@return FlowApiV2APIReadFlowV2Request
 */
-func (a *FlowApiV2APIService) ReadFlowV2(ctx context.Context, id int32) FlowApiV2APIReadFlowV2Request {
+func (a *FlowApiV2APIService) ReadFlowV2(ctx context.Context, id int64) FlowApiV2APIReadFlowV2Request {
 	return FlowApiV2APIReadFlowV2Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -1347,7 +1437,7 @@ func (a *FlowApiV2APIService) ReadTestEventParametersExecute(r FlowApiV2APIReadT
 type FlowApiV2APIUpdateFlowDataV2Request struct {
 	ctx        context.Context
 	ApiService FlowApiV2API
-	id         int32
+	id         int64
 	body       *FlowDataV2
 }
 
@@ -1369,7 +1459,7 @@ Use this method to update a flow in data connector.
 	@param id Flow Identifier
 	@return FlowApiV2APIUpdateFlowDataV2Request
 */
-func (a *FlowApiV2APIService) UpdateFlowDataV2(ctx context.Context, id int32) FlowApiV2APIUpdateFlowDataV2Request {
+func (a *FlowApiV2APIService) UpdateFlowDataV2(ctx context.Context, id int64) FlowApiV2APIUpdateFlowDataV2Request {
 	return FlowApiV2APIUpdateFlowDataV2Request{
 		ApiService: a,
 		ctx:        ctx,
@@ -1419,6 +1509,16 @@ func (a *FlowApiV2APIService) UpdateFlowDataV2Execute(r FlowApiV2APIUpdateFlowDa
 	localVarHTTPHeaderAccept := internal.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if len(a.Client.Cfg.DefaultTags) > 0 && r.body != nil {
+		if r.body.Tags == nil {
+			r.body.Tags = make(map[string]interface{})
+		}
+		for k, v := range a.Client.Cfg.DefaultTags {
+			if _, ok := r.body.Tags[k]; !ok {
+				r.body.Tags[k] = v
+			}
+		}
 	}
 	// body params
 	localVarPostBody = r.body

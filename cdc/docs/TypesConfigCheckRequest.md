@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountId** | Pointer to **int32** |  | [optional] 
+**AccountId** | Pointer to **int64** |  | [optional] 
 **ConfigCheckType** | Pointer to **string** |  | [optional] 
 **Notify** | Pointer to **bool** | Caller sets to false if wants to suppress notification. | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccountId
 
-`func (o *TypesConfigCheckRequest) GetAccountId() int32`
+`func (o *TypesConfigCheckRequest) GetAccountId() int64`
 
 GetAccountId returns the AccountId field if non-nil, zero value otherwise.
 
 ### GetAccountIdOk
 
-`func (o *TypesConfigCheckRequest) GetAccountIdOk() (*int32, bool)`
+`func (o *TypesConfigCheckRequest) GetAccountIdOk() (*int64, bool)`
 
 GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccountId
 
-`func (o *TypesConfigCheckRequest) SetAccountId(v int32)`
+`func (o *TypesConfigCheckRequest) SetAccountId(v int64)`
 
 SetAccountId sets AccountId field to given value.
 
