@@ -3479,6 +3479,9 @@ paths:
       summary: Create an ETL DNS Record Type filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_record_type
+      x-tf-datasource: cdc_etl_filter_record_types
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/record_type/{id}:
     delete:
@@ -3562,6 +3565,7 @@ paths:
       summary: Update an ETL DNS Record Type filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/regex:
     delete:
@@ -4448,6 +4452,9 @@ paths:
       summary: Create a NIOS source
       tags:
       - SourceApi
+      x-tf-resource: cdc_source_nios
+      x-tf-datasource: cdc_source_nios_list
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/sources/nios/{id}:
     delete:
@@ -4529,6 +4536,7 @@ paths:
       summary: Update a NIOS source
       tags:
       - SourceApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/sources/schedule:
     get:
