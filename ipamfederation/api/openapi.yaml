@@ -2141,10 +2141,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -2188,10 +2186,8 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
@@ -2224,10 +2220,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -2311,10 +2305,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -2343,10 +2335,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -2623,10 +2613,8 @@ components:
         created_at: 2000-01-23T04:56:07.000+00:00
         utilization: 2
         utilization_v6:
-          total:
-            raw_value: raw_value
-          used:
-            raw_value: raw_value
+          total: total
+          used: used
         tags: "{}"
         federated_pool_id: federated_pool_id
         protocol: protocol
@@ -2753,10 +2741,8 @@ components:
         description: description
         utilization: 14
         utilization_v6:
-          total:
-            raw_value: raw_value
-          used:
-            raw_value: raw_value
+          total: total
+          used: used
         tags: "{}"
         protocol: protocol
         updated_at: 2000-01-23T04:56:07.000+00:00
@@ -2866,10 +2852,8 @@ components:
         id: id
         region: region
         utilization_v6:
-          total:
-            raw_value: raw_value
-          used:
-            raw_value: raw_value
+          total: total
+          used: used
         allocation_v4:
           forward_looking_delegation: 1
           reserved: 5
@@ -3010,14 +2994,8 @@ components:
       title: ForwardLookingDelegation
       type: object
     federationInteger128:
-      example:
-        raw_value: raw_value
-      properties:
-        raw_value:
-          format: byte
-          pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
-          type: string
-      type: object
+      format: byte
+      type: string
     federationListDelegationResponse:
       description: The response format to retrieve __Delegation__ objects.
       example:
@@ -3081,10 +3059,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3113,10 +3089,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3167,10 +3141,8 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
@@ -3197,10 +3169,8 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
@@ -3242,10 +3212,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -3263,10 +3231,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -3335,10 +3301,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3367,10 +3331,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -4022,10 +3984,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -4069,10 +4029,8 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
@@ -4105,10 +4063,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -4353,10 +4309,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -4400,10 +4354,8 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
@@ -4436,10 +4388,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -4525,15 +4475,15 @@ components:
     federationUtilizationV6:
       description: The __UtilizationV6__ represents IPv6 utilization metrics.
       example:
-        total:
-          raw_value: raw_value
-        used:
-          raw_value: raw_value
+        total: total
+        used: used
       properties:
         total:
-          $ref: '#/components/schemas/federationInteger128'
+          format: byte
+          type: string
         used:
-          $ref: '#/components/schemas/federationInteger128'
+          format: byte
+          type: string
       title: UtilizationV6
       type: object
   securitySchemes:
