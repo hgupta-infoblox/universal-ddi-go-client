@@ -144,6 +144,9 @@ paths:
       summary: Create application configurations
       tags:
       - ApplicationApi
+      x-tf-resource: cdc_application
+      x-tf-datasource: cdc_applications
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/applications/{id}:
     delete:
@@ -244,6 +247,7 @@ paths:
       summary: Update application configurations
       tags:
       - ApplicationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/cdcs/hosts:
     get:
