@@ -32,8 +32,8 @@ type NIJobConfigServiceAPI interface {
 	Create(ctx context.Context, id string) NIJobConfigServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreateNIJobConfigResponse
-	CreateExecute(r NIJobConfigServiceAPICreateRequest) (*ControllerCreateNIJobConfigResponse, *http.Response, error)
+	//  @return CreateNIJobConfigResponse
+	CreateExecute(r NIJobConfigServiceAPICreateRequest) (*CreateNIJobConfigResponse, *http.Response, error)
 	/*
 		List List Network Insight JobConfig objects. Use this method to retrieve list of Network Insight JobConfig objects.
 
@@ -43,8 +43,8 @@ type NIJobConfigServiceAPI interface {
 	List(ctx context.Context) NIJobConfigServiceAPIListRequest
 
 	// ListExecute executes the request
-	//  @return ControllerListNIJobConfigResponse
-	ListExecute(r NIJobConfigServiceAPIListRequest) (*ControllerListNIJobConfigResponse, *http.Response, error)
+	//  @return ListNIJobConfigResponse
+	ListExecute(r NIJobConfigServiceAPIListRequest) (*ListNIJobConfigResponse, *http.Response, error)
 	/*
 		Read Read the  Network Insight JobConfig object. Use this method to read the  Network Insight JobConfig object.
 
@@ -55,8 +55,8 @@ type NIJobConfigServiceAPI interface {
 	Read(ctx context.Context, id string) NIJobConfigServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadNIJobConfigResponse
-	ReadExecute(r NIJobConfigServiceAPIReadRequest) (*ControllerReadNIJobConfigResponse, *http.Response, error)
+	//  @return ReadNIJobConfigResponse
+	ReadExecute(r NIJobConfigServiceAPIReadRequest) (*ReadNIJobConfigResponse, *http.Response, error)
 	/*
 		Update Update the Network Insight JobConfig object. Use this method to update the Network Insight JobConfig object.
 
@@ -67,8 +67,8 @@ type NIJobConfigServiceAPI interface {
 	Update(ctx context.Context, id string) NIJobConfigServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdateNIJobConfigResponse
-	UpdateExecute(r NIJobConfigServiceAPIUpdateRequest) (*ControllerUpdateNIJobConfigResponse, *http.Response, error)
+	//  @return UpdateNIJobConfigResponse
+	UpdateExecute(r NIJobConfigServiceAPIUpdateRequest) (*UpdateNIJobConfigResponse, *http.Response, error)
 }
 
 // NIJobConfigServiceAPIService NIJobConfigServiceAPI service
@@ -78,15 +78,15 @@ type NIJobConfigServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService NIJobConfigServiceAPI
 	id         string
-	body       *ControllerNIJobConfig
+	body       *NIJobConfig
 }
 
-func (r NIJobConfigServiceAPICreateRequest) Body(body ControllerNIJobConfig) NIJobConfigServiceAPICreateRequest {
+func (r NIJobConfigServiceAPICreateRequest) Body(body NIJobConfig) NIJobConfigServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r NIJobConfigServiceAPICreateRequest) Execute() (*ControllerCreateNIJobConfigResponse, *http.Response, error) {
+func (r NIJobConfigServiceAPICreateRequest) Execute() (*CreateNIJobConfigResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -107,13 +107,13 @@ func (a *NIJobConfigServiceAPIService) Create(ctx context.Context, id string) NI
 
 // Execute executes the request
 //
-//	@return ControllerCreateNIJobConfigResponse
-func (a *NIJobConfigServiceAPIService) CreateExecute(r NIJobConfigServiceAPICreateRequest) (*ControllerCreateNIJobConfigResponse, *http.Response, error) {
+//	@return CreateNIJobConfigResponse
+func (a *NIJobConfigServiceAPIService) CreateExecute(r NIJobConfigServiceAPICreateRequest) (*CreateNIJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreateNIJobConfigResponse
+		localVarReturnValue *CreateNIJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIJobConfigServiceAPIService.Create")
@@ -227,7 +227,7 @@ func (r NIJobConfigServiceAPIListRequest) OrderBy(orderBy string) NIJobConfigSer
 	return r
 }
 
-func (r NIJobConfigServiceAPIListRequest) Execute() (*ControllerListNIJobConfigResponse, *http.Response, error) {
+func (r NIJobConfigServiceAPIListRequest) Execute() (*ListNIJobConfigResponse, *http.Response, error) {
 	return r.ApiService.ListExecute(r)
 }
 
@@ -246,13 +246,13 @@ func (a *NIJobConfigServiceAPIService) List(ctx context.Context) NIJobConfigServ
 
 // Execute executes the request
 //
-//	@return ControllerListNIJobConfigResponse
-func (a *NIJobConfigServiceAPIService) ListExecute(r NIJobConfigServiceAPIListRequest) (*ControllerListNIJobConfigResponse, *http.Response, error) {
+//	@return ListNIJobConfigResponse
+func (a *NIJobConfigServiceAPIService) ListExecute(r NIJobConfigServiceAPIListRequest) (*ListNIJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListNIJobConfigResponse
+		localVarReturnValue *ListNIJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIJobConfigServiceAPIService.List")
@@ -344,7 +344,7 @@ func (r NIJobConfigServiceAPIReadRequest) Fields(fields string) NIJobConfigServi
 	return r
 }
 
-func (r NIJobConfigServiceAPIReadRequest) Execute() (*ControllerReadNIJobConfigResponse, *http.Response, error) {
+func (r NIJobConfigServiceAPIReadRequest) Execute() (*ReadNIJobConfigResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -365,13 +365,13 @@ func (a *NIJobConfigServiceAPIService) Read(ctx context.Context, id string) NIJo
 
 // Execute executes the request
 //
-//	@return ControllerReadNIJobConfigResponse
-func (a *NIJobConfigServiceAPIService) ReadExecute(r NIJobConfigServiceAPIReadRequest) (*ControllerReadNIJobConfigResponse, *http.Response, error) {
+//	@return ReadNIJobConfigResponse
+func (a *NIJobConfigServiceAPIService) ReadExecute(r NIJobConfigServiceAPIReadRequest) (*ReadNIJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadNIJobConfigResponse
+		localVarReturnValue *ReadNIJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIJobConfigServiceAPIService.Read")
@@ -440,15 +440,15 @@ type NIJobConfigServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService NIJobConfigServiceAPI
 	id         string
-	body       *ControllerNIJobConfig
+	body       *NIJobConfig
 }
 
-func (r NIJobConfigServiceAPIUpdateRequest) Body(body ControllerNIJobConfig) NIJobConfigServiceAPIUpdateRequest {
+func (r NIJobConfigServiceAPIUpdateRequest) Body(body NIJobConfig) NIJobConfigServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r NIJobConfigServiceAPIUpdateRequest) Execute() (*ControllerUpdateNIJobConfigResponse, *http.Response, error) {
+func (r NIJobConfigServiceAPIUpdateRequest) Execute() (*UpdateNIJobConfigResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -469,13 +469,13 @@ func (a *NIJobConfigServiceAPIService) Update(ctx context.Context, id string) NI
 
 // Execute executes the request
 //
-//	@return ControllerUpdateNIJobConfigResponse
-func (a *NIJobConfigServiceAPIService) UpdateExecute(r NIJobConfigServiceAPIUpdateRequest) (*ControllerUpdateNIJobConfigResponse, *http.Response, error) {
+//	@return UpdateNIJobConfigResponse
+func (a *NIJobConfigServiceAPIService) UpdateExecute(r NIJobConfigServiceAPIUpdateRequest) (*UpdateNIJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdateNIJobConfigResponse
+		localVarReturnValue *UpdateNIJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIJobConfigServiceAPIService.Update")

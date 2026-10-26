@@ -32,8 +32,8 @@ type JobConfigServiceAPI interface {
 	Create(ctx context.Context, id string) JobConfigServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreateJobConfigResponse
-	CreateExecute(r JobConfigServiceAPICreateRequest) (*ControllerCreateJobConfigResponse, *http.Response, error)
+	//  @return CreateJobConfigResponse
+	CreateExecute(r JobConfigServiceAPICreateRequest) (*CreateJobConfigResponse, *http.Response, error)
 	/*
 		List List JobConfig objects. Use this method to retrieve list of JobConfig objects.
 
@@ -43,8 +43,8 @@ type JobConfigServiceAPI interface {
 	List(ctx context.Context) JobConfigServiceAPIListRequest
 
 	// ListExecute executes the request
-	//  @return ControllerListJobConfigResponse
-	ListExecute(r JobConfigServiceAPIListRequest) (*ControllerListJobConfigResponse, *http.Response, error)
+	//  @return ListJobConfigResponse
+	ListExecute(r JobConfigServiceAPIListRequest) (*ListJobConfigResponse, *http.Response, error)
 	/*
 		Read Read the JobConfig object. Use this method to read the JobConfig object.
 
@@ -55,8 +55,8 @@ type JobConfigServiceAPI interface {
 	Read(ctx context.Context, id string) JobConfigServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadJobConfigResponse
-	ReadExecute(r JobConfigServiceAPIReadRequest) (*ControllerReadJobConfigResponse, *http.Response, error)
+	//  @return ReadJobConfigResponse
+	ReadExecute(r JobConfigServiceAPIReadRequest) (*ReadJobConfigResponse, *http.Response, error)
 	/*
 		Update Update the JobConfig object. Use this method to update the JobConfig object.
 
@@ -67,8 +67,8 @@ type JobConfigServiceAPI interface {
 	Update(ctx context.Context, id string) JobConfigServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdateJobConfigResponse
-	UpdateExecute(r JobConfigServiceAPIUpdateRequest) (*ControllerUpdateJobConfigResponse, *http.Response, error)
+	//  @return UpdateJobConfigResponse
+	UpdateExecute(r JobConfigServiceAPIUpdateRequest) (*UpdateJobConfigResponse, *http.Response, error)
 }
 
 // JobConfigServiceAPIService JobConfigServiceAPI service
@@ -78,15 +78,15 @@ type JobConfigServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService JobConfigServiceAPI
 	id         string
-	body       *ControllerJobConfig
+	body       *JobConfig
 }
 
-func (r JobConfigServiceAPICreateRequest) Body(body ControllerJobConfig) JobConfigServiceAPICreateRequest {
+func (r JobConfigServiceAPICreateRequest) Body(body JobConfig) JobConfigServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r JobConfigServiceAPICreateRequest) Execute() (*ControllerCreateJobConfigResponse, *http.Response, error) {
+func (r JobConfigServiceAPICreateRequest) Execute() (*CreateJobConfigResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -107,13 +107,13 @@ func (a *JobConfigServiceAPIService) Create(ctx context.Context, id string) JobC
 
 // Execute executes the request
 //
-//	@return ControllerCreateJobConfigResponse
-func (a *JobConfigServiceAPIService) CreateExecute(r JobConfigServiceAPICreateRequest) (*ControllerCreateJobConfigResponse, *http.Response, error) {
+//	@return CreateJobConfigResponse
+func (a *JobConfigServiceAPIService) CreateExecute(r JobConfigServiceAPICreateRequest) (*CreateJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreateJobConfigResponse
+		localVarReturnValue *CreateJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "JobConfigServiceAPIService.Create")
@@ -227,7 +227,7 @@ func (r JobConfigServiceAPIListRequest) OrderBy(orderBy string) JobConfigService
 	return r
 }
 
-func (r JobConfigServiceAPIListRequest) Execute() (*ControllerListJobConfigResponse, *http.Response, error) {
+func (r JobConfigServiceAPIListRequest) Execute() (*ListJobConfigResponse, *http.Response, error) {
 	return r.ApiService.ListExecute(r)
 }
 
@@ -246,13 +246,13 @@ func (a *JobConfigServiceAPIService) List(ctx context.Context) JobConfigServiceA
 
 // Execute executes the request
 //
-//	@return ControllerListJobConfigResponse
-func (a *JobConfigServiceAPIService) ListExecute(r JobConfigServiceAPIListRequest) (*ControllerListJobConfigResponse, *http.Response, error) {
+//	@return ListJobConfigResponse
+func (a *JobConfigServiceAPIService) ListExecute(r JobConfigServiceAPIListRequest) (*ListJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListJobConfigResponse
+		localVarReturnValue *ListJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "JobConfigServiceAPIService.List")
@@ -344,7 +344,7 @@ func (r JobConfigServiceAPIReadRequest) Fields(fields string) JobConfigServiceAP
 	return r
 }
 
-func (r JobConfigServiceAPIReadRequest) Execute() (*ControllerReadJobConfigResponse, *http.Response, error) {
+func (r JobConfigServiceAPIReadRequest) Execute() (*ReadJobConfigResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -365,13 +365,13 @@ func (a *JobConfigServiceAPIService) Read(ctx context.Context, id string) JobCon
 
 // Execute executes the request
 //
-//	@return ControllerReadJobConfigResponse
-func (a *JobConfigServiceAPIService) ReadExecute(r JobConfigServiceAPIReadRequest) (*ControllerReadJobConfigResponse, *http.Response, error) {
+//	@return ReadJobConfigResponse
+func (a *JobConfigServiceAPIService) ReadExecute(r JobConfigServiceAPIReadRequest) (*ReadJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadJobConfigResponse
+		localVarReturnValue *ReadJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "JobConfigServiceAPIService.Read")
@@ -440,15 +440,15 @@ type JobConfigServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService JobConfigServiceAPI
 	id         string
-	body       *ControllerJobConfig
+	body       *JobConfig
 }
 
-func (r JobConfigServiceAPIUpdateRequest) Body(body ControllerJobConfig) JobConfigServiceAPIUpdateRequest {
+func (r JobConfigServiceAPIUpdateRequest) Body(body JobConfig) JobConfigServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r JobConfigServiceAPIUpdateRequest) Execute() (*ControllerUpdateJobConfigResponse, *http.Response, error) {
+func (r JobConfigServiceAPIUpdateRequest) Execute() (*UpdateJobConfigResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -469,13 +469,13 @@ func (a *JobConfigServiceAPIService) Update(ctx context.Context, id string) JobC
 
 // Execute executes the request
 //
-//	@return ControllerUpdateJobConfigResponse
-func (a *JobConfigServiceAPIService) UpdateExecute(r JobConfigServiceAPIUpdateRequest) (*ControllerUpdateJobConfigResponse, *http.Response, error) {
+//	@return UpdateJobConfigResponse
+func (a *JobConfigServiceAPIService) UpdateExecute(r JobConfigServiceAPIUpdateRequest) (*UpdateJobConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdateJobConfigResponse
+		localVarReturnValue *UpdateJobConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "JobConfigServiceAPIService.Update")

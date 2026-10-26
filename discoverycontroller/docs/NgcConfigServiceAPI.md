@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreateNgcConfigResponse Create(ctx, id).Body(body).Execute()
+> CreateNgcConfigResponse Create(ctx, id).Body(body).Execute()
 
 Create the NgcConfig object. Use this method to create the NgcConfig object.
 
@@ -32,7 +32,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerNgcConfig() // ControllerNgcConfig | 
+	body := *discoverycontroller.NewNgcConfig() // NgcConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.NgcConfigServiceAPI.Create(context.Background(), id).Body(body).Execute()
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NgcConfigServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreateNgcConfigResponse
+	// response from `Create`: CreateNgcConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NgcConfigServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Other parameters are passed through a pointer to a `NgcConfigServiceAPICreateReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerNgcConfig**](ControllerNgcConfig.md) |  | 
+**body** | [**NgcConfig**](NgcConfig.md) |  | 
 
 ### Return type
 
-[**ControllerCreateNgcConfigResponse**](ControllerCreateNgcConfigResponse.md)
+[**CreateNgcConfigResponse**](CreateNgcConfigResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> ControllerListNgcConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
+> ListNgcConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
 
 List NgcConfig objects. Use this method to retrieve list of NgcConfig objects.
 
@@ -107,7 +107,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NgcConfigServiceAPI.List``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ControllerListNgcConfigResponse
+	// response from `List`: ListNgcConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NgcConfigServiceAPI.List`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListNgcConfigResponse**](ControllerListNgcConfigResponse.md)
+[**ListNgcConfigResponse**](ListNgcConfigResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadNgcConfigResponse Read(ctx, id).Fields(fields).Execute()
+> ReadNgcConfigResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the NgcConfig object. Use this method to read the NgcConfig object.
 
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NgcConfigServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadNgcConfigResponse
+	// response from `Read`: ReadNgcConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NgcConfigServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadNgcConfigResponse**](ControllerReadNgcConfigResponse.md)
+[**ReadNgcConfigResponse**](ReadNgcConfigResponse.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdateNgcConfigResponse Update(ctx, id).Body(body).Execute()
+> UpdateNgcConfigResponse Update(ctx, id).Body(body).Execute()
 
 Update the NgcConfig object. Use this method to update the NgcConfig object.
 
@@ -237,7 +237,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerNgcConfig() // ControllerNgcConfig | 
+	body := *discoverycontroller.NewNgcConfig() // NgcConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.NgcConfigServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -245,7 +245,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NgcConfigServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdateNgcConfigResponse
+	// response from `Update`: UpdateNgcConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NgcConfigServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -265,11 +265,11 @@ Other parameters are passed through a pointer to a `NgcConfigServiceAPIUpdateReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerNgcConfig**](ControllerNgcConfig.md) |  | 
+**body** | [**NgcConfig**](NgcConfig.md) |  | 
 
 ### Return type
 
-[**ControllerUpdateNgcConfigResponse**](ControllerUpdateNgcConfigResponse.md)
+[**UpdateNgcConfigResponse**](UpdateNgcConfigResponse.md)
 
 ### Authorization
 

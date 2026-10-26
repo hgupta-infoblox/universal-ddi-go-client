@@ -1423,7 +1423,7 @@ components:
           description: |-
             The service may optionally include the offset of the next page of resources.
             A null value indicates no more pages.
-          format: int32
+          format: int64
           type: integer
         page_token:
           description: |-
@@ -1434,7 +1434,7 @@ components:
         size:
           description: The service may optionally include the total number of resources
             being paged.
-          format: int32
+          format: int64
           type: integer
       type: object
     controllerAdvancedSettings:
@@ -1456,15 +1456,15 @@ components:
       properties:
         arp_aggregate_limit:
           description: Number of MAC addresses.
-          format: int32
+          format: int64
           type: integer
         arp_cache_refresh_period:
           description: ARP Cache Refresh in seconds or minutes.
-          format: int32
+          format: int64
           type: integer
         device_expiration_days:
           description: Days after which expired device data needs to be purged.
-          format: int32
+          format: int64
           type: integer
         dns_lookup_options:
           description: |-
@@ -1477,23 +1477,23 @@ components:
         dns_lookup_throttle:
           description: DNS Lookup Throttle. This is the value in percentage that throttles
             the traffic on the DNS server.
-          format: int32
+          format: int64
           type: integer
         end_host_expiration_days:
           description: Days after which expired assets data needs to be purged.
-          format: int32
+          format: int64
           type: integer
         ping_retries:
           description: Ping Sweep Attempts.
-          format: int32
+          format: int64
           type: integer
         ping_sweep_frequency:
           description: Ping Sweep Frequency in days or hours.
-          format: int32
+          format: int64
           type: integer
         ping_timeout:
           description: Ping Sweep timeout limit in seconds.
-          format: int32
+          format: int64
           type: integer
         port_scanning_enabled:
           description: |-
@@ -1506,7 +1506,7 @@ components:
           type: boolean
         route_limit:
           description: number of routes that can be configured in the discovery.
-          format: int32
+          format: int64
           type: integer
         snmp_discovery_version:
           description: |-
@@ -1552,7 +1552,7 @@ components:
         creds:
           $ref: '#/components/schemas/controllerKeyStoreCredential'
         priority:
-          format: int32
+          format: int64
           type: integer
       type: object
     controllerConfiguration:
@@ -1754,7 +1754,7 @@ components:
                 cli_collection: true
                 arp_collection_priority: arp_collection_priority
                 route_collection_priority: route_collection_priority
-                polling_frequency_modifier: 4.145608
+                polling_frequency_modifier: 4
                 auto_arp_refresh: true
                 smart_subnet_ping_sweep: true
                 snmp_collection: true
@@ -2458,7 +2458,7 @@ components:
                 cli_collection: true
                 arp_collection_priority: arp_collection_priority
                 route_collection_priority: route_collection_priority
-                polling_frequency_modifier: 4.145608
+                polling_frequency_modifier: 4
                 auto_arp_refresh: true
                 smart_subnet_ping_sweep: true
                 snmp_collection: true
@@ -2575,7 +2575,7 @@ components:
                 cli_collection: true
                 arp_collection_priority: arp_collection_priority
                 route_collection_priority: route_collection_priority
-                polling_frequency_modifier: 4.145608
+                polling_frequency_modifier: 4
                 auto_arp_refresh: true
                 smart_subnet_ping_sweep: true
                 snmp_collection: true
@@ -3750,7 +3750,7 @@ components:
               cli_collection: true
               arp_collection_priority: arp_collection_priority
               route_collection_priority: route_collection_priority
-              polling_frequency_modifier: 4.145608
+              polling_frequency_modifier: 4
               auto_arp_refresh: true
               smart_subnet_ping_sweep: true
               snmp_collection: true
@@ -3905,7 +3905,7 @@ components:
             cli_collection: true
             arp_collection_priority: arp_collection_priority
             route_collection_priority: route_collection_priority
-            polling_frequency_modifier: 4.145608
+            polling_frequency_modifier: 4
             auto_arp_refresh: true
             smart_subnet_ping_sweep: true
             snmp_collection: true
@@ -3983,7 +3983,7 @@ components:
         cli_collection: true
         arp_collection_priority: arp_collection_priority
         route_collection_priority: route_collection_priority
-        polling_frequency_modifier: 4.145608
+        polling_frequency_modifier: 4
         auto_arp_refresh: true
         smart_subnet_ping_sweep: true
         snmp_collection: true
@@ -4007,9 +4007,9 @@ components:
           format: boolean
           type: boolean
         polling_frequency_modifier:
-          format: float
+          format: int64
           title: Polling Frequency will be multiplied by this number
-          type: number
+          type: integer
         route_collection_priority:
           description: Instructs whether to perform Route collection using SNMP or
             CLI.
@@ -4157,15 +4157,15 @@ components:
         end_time:
           description: The time of the day in minutes that indicates the end of the
             blackout window.
-          format: int32
+          format: int64
           type: integer
         start_time:
           description: The time of the day in minutes that indicates the start of
             the blackout window.
-          format: int32
+          format: int64
           type: integer
         weekday:
-          format: int32
+          format: int64
           title: "The day on which the schedule window will be active (Sunday (0),\
             \ Monday(1)... Saturday (6)"
           type: integer
@@ -4181,7 +4181,7 @@ components:
           cli_collection: true
           arp_collection_priority: arp_collection_priority
           route_collection_priority: route_collection_priority
-          polling_frequency_modifier: 4.145608
+          polling_frequency_modifier: 4
           auto_arp_refresh: true
           smart_subnet_ping_sweep: true
           snmp_collection: true
@@ -4313,7 +4313,7 @@ components:
                 cli_collection: true
                 arp_collection_priority: arp_collection_priority
                 route_collection_priority: route_collection_priority
-                polling_frequency_modifier: 4.145608
+                polling_frequency_modifier: 4
                 auto_arp_refresh: true
                 smart_subnet_ping_sweep: true
                 snmp_collection: true
@@ -4698,7 +4698,7 @@ components:
           format: boolean
           type: boolean
         end_host_polling_interval_minutes:
-          format: int32
+          format: int64
           type: integer
         sdn_discovery:
           format: boolean
@@ -4721,7 +4721,7 @@ components:
         creds:
           $ref: '#/components/schemas/controllerKeyStoreCredential'
         priority:
-          format: int32
+          format: int64
           type: integer
       type: object
     controllerSNMPV3Credentials:
@@ -4741,7 +4741,7 @@ components:
         creds:
           $ref: '#/components/schemas/controllerKeyStoreCredential'
         priority:
-          format: int32
+          format: int64
           type: integer
       type: object
     controllerScanDomain:
@@ -4887,7 +4887,7 @@ components:
         enabled: true
       properties:
         dom:
-          format: int32
+          format: int64
           title: day of month for "monthly" type
           type: integer
         dow:
@@ -4902,7 +4902,7 @@ components:
           format: boolean
           type: boolean
         every:
-          format: int32
+          format: int64
           title: "schedule every x months for \"monthly\" type, 1 means every month"
           type: integer
         time:
@@ -4937,7 +4937,7 @@ components:
         service: service
       properties:
         port:
-          format: int32
+          format: int64
           type: integer
         protocol:
           description: Service protocol correspond to one of TCP or UDP.
@@ -4956,7 +4956,7 @@ components:
           type: boolean
         polling_interval:
           description: Polling interval in minutes.
-          format: int32
+          format: int64
           type: integer
         port_control_preference:
           description: Port control preference corresponds to one of SNMP or CLI.
@@ -5084,7 +5084,7 @@ components:
                 cli_collection: true
                 arp_collection_priority: arp_collection_priority
                 route_collection_priority: route_collection_priority
-                polling_frequency_modifier: 4.145608
+                polling_frequency_modifier: 4
                 auto_arp_refresh: true
                 smart_subnet_ping_sweep: true
                 snmp_collection: true

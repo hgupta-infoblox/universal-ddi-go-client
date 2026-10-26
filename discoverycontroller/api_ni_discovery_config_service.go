@@ -32,8 +32,8 @@ type NIDiscoveryConfigServiceAPI interface {
 	Create(ctx context.Context, id string) NIDiscoveryConfigServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreateNIServiceConfigResponse
-	CreateExecute(r NIDiscoveryConfigServiceAPICreateRequest) (*ControllerCreateNIServiceConfigResponse, *http.Response, error)
+	//  @return CreateNIServiceConfigResponse
+	CreateExecute(r NIDiscoveryConfigServiceAPICreateRequest) (*CreateNIServiceConfigResponse, *http.Response, error)
 	/*
 		Delete Delete the Network Insight DiscoveryService config object. Use this method to delete the Network Insight DiscoveryService config object.
 
@@ -54,8 +54,8 @@ type NIDiscoveryConfigServiceAPI interface {
 	List(ctx context.Context) NIDiscoveryConfigServiceAPIListRequest
 
 	// ListExecute executes the request
-	//  @return ControllerListNIServiceConfigResponse
-	ListExecute(r NIDiscoveryConfigServiceAPIListRequest) (*ControllerListNIServiceConfigResponse, *http.Response, error)
+	//  @return ListNIServiceConfigResponse
+	ListExecute(r NIDiscoveryConfigServiceAPIListRequest) (*ListNIServiceConfigResponse, *http.Response, error)
 	/*
 		Read Read the Network Insight DiscoveryService config object. Use this method to read the Network Insight DiscoveryService config object.
 
@@ -66,8 +66,8 @@ type NIDiscoveryConfigServiceAPI interface {
 	Read(ctx context.Context, id string) NIDiscoveryConfigServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadNIServiceConfigResponse
-	ReadExecute(r NIDiscoveryConfigServiceAPIReadRequest) (*ControllerReadNIServiceConfigResponse, *http.Response, error)
+	//  @return ReadNIServiceConfigResponse
+	ReadExecute(r NIDiscoveryConfigServiceAPIReadRequest) (*ReadNIServiceConfigResponse, *http.Response, error)
 	/*
 		Update Update the Network Insight DiscoveryService config object. Use this method to update the Network Insight DiscoveryService config object.
 
@@ -78,8 +78,8 @@ type NIDiscoveryConfigServiceAPI interface {
 	Update(ctx context.Context, id string) NIDiscoveryConfigServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdateNIServiceConfigResponse
-	UpdateExecute(r NIDiscoveryConfigServiceAPIUpdateRequest) (*ControllerUpdateNIServiceConfigResponse, *http.Response, error)
+	//  @return UpdateNIServiceConfigResponse
+	UpdateExecute(r NIDiscoveryConfigServiceAPIUpdateRequest) (*UpdateNIServiceConfigResponse, *http.Response, error)
 }
 
 // NIDiscoveryConfigServiceAPIService NIDiscoveryConfigServiceAPI service
@@ -89,15 +89,15 @@ type NIDiscoveryConfigServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService NIDiscoveryConfigServiceAPI
 	id         string
-	body       *ControllerNIDiscoveryService
+	body       *NIDiscoveryService
 }
 
-func (r NIDiscoveryConfigServiceAPICreateRequest) Body(body ControllerNIDiscoveryService) NIDiscoveryConfigServiceAPICreateRequest {
+func (r NIDiscoveryConfigServiceAPICreateRequest) Body(body NIDiscoveryService) NIDiscoveryConfigServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r NIDiscoveryConfigServiceAPICreateRequest) Execute() (*ControllerCreateNIServiceConfigResponse, *http.Response, error) {
+func (r NIDiscoveryConfigServiceAPICreateRequest) Execute() (*CreateNIServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -118,13 +118,13 @@ func (a *NIDiscoveryConfigServiceAPIService) Create(ctx context.Context, id stri
 
 // Execute executes the request
 //
-//	@return ControllerCreateNIServiceConfigResponse
-func (a *NIDiscoveryConfigServiceAPIService) CreateExecute(r NIDiscoveryConfigServiceAPICreateRequest) (*ControllerCreateNIServiceConfigResponse, *http.Response, error) {
+//	@return CreateNIServiceConfigResponse
+func (a *NIDiscoveryConfigServiceAPIService) CreateExecute(r NIDiscoveryConfigServiceAPICreateRequest) (*CreateNIServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreateNIServiceConfigResponse
+		localVarReturnValue *CreateNIServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIDiscoveryConfigServiceAPIService.Create")
@@ -325,7 +325,7 @@ func (r NIDiscoveryConfigServiceAPIListRequest) OrderBy(orderBy string) NIDiscov
 	return r
 }
 
-func (r NIDiscoveryConfigServiceAPIListRequest) Execute() (*ControllerListNIServiceConfigResponse, *http.Response, error) {
+func (r NIDiscoveryConfigServiceAPIListRequest) Execute() (*ListNIServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.ListExecute(r)
 }
 
@@ -344,13 +344,13 @@ func (a *NIDiscoveryConfigServiceAPIService) List(ctx context.Context) NIDiscove
 
 // Execute executes the request
 //
-//	@return ControllerListNIServiceConfigResponse
-func (a *NIDiscoveryConfigServiceAPIService) ListExecute(r NIDiscoveryConfigServiceAPIListRequest) (*ControllerListNIServiceConfigResponse, *http.Response, error) {
+//	@return ListNIServiceConfigResponse
+func (a *NIDiscoveryConfigServiceAPIService) ListExecute(r NIDiscoveryConfigServiceAPIListRequest) (*ListNIServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListNIServiceConfigResponse
+		localVarReturnValue *ListNIServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIDiscoveryConfigServiceAPIService.List")
@@ -442,7 +442,7 @@ func (r NIDiscoveryConfigServiceAPIReadRequest) Fields(fields string) NIDiscover
 	return r
 }
 
-func (r NIDiscoveryConfigServiceAPIReadRequest) Execute() (*ControllerReadNIServiceConfigResponse, *http.Response, error) {
+func (r NIDiscoveryConfigServiceAPIReadRequest) Execute() (*ReadNIServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -463,13 +463,13 @@ func (a *NIDiscoveryConfigServiceAPIService) Read(ctx context.Context, id string
 
 // Execute executes the request
 //
-//	@return ControllerReadNIServiceConfigResponse
-func (a *NIDiscoveryConfigServiceAPIService) ReadExecute(r NIDiscoveryConfigServiceAPIReadRequest) (*ControllerReadNIServiceConfigResponse, *http.Response, error) {
+//	@return ReadNIServiceConfigResponse
+func (a *NIDiscoveryConfigServiceAPIService) ReadExecute(r NIDiscoveryConfigServiceAPIReadRequest) (*ReadNIServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadNIServiceConfigResponse
+		localVarReturnValue *ReadNIServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIDiscoveryConfigServiceAPIService.Read")
@@ -538,15 +538,15 @@ type NIDiscoveryConfigServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService NIDiscoveryConfigServiceAPI
 	id         string
-	body       *ControllerNIDiscoveryService
+	body       *NIDiscoveryService
 }
 
-func (r NIDiscoveryConfigServiceAPIUpdateRequest) Body(body ControllerNIDiscoveryService) NIDiscoveryConfigServiceAPIUpdateRequest {
+func (r NIDiscoveryConfigServiceAPIUpdateRequest) Body(body NIDiscoveryService) NIDiscoveryConfigServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r NIDiscoveryConfigServiceAPIUpdateRequest) Execute() (*ControllerUpdateNIServiceConfigResponse, *http.Response, error) {
+func (r NIDiscoveryConfigServiceAPIUpdateRequest) Execute() (*UpdateNIServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -567,13 +567,13 @@ func (a *NIDiscoveryConfigServiceAPIService) Update(ctx context.Context, id stri
 
 // Execute executes the request
 //
-//	@return ControllerUpdateNIServiceConfigResponse
-func (a *NIDiscoveryConfigServiceAPIService) UpdateExecute(r NIDiscoveryConfigServiceAPIUpdateRequest) (*ControllerUpdateNIServiceConfigResponse, *http.Response, error) {
+//	@return UpdateNIServiceConfigResponse
+func (a *NIDiscoveryConfigServiceAPIService) UpdateExecute(r NIDiscoveryConfigServiceAPIUpdateRequest) (*UpdateNIServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdateNIServiceConfigResponse
+		localVarReturnValue *UpdateNIServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NIDiscoveryConfigServiceAPIService.Update")

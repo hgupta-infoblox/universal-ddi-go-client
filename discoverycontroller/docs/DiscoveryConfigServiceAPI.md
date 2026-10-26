@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreateServiceConfigResponse Create(ctx, id).Body(body).Execute()
+> CreateServiceConfigResponse Create(ctx, id).Body(body).Execute()
 
 Create the DiscoveryService config object. Use this method to create the DiscoveryService config object.
 
@@ -33,7 +33,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerDiscoveryService() // ControllerDiscoveryService | 
+	body := *discoverycontroller.NewDiscoveryService() // DiscoveryService | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.DiscoveryConfigServiceAPI.Create(context.Background(), id).Body(body).Execute()
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiscoveryConfigServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreateServiceConfigResponse
+	// response from `Create`: CreateServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DiscoveryConfigServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -61,11 +61,11 @@ Other parameters are passed through a pointer to a `DiscoveryConfigServiceAPICre
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerDiscoveryService**](ControllerDiscoveryService.md) |  | 
+**body** | [**DiscoveryService**](DiscoveryService.md) |  | 
 
 ### Return type
 
-[**ControllerCreateServiceConfigResponse**](ControllerCreateServiceConfigResponse.md)
+[**CreateServiceConfigResponse**](CreateServiceConfigResponse.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> ControllerListServiceConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
+> ListServiceConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
 
 List DiscoveryService config objects. Use this method to retrieve list of DiscoveryService config objects.
 
@@ -173,7 +173,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiscoveryConfigServiceAPI.List``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ControllerListServiceConfigResponse
+	// response from `List`: ListServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DiscoveryConfigServiceAPI.List`: %v\n", resp)
 }
 ```
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListServiceConfigResponse**](ControllerListServiceConfigResponse.md)
+[**ListServiceConfigResponse**](ListServiceConfigResponse.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadServiceConfigResponse Read(ctx, id).Fields(fields).Execute()
+> ReadServiceConfigResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the DiscoveryService config object. Use this method to read the DiscoveryService config object.
 
@@ -242,7 +242,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiscoveryConfigServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadServiceConfigResponse
+	// response from `Read`: ReadServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DiscoveryConfigServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadServiceConfigResponse**](ControllerReadServiceConfigResponse.md)
+[**ReadServiceConfigResponse**](ReadServiceConfigResponse.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdateServiceConfigResponse Update(ctx, id).Body(body).Execute()
+> UpdateServiceConfigResponse Update(ctx, id).Body(body).Execute()
 
 Update the DiscoveryService config object. Use this method to update the DiscoveryService config object.
 
@@ -303,7 +303,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerDiscoveryService() // ControllerDiscoveryService | 
+	body := *discoverycontroller.NewDiscoveryService() // DiscoveryService | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.DiscoveryConfigServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -311,7 +311,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiscoveryConfigServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdateServiceConfigResponse
+	// response from `Update`: UpdateServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `DiscoveryConfigServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -331,11 +331,11 @@ Other parameters are passed through a pointer to a `DiscoveryConfigServiceAPIUpd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerDiscoveryService**](ControllerDiscoveryService.md) |  | 
+**body** | [**DiscoveryService**](DiscoveryService.md) |  | 
 
 ### Return type
 
-[**ControllerUpdateServiceConfigResponse**](ControllerUpdateServiceConfigResponse.md)
+[**UpdateServiceConfigResponse**](UpdateServiceConfigResponse.md)
 
 ### Authorization
 

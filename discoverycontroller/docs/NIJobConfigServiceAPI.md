@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreateNIJobConfigResponse Create(ctx, id).Body(body).Execute()
+> CreateNIJobConfigResponse Create(ctx, id).Body(body).Execute()
 
 Create the Network Insight JobConfig object. Use this method to create the Network Insight JobConfig object.
 
@@ -32,7 +32,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerNIJobConfig() // ControllerNIJobConfig | 
+	body := *discoverycontroller.NewNIJobConfig() // NIJobConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.NIJobConfigServiceAPI.Create(context.Background(), id).Body(body).Execute()
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIJobConfigServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreateNIJobConfigResponse
+	// response from `Create`: CreateNIJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIJobConfigServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Other parameters are passed through a pointer to a `NIJobConfigServiceAPICreateR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerNIJobConfig**](ControllerNIJobConfig.md) |  | 
+**body** | [**NIJobConfig**](NIJobConfig.md) |  | 
 
 ### Return type
 
-[**ControllerCreateNIJobConfigResponse**](ControllerCreateNIJobConfigResponse.md)
+[**CreateNIJobConfigResponse**](CreateNIJobConfigResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> ControllerListNIJobConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
+> ListNIJobConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
 
 List Network Insight JobConfig objects. Use this method to retrieve list of Network Insight JobConfig objects.
 
@@ -107,7 +107,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIJobConfigServiceAPI.List``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ControllerListNIJobConfigResponse
+	// response from `List`: ListNIJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIJobConfigServiceAPI.List`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListNIJobConfigResponse**](ControllerListNIJobConfigResponse.md)
+[**ListNIJobConfigResponse**](ListNIJobConfigResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadNIJobConfigResponse Read(ctx, id).Fields(fields).Execute()
+> ReadNIJobConfigResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the  Network Insight JobConfig object. Use this method to read the  Network Insight JobConfig object.
 
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIJobConfigServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadNIJobConfigResponse
+	// response from `Read`: ReadNIJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIJobConfigServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadNIJobConfigResponse**](ControllerReadNIJobConfigResponse.md)
+[**ReadNIJobConfigResponse**](ReadNIJobConfigResponse.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdateNIJobConfigResponse Update(ctx, id).Body(body).Execute()
+> UpdateNIJobConfigResponse Update(ctx, id).Body(body).Execute()
 
 Update the Network Insight JobConfig object. Use this method to update the Network Insight JobConfig object.
 
@@ -237,7 +237,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerNIJobConfig() // ControllerNIJobConfig | 
+	body := *discoverycontroller.NewNIJobConfig() // NIJobConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.NIJobConfigServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -245,7 +245,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIJobConfigServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdateNIJobConfigResponse
+	// response from `Update`: UpdateNIJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIJobConfigServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -265,11 +265,11 @@ Other parameters are passed through a pointer to a `NIJobConfigServiceAPIUpdateR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerNIJobConfig**](ControllerNIJobConfig.md) |  | 
+**body** | [**NIJobConfig**](NIJobConfig.md) |  | 
 
 ### Return type
 
-[**ControllerUpdateNIJobConfigResponse**](ControllerUpdateNIJobConfigResponse.md)
+[**UpdateNIJobConfigResponse**](UpdateNIJobConfigResponse.md)
 
 ### Authorization
 

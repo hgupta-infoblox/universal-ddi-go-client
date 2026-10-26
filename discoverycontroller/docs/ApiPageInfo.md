@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Offset** | Pointer to **int32** | The service may optionally include the offset of the next page of resources. A null value indicates no more pages. | [optional] 
+**Offset** | Pointer to **int64** | The service may optionally include the offset of the next page of resources. A null value indicates no more pages. | [optional] 
 **PageToken** | Pointer to **string** | The service response should contain a string to indicate the next page of resources. A null value indicates no more pages. | [optional] 
-**Size** | Pointer to **int32** | The service may optionally include the total number of resources being paged. | [optional] 
+**Size** | Pointer to **int64** | The service may optionally include the total number of resources being paged. | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOffset
 
-`func (o *ApiPageInfo) GetOffset() int32`
+`func (o *ApiPageInfo) GetOffset() int64`
 
 GetOffset returns the Offset field if non-nil, zero value otherwise.
 
 ### GetOffsetOk
 
-`func (o *ApiPageInfo) GetOffsetOk() (*int32, bool)`
+`func (o *ApiPageInfo) GetOffsetOk() (*int64, bool)`
 
 GetOffsetOk returns a tuple with the Offset field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOffset
 
-`func (o *ApiPageInfo) SetOffset(v int32)`
+`func (o *ApiPageInfo) SetOffset(v int64)`
 
 SetOffset sets Offset field to given value.
 
@@ -79,20 +79,20 @@ HasPageToken returns a boolean if a field has been set.
 
 ### GetSize
 
-`func (o *ApiPageInfo) GetSize() int32`
+`func (o *ApiPageInfo) GetSize() int64`
 
 GetSize returns the Size field if non-nil, zero value otherwise.
 
 ### GetSizeOk
 
-`func (o *ApiPageInfo) GetSizeOk() (*int32, bool)`
+`func (o *ApiPageInfo) GetSizeOk() (*int64, bool)`
 
 GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSize
 
-`func (o *ApiPageInfo) SetSize(v int32)`
+`func (o *ApiPageInfo) SetSize(v int64)`
 
 SetSize sets Size field to given value.
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreatePassiveDiscoveryConfigResponse Create(ctx, id).Body(body).Execute()
+> CreatePassiveDiscoveryConfigResponse Create(ctx, id).Body(body).Execute()
 
 Create the PassiveDiscoveryConfig object. Use this method to create the PassiveDiscoveryConfig object.
 
@@ -32,7 +32,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerPassiveDiscoveryConfig() // ControllerPassiveDiscoveryConfig | 
+	body := *discoverycontroller.NewPassiveDiscoveryConfig() // PassiveDiscoveryConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.PassiveDiscoveryConfigServiceAPI.Create(context.Background(), id).Body(body).Execute()
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PassiveDiscoveryConfigServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreatePassiveDiscoveryConfigResponse
+	// response from `Create`: CreatePassiveDiscoveryConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `PassiveDiscoveryConfigServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Other parameters are passed through a pointer to a `PassiveDiscoveryConfigServic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerPassiveDiscoveryConfig**](ControllerPassiveDiscoveryConfig.md) |  | 
+**body** | [**PassiveDiscoveryConfig**](PassiveDiscoveryConfig.md) |  | 
 
 ### Return type
 
-[**ControllerCreatePassiveDiscoveryConfigResponse**](ControllerCreatePassiveDiscoveryConfigResponse.md)
+[**CreatePassiveDiscoveryConfigResponse**](CreatePassiveDiscoveryConfigResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## ListPassiveDiscoveryAccounts2
 
-> ControllerListPassiveDiscoveryAccountsResponse ListPassiveDiscoveryAccounts2(ctx, source).Execute()
+> ListPassiveDiscoveryAccountsResponse ListPassiveDiscoveryAccounts2(ctx, source).Execute()
 
 List account by enabled source. Use this method to retrieve a list of enabled account that have the given source. The response format is an object containing a list of account ID objects.
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PassiveDiscoveryConfigServiceAPI.ListPassiveDiscoveryAccounts2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListPassiveDiscoveryAccounts2`: ControllerListPassiveDiscoveryAccountsResponse
+	// response from `ListPassiveDiscoveryAccounts2`: ListPassiveDiscoveryAccountsResponse
 	fmt.Fprintf(os.Stdout, "Response from `PassiveDiscoveryConfigServiceAPI.ListPassiveDiscoveryAccounts2`: %v\n", resp)
 }
 ```
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListPassiveDiscoveryAccountsResponse**](ControllerListPassiveDiscoveryAccountsResponse.md)
+[**ListPassiveDiscoveryAccountsResponse**](ListPassiveDiscoveryAccountsResponse.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadPassiveDiscoveryConfigResponse Read(ctx, id).Fields(fields).Execute()
+> ReadPassiveDiscoveryConfigResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the PassiveDiscoveryConfig object. Use this method to read the PassiveDiscoveryConfig object.
 
@@ -175,7 +175,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PassiveDiscoveryConfigServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadPassiveDiscoveryConfigResponse
+	// response from `Read`: ReadPassiveDiscoveryConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `PassiveDiscoveryConfigServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadPassiveDiscoveryConfigResponse**](ControllerReadPassiveDiscoveryConfigResponse.md)
+[**ReadPassiveDiscoveryConfigResponse**](ReadPassiveDiscoveryConfigResponse.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdatePassiveDiscoveryConfigResponse Update(ctx, id).Body(body).Execute()
+> UpdatePassiveDiscoveryConfigResponse Update(ctx, id).Body(body).Execute()
 
 Update the PassiveDiscoveryConfig object. Use this method to update the PassiveDiscoveryConfig object.
 
@@ -236,7 +236,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerPassiveDiscoveryConfig() // ControllerPassiveDiscoveryConfig | 
+	body := *discoverycontroller.NewPassiveDiscoveryConfig() // PassiveDiscoveryConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.PassiveDiscoveryConfigServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -244,7 +244,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PassiveDiscoveryConfigServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdatePassiveDiscoveryConfigResponse
+	// response from `Update`: UpdatePassiveDiscoveryConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `PassiveDiscoveryConfigServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -264,11 +264,11 @@ Other parameters are passed through a pointer to a `PassiveDiscoveryConfigServic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerPassiveDiscoveryConfig**](ControllerPassiveDiscoveryConfig.md) |  | 
+**body** | [**PassiveDiscoveryConfig**](PassiveDiscoveryConfig.md) |  | 
 
 ### Return type
 
-[**ControllerUpdatePassiveDiscoveryConfigResponse**](ControllerUpdatePassiveDiscoveryConfigResponse.md)
+[**UpdatePassiveDiscoveryConfigResponse**](UpdatePassiveDiscoveryConfigResponse.md)
 
 ### Authorization
 

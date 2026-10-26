@@ -32,8 +32,8 @@ type PassiveDiscoveryConfigServiceAPI interface {
 	Create(ctx context.Context, id string) PassiveDiscoveryConfigServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreatePassiveDiscoveryConfigResponse
-	CreateExecute(r PassiveDiscoveryConfigServiceAPICreateRequest) (*ControllerCreatePassiveDiscoveryConfigResponse, *http.Response, error)
+	//  @return CreatePassiveDiscoveryConfigResponse
+	CreateExecute(r PassiveDiscoveryConfigServiceAPICreateRequest) (*CreatePassiveDiscoveryConfigResponse, *http.Response, error)
 	/*
 		ListPassiveDiscoveryAccounts2 List account by enabled source. Use this method to retrieve a list of enabled account that have the given source. The response format is an object containing a list of account ID objects.
 
@@ -44,8 +44,8 @@ type PassiveDiscoveryConfigServiceAPI interface {
 	ListPassiveDiscoveryAccounts2(ctx context.Context, source interface{}) PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request
 
 	// ListPassiveDiscoveryAccounts2Execute executes the request
-	//  @return ControllerListPassiveDiscoveryAccountsResponse
-	ListPassiveDiscoveryAccounts2Execute(r PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request) (*ControllerListPassiveDiscoveryAccountsResponse, *http.Response, error)
+	//  @return ListPassiveDiscoveryAccountsResponse
+	ListPassiveDiscoveryAccounts2Execute(r PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request) (*ListPassiveDiscoveryAccountsResponse, *http.Response, error)
 	/*
 		Read Read the PassiveDiscoveryConfig object. Use this method to read the PassiveDiscoveryConfig object.
 
@@ -56,8 +56,8 @@ type PassiveDiscoveryConfigServiceAPI interface {
 	Read(ctx context.Context, id string) PassiveDiscoveryConfigServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadPassiveDiscoveryConfigResponse
-	ReadExecute(r PassiveDiscoveryConfigServiceAPIReadRequest) (*ControllerReadPassiveDiscoveryConfigResponse, *http.Response, error)
+	//  @return ReadPassiveDiscoveryConfigResponse
+	ReadExecute(r PassiveDiscoveryConfigServiceAPIReadRequest) (*ReadPassiveDiscoveryConfigResponse, *http.Response, error)
 	/*
 		Update Update the PassiveDiscoveryConfig object. Use this method to update the PassiveDiscoveryConfig object.
 
@@ -68,8 +68,8 @@ type PassiveDiscoveryConfigServiceAPI interface {
 	Update(ctx context.Context, id string) PassiveDiscoveryConfigServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdatePassiveDiscoveryConfigResponse
-	UpdateExecute(r PassiveDiscoveryConfigServiceAPIUpdateRequest) (*ControllerUpdatePassiveDiscoveryConfigResponse, *http.Response, error)
+	//  @return UpdatePassiveDiscoveryConfigResponse
+	UpdateExecute(r PassiveDiscoveryConfigServiceAPIUpdateRequest) (*UpdatePassiveDiscoveryConfigResponse, *http.Response, error)
 }
 
 // PassiveDiscoveryConfigServiceAPIService PassiveDiscoveryConfigServiceAPI service
@@ -79,15 +79,15 @@ type PassiveDiscoveryConfigServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService PassiveDiscoveryConfigServiceAPI
 	id         string
-	body       *ControllerPassiveDiscoveryConfig
+	body       *PassiveDiscoveryConfig
 }
 
-func (r PassiveDiscoveryConfigServiceAPICreateRequest) Body(body ControllerPassiveDiscoveryConfig) PassiveDiscoveryConfigServiceAPICreateRequest {
+func (r PassiveDiscoveryConfigServiceAPICreateRequest) Body(body PassiveDiscoveryConfig) PassiveDiscoveryConfigServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r PassiveDiscoveryConfigServiceAPICreateRequest) Execute() (*ControllerCreatePassiveDiscoveryConfigResponse, *http.Response, error) {
+func (r PassiveDiscoveryConfigServiceAPICreateRequest) Execute() (*CreatePassiveDiscoveryConfigResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -108,13 +108,13 @@ func (a *PassiveDiscoveryConfigServiceAPIService) Create(ctx context.Context, id
 
 // Execute executes the request
 //
-//	@return ControllerCreatePassiveDiscoveryConfigResponse
-func (a *PassiveDiscoveryConfigServiceAPIService) CreateExecute(r PassiveDiscoveryConfigServiceAPICreateRequest) (*ControllerCreatePassiveDiscoveryConfigResponse, *http.Response, error) {
+//	@return CreatePassiveDiscoveryConfigResponse
+func (a *PassiveDiscoveryConfigServiceAPIService) CreateExecute(r PassiveDiscoveryConfigServiceAPICreateRequest) (*CreatePassiveDiscoveryConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreatePassiveDiscoveryConfigResponse
+		localVarReturnValue *CreatePassiveDiscoveryConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "PassiveDiscoveryConfigServiceAPIService.Create")
@@ -187,7 +187,7 @@ type PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request struct
 	source     interface{}
 }
 
-func (r PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request) Execute() (*ControllerListPassiveDiscoveryAccountsResponse, *http.Response, error) {
+func (r PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request) Execute() (*ListPassiveDiscoveryAccountsResponse, *http.Response, error) {
 	return r.ApiService.ListPassiveDiscoveryAccounts2Execute(r)
 }
 
@@ -208,13 +208,13 @@ func (a *PassiveDiscoveryConfigServiceAPIService) ListPassiveDiscoveryAccounts2(
 
 // Execute executes the request
 //
-//	@return ControllerListPassiveDiscoveryAccountsResponse
-func (a *PassiveDiscoveryConfigServiceAPIService) ListPassiveDiscoveryAccounts2Execute(r PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request) (*ControllerListPassiveDiscoveryAccountsResponse, *http.Response, error) {
+//	@return ListPassiveDiscoveryAccountsResponse
+func (a *PassiveDiscoveryConfigServiceAPIService) ListPassiveDiscoveryAccounts2Execute(r PassiveDiscoveryConfigServiceAPIListPassiveDiscoveryAccounts2Request) (*ListPassiveDiscoveryAccountsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListPassiveDiscoveryAccountsResponse
+		localVarReturnValue *ListPassiveDiscoveryAccountsResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "PassiveDiscoveryConfigServiceAPIService.ListPassiveDiscoveryAccounts2")
@@ -289,7 +289,7 @@ func (r PassiveDiscoveryConfigServiceAPIReadRequest) Fields(fields string) Passi
 	return r
 }
 
-func (r PassiveDiscoveryConfigServiceAPIReadRequest) Execute() (*ControllerReadPassiveDiscoveryConfigResponse, *http.Response, error) {
+func (r PassiveDiscoveryConfigServiceAPIReadRequest) Execute() (*ReadPassiveDiscoveryConfigResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -310,13 +310,13 @@ func (a *PassiveDiscoveryConfigServiceAPIService) Read(ctx context.Context, id s
 
 // Execute executes the request
 //
-//	@return ControllerReadPassiveDiscoveryConfigResponse
-func (a *PassiveDiscoveryConfigServiceAPIService) ReadExecute(r PassiveDiscoveryConfigServiceAPIReadRequest) (*ControllerReadPassiveDiscoveryConfigResponse, *http.Response, error) {
+//	@return ReadPassiveDiscoveryConfigResponse
+func (a *PassiveDiscoveryConfigServiceAPIService) ReadExecute(r PassiveDiscoveryConfigServiceAPIReadRequest) (*ReadPassiveDiscoveryConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadPassiveDiscoveryConfigResponse
+		localVarReturnValue *ReadPassiveDiscoveryConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "PassiveDiscoveryConfigServiceAPIService.Read")
@@ -385,15 +385,15 @@ type PassiveDiscoveryConfigServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService PassiveDiscoveryConfigServiceAPI
 	id         string
-	body       *ControllerPassiveDiscoveryConfig
+	body       *PassiveDiscoveryConfig
 }
 
-func (r PassiveDiscoveryConfigServiceAPIUpdateRequest) Body(body ControllerPassiveDiscoveryConfig) PassiveDiscoveryConfigServiceAPIUpdateRequest {
+func (r PassiveDiscoveryConfigServiceAPIUpdateRequest) Body(body PassiveDiscoveryConfig) PassiveDiscoveryConfigServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r PassiveDiscoveryConfigServiceAPIUpdateRequest) Execute() (*ControllerUpdatePassiveDiscoveryConfigResponse, *http.Response, error) {
+func (r PassiveDiscoveryConfigServiceAPIUpdateRequest) Execute() (*UpdatePassiveDiscoveryConfigResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -414,13 +414,13 @@ func (a *PassiveDiscoveryConfigServiceAPIService) Update(ctx context.Context, id
 
 // Execute executes the request
 //
-//	@return ControllerUpdatePassiveDiscoveryConfigResponse
-func (a *PassiveDiscoveryConfigServiceAPIService) UpdateExecute(r PassiveDiscoveryConfigServiceAPIUpdateRequest) (*ControllerUpdatePassiveDiscoveryConfigResponse, *http.Response, error) {
+//	@return UpdatePassiveDiscoveryConfigResponse
+func (a *PassiveDiscoveryConfigServiceAPIService) UpdateExecute(r PassiveDiscoveryConfigServiceAPIUpdateRequest) (*UpdatePassiveDiscoveryConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdatePassiveDiscoveryConfigResponse
+		localVarReturnValue *UpdatePassiveDiscoveryConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "PassiveDiscoveryConfigServiceAPIService.Update")

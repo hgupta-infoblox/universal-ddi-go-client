@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreateJobConfigResponse Create(ctx, id).Body(body).Execute()
+> CreateJobConfigResponse Create(ctx, id).Body(body).Execute()
 
 Create the JobConfig object. Use this method to create the JobConfig object.
 
@@ -32,7 +32,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerJobConfig() // ControllerJobConfig | 
+	body := *discoverycontroller.NewJobConfig() // JobConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.JobConfigServiceAPI.Create(context.Background(), id).Body(body).Execute()
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `JobConfigServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreateJobConfigResponse
+	// response from `Create`: CreateJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `JobConfigServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Other parameters are passed through a pointer to a `JobConfigServiceAPICreateReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerJobConfig**](ControllerJobConfig.md) |  | 
+**body** | [**JobConfig**](JobConfig.md) |  | 
 
 ### Return type
 
-[**ControllerCreateJobConfigResponse**](ControllerCreateJobConfigResponse.md)
+[**CreateJobConfigResponse**](CreateJobConfigResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> ControllerListJobConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
+> ListJobConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
 
 List JobConfig objects. Use this method to retrieve list of JobConfig objects.
 
@@ -107,7 +107,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `JobConfigServiceAPI.List``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ControllerListJobConfigResponse
+	// response from `List`: ListJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `JobConfigServiceAPI.List`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListJobConfigResponse**](ControllerListJobConfigResponse.md)
+[**ListJobConfigResponse**](ListJobConfigResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadJobConfigResponse Read(ctx, id).Fields(fields).Execute()
+> ReadJobConfigResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the JobConfig object. Use this method to read the JobConfig object.
 
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `JobConfigServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadJobConfigResponse
+	// response from `Read`: ReadJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `JobConfigServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadJobConfigResponse**](ControllerReadJobConfigResponse.md)
+[**ReadJobConfigResponse**](ReadJobConfigResponse.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdateJobConfigResponse Update(ctx, id).Body(body).Execute()
+> UpdateJobConfigResponse Update(ctx, id).Body(body).Execute()
 
 Update the JobConfig object. Use this method to update the JobConfig object.
 
@@ -237,7 +237,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerJobConfig() // ControllerJobConfig | 
+	body := *discoverycontroller.NewJobConfig() // JobConfig | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.JobConfigServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -245,7 +245,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `JobConfigServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdateJobConfigResponse
+	// response from `Update`: UpdateJobConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `JobConfigServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -265,11 +265,11 @@ Other parameters are passed through a pointer to a `JobConfigServiceAPIUpdateReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerJobConfig**](ControllerJobConfig.md) |  | 
+**body** | [**JobConfig**](JobConfig.md) |  | 
 
 ### Return type
 
-[**ControllerUpdateJobConfigResponse**](ControllerUpdateJobConfigResponse.md)
+[**UpdateJobConfigResponse**](UpdateJobConfigResponse.md)
 
 ### Authorization
 

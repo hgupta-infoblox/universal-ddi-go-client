@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreateConfigurationResponse Create(ctx).Body(body).Execute()
+> CreateConfigurationResponse Create(ctx).Body(body).Execute()
 
 Create the discovery Configuration object. Use this method to create the Configuration object.
 
@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-	body := *discoverycontroller.NewControllerConfiguration() // ControllerConfiguration | 
+	body := *discoverycontroller.NewConfiguration() // Configuration | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.ConfigurationServiceAPI.Create(context.Background()).Body(body).Execute()
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreateConfigurationResponse
+	// response from `Create`: CreateConfigurationResponse
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -56,11 +56,11 @@ Other parameters are passed through a pointer to a `ConfigurationServiceAPICreat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerConfiguration**](ControllerConfiguration.md) |  | 
+**body** | [**Configuration**](Configuration.md) |  | 
 
 ### Return type
 
-[**ControllerCreateConfigurationResponse**](ControllerCreateConfigurationResponse.md)
+[**CreateConfigurationResponse**](CreateConfigurationResponse.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> ControllerListConfigurationResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
+> ListConfigurationResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
 
 List Configuration objects. Use this method to retrieve list of Configuration objects.
 
@@ -168,7 +168,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationServiceAPI.List``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ControllerListConfigurationResponse
+	// response from `List`: ListConfigurationResponse
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationServiceAPI.List`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListConfigurationResponse**](ControllerListConfigurationResponse.md)
+[**ListConfigurationResponse**](ListConfigurationResponse.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadConfigurationResponse Read(ctx, id).Fields(fields).Execute()
+> ReadConfigurationResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the discovery Configuration object. Use this method to read the Configuration object.
 
@@ -237,7 +237,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadConfigurationResponse
+	// response from `Read`: ReadConfigurationResponse
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadConfigurationResponse**](ControllerReadConfigurationResponse.md)
+[**ReadConfigurationResponse**](ReadConfigurationResponse.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdateConfigurationResponse Update(ctx, id).Body(body).Execute()
+> UpdateConfigurationResponse Update(ctx, id).Body(body).Execute()
 
 Update the discovery Configuration object. Use this method to update the Configuration object.
 
@@ -298,7 +298,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerConfiguration() // ControllerConfiguration | 
+	body := *discoverycontroller.NewConfiguration() // Configuration | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.ConfigurationServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -306,7 +306,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdateConfigurationResponse
+	// response from `Update`: UpdateConfigurationResponse
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -326,11 +326,11 @@ Other parameters are passed through a pointer to a `ConfigurationServiceAPIUpdat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerConfiguration**](ControllerConfiguration.md) |  | 
+**body** | [**Configuration**](Configuration.md) |  | 
 
 ### Return type
 
-[**ControllerUpdateConfigurationResponse**](ControllerUpdateConfigurationResponse.md)
+[**UpdateConfigurationResponse**](UpdateConfigurationResponse.md)
 
 ### Authorization
 

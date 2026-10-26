@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## Create
 
-> ControllerCreateNIServiceConfigResponse Create(ctx, id).Body(body).Execute()
+> CreateNIServiceConfigResponse Create(ctx, id).Body(body).Execute()
 
 Create the Network Insight DiscoveryService config object. Use this method to create the Network Insight DiscoveryService config object.
 
@@ -33,7 +33,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerNIDiscoveryService() // ControllerNIDiscoveryService | 
+	body := *discoverycontroller.NewNIDiscoveryService() // NIDiscoveryService | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.NIDiscoveryConfigServiceAPI.Create(context.Background(), id).Body(body).Execute()
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIDiscoveryConfigServiceAPI.Create``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: ControllerCreateNIServiceConfigResponse
+	// response from `Create`: CreateNIServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIDiscoveryConfigServiceAPI.Create`: %v\n", resp)
 }
 ```
@@ -61,11 +61,11 @@ Other parameters are passed through a pointer to a `NIDiscoveryConfigServiceAPIC
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerNIDiscoveryService**](ControllerNIDiscoveryService.md) |  | 
+**body** | [**NIDiscoveryService**](NIDiscoveryService.md) |  | 
 
 ### Return type
 
-[**ControllerCreateNIServiceConfigResponse**](ControllerCreateNIServiceConfigResponse.md)
+[**CreateNIServiceConfigResponse**](CreateNIServiceConfigResponse.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## List
 
-> ControllerListNIServiceConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
+> ListNIServiceConfigResponse List(ctx).Fields(fields).Filter(filter).Offset(offset).Limit(limit).PageToken(pageToken).OrderBy(orderBy).Execute()
 
 List Network Insight DiscoveryService config objects. Use this method to retrieve list of Network Insight DiscoveryService config objects.
 
@@ -173,7 +173,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIDiscoveryConfigServiceAPI.List``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ControllerListNIServiceConfigResponse
+	// response from `List`: ListNIServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIDiscoveryConfigServiceAPI.List`: %v\n", resp)
 }
 ```
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerListNIServiceConfigResponse**](ControllerListNIServiceConfigResponse.md)
+[**ListNIServiceConfigResponse**](ListNIServiceConfigResponse.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## Read
 
-> ControllerReadNIServiceConfigResponse Read(ctx, id).Fields(fields).Execute()
+> ReadNIServiceConfigResponse Read(ctx, id).Fields(fields).Execute()
 
 Read the Network Insight DiscoveryService config object. Use this method to read the Network Insight DiscoveryService config object.
 
@@ -242,7 +242,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIDiscoveryConfigServiceAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: ControllerReadNIServiceConfigResponse
+	// response from `Read`: ReadNIServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIDiscoveryConfigServiceAPI.Read`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ControllerReadNIServiceConfigResponse**](ControllerReadNIServiceConfigResponse.md)
+[**ReadNIServiceConfigResponse**](ReadNIServiceConfigResponse.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ## Update
 
-> ControllerUpdateNIServiceConfigResponse Update(ctx, id).Body(body).Execute()
+> UpdateNIServiceConfigResponse Update(ctx, id).Body(body).Execute()
 
 Update the Network Insight DiscoveryService config object. Use this method to update the Network Insight DiscoveryService config object.
 
@@ -303,7 +303,7 @@ import (
 
 func main() {
 	id := "a5183192-1e00-475f-b334-38e1f0bb1bc7" // string | An application specific resource identity of a resource
-	body := *discoverycontroller.NewControllerNIDiscoveryService() // ControllerNIDiscoveryService | 
+	body := *discoverycontroller.NewNIDiscoveryService() // NIDiscoveryService | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.NIDiscoveryConfigServiceAPI.Update(context.Background(), id).Body(body).Execute()
@@ -311,7 +311,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NIDiscoveryConfigServiceAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: ControllerUpdateNIServiceConfigResponse
+	// response from `Update`: UpdateNIServiceConfigResponse
 	fmt.Fprintf(os.Stdout, "Response from `NIDiscoveryConfigServiceAPI.Update`: %v\n", resp)
 }
 ```
@@ -331,11 +331,11 @@ Other parameters are passed through a pointer to a `NIDiscoveryConfigServiceAPIU
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**body** | [**ControllerNIDiscoveryService**](ControllerNIDiscoveryService.md) |  | 
+**body** | [**NIDiscoveryService**](NIDiscoveryService.md) |  | 
 
 ### Return type
 
-[**ControllerUpdateNIServiceConfigResponse**](ControllerUpdateNIServiceConfigResponse.md)
+[**UpdateNIServiceConfigResponse**](UpdateNIServiceConfigResponse.md)
 
 ### Authorization
 

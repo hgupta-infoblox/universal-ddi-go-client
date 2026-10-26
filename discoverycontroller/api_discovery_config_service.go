@@ -32,8 +32,8 @@ type DiscoveryConfigServiceAPI interface {
 	Create(ctx context.Context, id string) DiscoveryConfigServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreateServiceConfigResponse
-	CreateExecute(r DiscoveryConfigServiceAPICreateRequest) (*ControllerCreateServiceConfigResponse, *http.Response, error)
+	//  @return CreateServiceConfigResponse
+	CreateExecute(r DiscoveryConfigServiceAPICreateRequest) (*CreateServiceConfigResponse, *http.Response, error)
 	/*
 		Delete Delete the DiscoveryService config object. Use this method to delete the DiscoveryService config object.
 
@@ -54,8 +54,8 @@ type DiscoveryConfigServiceAPI interface {
 	List(ctx context.Context) DiscoveryConfigServiceAPIListRequest
 
 	// ListExecute executes the request
-	//  @return ControllerListServiceConfigResponse
-	ListExecute(r DiscoveryConfigServiceAPIListRequest) (*ControllerListServiceConfigResponse, *http.Response, error)
+	//  @return ListServiceConfigResponse
+	ListExecute(r DiscoveryConfigServiceAPIListRequest) (*ListServiceConfigResponse, *http.Response, error)
 	/*
 		Read Read the DiscoveryService config object. Use this method to read the DiscoveryService config object.
 
@@ -66,8 +66,8 @@ type DiscoveryConfigServiceAPI interface {
 	Read(ctx context.Context, id string) DiscoveryConfigServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadServiceConfigResponse
-	ReadExecute(r DiscoveryConfigServiceAPIReadRequest) (*ControllerReadServiceConfigResponse, *http.Response, error)
+	//  @return ReadServiceConfigResponse
+	ReadExecute(r DiscoveryConfigServiceAPIReadRequest) (*ReadServiceConfigResponse, *http.Response, error)
 	/*
 		Update Update the DiscoveryService config object. Use this method to update the DiscoveryService config object.
 
@@ -78,8 +78,8 @@ type DiscoveryConfigServiceAPI interface {
 	Update(ctx context.Context, id string) DiscoveryConfigServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdateServiceConfigResponse
-	UpdateExecute(r DiscoveryConfigServiceAPIUpdateRequest) (*ControllerUpdateServiceConfigResponse, *http.Response, error)
+	//  @return UpdateServiceConfigResponse
+	UpdateExecute(r DiscoveryConfigServiceAPIUpdateRequest) (*UpdateServiceConfigResponse, *http.Response, error)
 }
 
 // DiscoveryConfigServiceAPIService DiscoveryConfigServiceAPI service
@@ -89,15 +89,15 @@ type DiscoveryConfigServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService DiscoveryConfigServiceAPI
 	id         string
-	body       *ControllerDiscoveryService
+	body       *DiscoveryService
 }
 
-func (r DiscoveryConfigServiceAPICreateRequest) Body(body ControllerDiscoveryService) DiscoveryConfigServiceAPICreateRequest {
+func (r DiscoveryConfigServiceAPICreateRequest) Body(body DiscoveryService) DiscoveryConfigServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r DiscoveryConfigServiceAPICreateRequest) Execute() (*ControllerCreateServiceConfigResponse, *http.Response, error) {
+func (r DiscoveryConfigServiceAPICreateRequest) Execute() (*CreateServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -118,13 +118,13 @@ func (a *DiscoveryConfigServiceAPIService) Create(ctx context.Context, id string
 
 // Execute executes the request
 //
-//	@return ControllerCreateServiceConfigResponse
-func (a *DiscoveryConfigServiceAPIService) CreateExecute(r DiscoveryConfigServiceAPICreateRequest) (*ControllerCreateServiceConfigResponse, *http.Response, error) {
+//	@return CreateServiceConfigResponse
+func (a *DiscoveryConfigServiceAPIService) CreateExecute(r DiscoveryConfigServiceAPICreateRequest) (*CreateServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreateServiceConfigResponse
+		localVarReturnValue *CreateServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "DiscoveryConfigServiceAPIService.Create")
@@ -325,7 +325,7 @@ func (r DiscoveryConfigServiceAPIListRequest) OrderBy(orderBy string) DiscoveryC
 	return r
 }
 
-func (r DiscoveryConfigServiceAPIListRequest) Execute() (*ControllerListServiceConfigResponse, *http.Response, error) {
+func (r DiscoveryConfigServiceAPIListRequest) Execute() (*ListServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.ListExecute(r)
 }
 
@@ -344,13 +344,13 @@ func (a *DiscoveryConfigServiceAPIService) List(ctx context.Context) DiscoveryCo
 
 // Execute executes the request
 //
-//	@return ControllerListServiceConfigResponse
-func (a *DiscoveryConfigServiceAPIService) ListExecute(r DiscoveryConfigServiceAPIListRequest) (*ControllerListServiceConfigResponse, *http.Response, error) {
+//	@return ListServiceConfigResponse
+func (a *DiscoveryConfigServiceAPIService) ListExecute(r DiscoveryConfigServiceAPIListRequest) (*ListServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListServiceConfigResponse
+		localVarReturnValue *ListServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "DiscoveryConfigServiceAPIService.List")
@@ -442,7 +442,7 @@ func (r DiscoveryConfigServiceAPIReadRequest) Fields(fields string) DiscoveryCon
 	return r
 }
 
-func (r DiscoveryConfigServiceAPIReadRequest) Execute() (*ControllerReadServiceConfigResponse, *http.Response, error) {
+func (r DiscoveryConfigServiceAPIReadRequest) Execute() (*ReadServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -463,13 +463,13 @@ func (a *DiscoveryConfigServiceAPIService) Read(ctx context.Context, id string) 
 
 // Execute executes the request
 //
-//	@return ControllerReadServiceConfigResponse
-func (a *DiscoveryConfigServiceAPIService) ReadExecute(r DiscoveryConfigServiceAPIReadRequest) (*ControllerReadServiceConfigResponse, *http.Response, error) {
+//	@return ReadServiceConfigResponse
+func (a *DiscoveryConfigServiceAPIService) ReadExecute(r DiscoveryConfigServiceAPIReadRequest) (*ReadServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadServiceConfigResponse
+		localVarReturnValue *ReadServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "DiscoveryConfigServiceAPIService.Read")
@@ -538,15 +538,15 @@ type DiscoveryConfigServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService DiscoveryConfigServiceAPI
 	id         string
-	body       *ControllerDiscoveryService
+	body       *DiscoveryService
 }
 
-func (r DiscoveryConfigServiceAPIUpdateRequest) Body(body ControllerDiscoveryService) DiscoveryConfigServiceAPIUpdateRequest {
+func (r DiscoveryConfigServiceAPIUpdateRequest) Body(body DiscoveryService) DiscoveryConfigServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r DiscoveryConfigServiceAPIUpdateRequest) Execute() (*ControllerUpdateServiceConfigResponse, *http.Response, error) {
+func (r DiscoveryConfigServiceAPIUpdateRequest) Execute() (*UpdateServiceConfigResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -567,13 +567,13 @@ func (a *DiscoveryConfigServiceAPIService) Update(ctx context.Context, id string
 
 // Execute executes the request
 //
-//	@return ControllerUpdateServiceConfigResponse
-func (a *DiscoveryConfigServiceAPIService) UpdateExecute(r DiscoveryConfigServiceAPIUpdateRequest) (*ControllerUpdateServiceConfigResponse, *http.Response, error) {
+//	@return UpdateServiceConfigResponse
+func (a *DiscoveryConfigServiceAPIService) UpdateExecute(r DiscoveryConfigServiceAPIUpdateRequest) (*UpdateServiceConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdateServiceConfigResponse
+		localVarReturnValue *UpdateServiceConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "DiscoveryConfigServiceAPIService.Update")

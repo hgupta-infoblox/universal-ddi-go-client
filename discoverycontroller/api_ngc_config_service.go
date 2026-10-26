@@ -32,8 +32,8 @@ type NgcConfigServiceAPI interface {
 	Create(ctx context.Context, id string) NgcConfigServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreateNgcConfigResponse
-	CreateExecute(r NgcConfigServiceAPICreateRequest) (*ControllerCreateNgcConfigResponse, *http.Response, error)
+	//  @return CreateNgcConfigResponse
+	CreateExecute(r NgcConfigServiceAPICreateRequest) (*CreateNgcConfigResponse, *http.Response, error)
 	/*
 		List List NgcConfig objects. Use this method to retrieve list of NgcConfig objects.
 
@@ -43,8 +43,8 @@ type NgcConfigServiceAPI interface {
 	List(ctx context.Context) NgcConfigServiceAPIListRequest
 
 	// ListExecute executes the request
-	//  @return ControllerListNgcConfigResponse
-	ListExecute(r NgcConfigServiceAPIListRequest) (*ControllerListNgcConfigResponse, *http.Response, error)
+	//  @return ListNgcConfigResponse
+	ListExecute(r NgcConfigServiceAPIListRequest) (*ListNgcConfigResponse, *http.Response, error)
 	/*
 		Read Read the NgcConfig object. Use this method to read the NgcConfig object.
 
@@ -55,8 +55,8 @@ type NgcConfigServiceAPI interface {
 	Read(ctx context.Context, id string) NgcConfigServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadNgcConfigResponse
-	ReadExecute(r NgcConfigServiceAPIReadRequest) (*ControllerReadNgcConfigResponse, *http.Response, error)
+	//  @return ReadNgcConfigResponse
+	ReadExecute(r NgcConfigServiceAPIReadRequest) (*ReadNgcConfigResponse, *http.Response, error)
 	/*
 		Update Update the NgcConfig object. Use this method to update the NgcConfig object.
 
@@ -67,8 +67,8 @@ type NgcConfigServiceAPI interface {
 	Update(ctx context.Context, id string) NgcConfigServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdateNgcConfigResponse
-	UpdateExecute(r NgcConfigServiceAPIUpdateRequest) (*ControllerUpdateNgcConfigResponse, *http.Response, error)
+	//  @return UpdateNgcConfigResponse
+	UpdateExecute(r NgcConfigServiceAPIUpdateRequest) (*UpdateNgcConfigResponse, *http.Response, error)
 }
 
 // NgcConfigServiceAPIService NgcConfigServiceAPI service
@@ -78,15 +78,15 @@ type NgcConfigServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService NgcConfigServiceAPI
 	id         string
-	body       *ControllerNgcConfig
+	body       *NgcConfig
 }
 
-func (r NgcConfigServiceAPICreateRequest) Body(body ControllerNgcConfig) NgcConfigServiceAPICreateRequest {
+func (r NgcConfigServiceAPICreateRequest) Body(body NgcConfig) NgcConfigServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r NgcConfigServiceAPICreateRequest) Execute() (*ControllerCreateNgcConfigResponse, *http.Response, error) {
+func (r NgcConfigServiceAPICreateRequest) Execute() (*CreateNgcConfigResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -107,13 +107,13 @@ func (a *NgcConfigServiceAPIService) Create(ctx context.Context, id string) NgcC
 
 // Execute executes the request
 //
-//	@return ControllerCreateNgcConfigResponse
-func (a *NgcConfigServiceAPIService) CreateExecute(r NgcConfigServiceAPICreateRequest) (*ControllerCreateNgcConfigResponse, *http.Response, error) {
+//	@return CreateNgcConfigResponse
+func (a *NgcConfigServiceAPIService) CreateExecute(r NgcConfigServiceAPICreateRequest) (*CreateNgcConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreateNgcConfigResponse
+		localVarReturnValue *CreateNgcConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NgcConfigServiceAPIService.Create")
@@ -227,7 +227,7 @@ func (r NgcConfigServiceAPIListRequest) OrderBy(orderBy string) NgcConfigService
 	return r
 }
 
-func (r NgcConfigServiceAPIListRequest) Execute() (*ControllerListNgcConfigResponse, *http.Response, error) {
+func (r NgcConfigServiceAPIListRequest) Execute() (*ListNgcConfigResponse, *http.Response, error) {
 	return r.ApiService.ListExecute(r)
 }
 
@@ -246,13 +246,13 @@ func (a *NgcConfigServiceAPIService) List(ctx context.Context) NgcConfigServiceA
 
 // Execute executes the request
 //
-//	@return ControllerListNgcConfigResponse
-func (a *NgcConfigServiceAPIService) ListExecute(r NgcConfigServiceAPIListRequest) (*ControllerListNgcConfigResponse, *http.Response, error) {
+//	@return ListNgcConfigResponse
+func (a *NgcConfigServiceAPIService) ListExecute(r NgcConfigServiceAPIListRequest) (*ListNgcConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListNgcConfigResponse
+		localVarReturnValue *ListNgcConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NgcConfigServiceAPIService.List")
@@ -344,7 +344,7 @@ func (r NgcConfigServiceAPIReadRequest) Fields(fields string) NgcConfigServiceAP
 	return r
 }
 
-func (r NgcConfigServiceAPIReadRequest) Execute() (*ControllerReadNgcConfigResponse, *http.Response, error) {
+func (r NgcConfigServiceAPIReadRequest) Execute() (*ReadNgcConfigResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -365,13 +365,13 @@ func (a *NgcConfigServiceAPIService) Read(ctx context.Context, id string) NgcCon
 
 // Execute executes the request
 //
-//	@return ControllerReadNgcConfigResponse
-func (a *NgcConfigServiceAPIService) ReadExecute(r NgcConfigServiceAPIReadRequest) (*ControllerReadNgcConfigResponse, *http.Response, error) {
+//	@return ReadNgcConfigResponse
+func (a *NgcConfigServiceAPIService) ReadExecute(r NgcConfigServiceAPIReadRequest) (*ReadNgcConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadNgcConfigResponse
+		localVarReturnValue *ReadNgcConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NgcConfigServiceAPIService.Read")
@@ -440,15 +440,15 @@ type NgcConfigServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService NgcConfigServiceAPI
 	id         string
-	body       *ControllerNgcConfig
+	body       *NgcConfig
 }
 
-func (r NgcConfigServiceAPIUpdateRequest) Body(body ControllerNgcConfig) NgcConfigServiceAPIUpdateRequest {
+func (r NgcConfigServiceAPIUpdateRequest) Body(body NgcConfig) NgcConfigServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r NgcConfigServiceAPIUpdateRequest) Execute() (*ControllerUpdateNgcConfigResponse, *http.Response, error) {
+func (r NgcConfigServiceAPIUpdateRequest) Execute() (*UpdateNgcConfigResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -469,13 +469,13 @@ func (a *NgcConfigServiceAPIService) Update(ctx context.Context, id string) NgcC
 
 // Execute executes the request
 //
-//	@return ControllerUpdateNgcConfigResponse
-func (a *NgcConfigServiceAPIService) UpdateExecute(r NgcConfigServiceAPIUpdateRequest) (*ControllerUpdateNgcConfigResponse, *http.Response, error) {
+//	@return UpdateNgcConfigResponse
+func (a *NgcConfigServiceAPIService) UpdateExecute(r NgcConfigServiceAPIUpdateRequest) (*UpdateNgcConfigResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdateNgcConfigResponse
+		localVarReturnValue *UpdateNgcConfigResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "NgcConfigServiceAPIService.Update")

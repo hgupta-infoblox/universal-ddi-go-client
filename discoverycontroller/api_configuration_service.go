@@ -31,8 +31,8 @@ type ConfigurationServiceAPI interface {
 	Create(ctx context.Context) ConfigurationServiceAPICreateRequest
 
 	// CreateExecute executes the request
-	//  @return ControllerCreateConfigurationResponse
-	CreateExecute(r ConfigurationServiceAPICreateRequest) (*ControllerCreateConfigurationResponse, *http.Response, error)
+	//  @return CreateConfigurationResponse
+	CreateExecute(r ConfigurationServiceAPICreateRequest) (*CreateConfigurationResponse, *http.Response, error)
 	/*
 		Delete Delete the discovery Configuration object. Use this method to delete the Configuration object.
 
@@ -53,8 +53,8 @@ type ConfigurationServiceAPI interface {
 	List(ctx context.Context) ConfigurationServiceAPIListRequest
 
 	// ListExecute executes the request
-	//  @return ControllerListConfigurationResponse
-	ListExecute(r ConfigurationServiceAPIListRequest) (*ControllerListConfigurationResponse, *http.Response, error)
+	//  @return ListConfigurationResponse
+	ListExecute(r ConfigurationServiceAPIListRequest) (*ListConfigurationResponse, *http.Response, error)
 	/*
 		Read Read the discovery Configuration object. Use this method to read the Configuration object.
 
@@ -65,8 +65,8 @@ type ConfigurationServiceAPI interface {
 	Read(ctx context.Context, id string) ConfigurationServiceAPIReadRequest
 
 	// ReadExecute executes the request
-	//  @return ControllerReadConfigurationResponse
-	ReadExecute(r ConfigurationServiceAPIReadRequest) (*ControllerReadConfigurationResponse, *http.Response, error)
+	//  @return ReadConfigurationResponse
+	ReadExecute(r ConfigurationServiceAPIReadRequest) (*ReadConfigurationResponse, *http.Response, error)
 	/*
 		Update Update the discovery Configuration object. Use this method to update the Configuration object.
 
@@ -77,8 +77,8 @@ type ConfigurationServiceAPI interface {
 	Update(ctx context.Context, id string) ConfigurationServiceAPIUpdateRequest
 
 	// UpdateExecute executes the request
-	//  @return ControllerUpdateConfigurationResponse
-	UpdateExecute(r ConfigurationServiceAPIUpdateRequest) (*ControllerUpdateConfigurationResponse, *http.Response, error)
+	//  @return UpdateConfigurationResponse
+	UpdateExecute(r ConfigurationServiceAPIUpdateRequest) (*UpdateConfigurationResponse, *http.Response, error)
 }
 
 // ConfigurationServiceAPIService ConfigurationServiceAPI service
@@ -87,15 +87,15 @@ type ConfigurationServiceAPIService internal.Service
 type ConfigurationServiceAPICreateRequest struct {
 	ctx        context.Context
 	ApiService ConfigurationServiceAPI
-	body       *ControllerConfiguration
+	body       *Configuration
 }
 
-func (r ConfigurationServiceAPICreateRequest) Body(body ControllerConfiguration) ConfigurationServiceAPICreateRequest {
+func (r ConfigurationServiceAPICreateRequest) Body(body Configuration) ConfigurationServiceAPICreateRequest {
 	r.body = &body
 	return r
 }
 
-func (r ConfigurationServiceAPICreateRequest) Execute() (*ControllerCreateConfigurationResponse, *http.Response, error) {
+func (r ConfigurationServiceAPICreateRequest) Execute() (*CreateConfigurationResponse, *http.Response, error) {
 	return r.ApiService.CreateExecute(r)
 }
 
@@ -114,13 +114,13 @@ func (a *ConfigurationServiceAPIService) Create(ctx context.Context) Configurati
 
 // Execute executes the request
 //
-//	@return ControllerCreateConfigurationResponse
-func (a *ConfigurationServiceAPIService) CreateExecute(r ConfigurationServiceAPICreateRequest) (*ControllerCreateConfigurationResponse, *http.Response, error) {
+//	@return CreateConfigurationResponse
+func (a *ConfigurationServiceAPIService) CreateExecute(r ConfigurationServiceAPICreateRequest) (*CreateConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerCreateConfigurationResponse
+		localVarReturnValue *CreateConfigurationResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "ConfigurationServiceAPIService.Create")
@@ -320,7 +320,7 @@ func (r ConfigurationServiceAPIListRequest) OrderBy(orderBy string) Configuratio
 	return r
 }
 
-func (r ConfigurationServiceAPIListRequest) Execute() (*ControllerListConfigurationResponse, *http.Response, error) {
+func (r ConfigurationServiceAPIListRequest) Execute() (*ListConfigurationResponse, *http.Response, error) {
 	return r.ApiService.ListExecute(r)
 }
 
@@ -339,13 +339,13 @@ func (a *ConfigurationServiceAPIService) List(ctx context.Context) Configuration
 
 // Execute executes the request
 //
-//	@return ControllerListConfigurationResponse
-func (a *ConfigurationServiceAPIService) ListExecute(r ConfigurationServiceAPIListRequest) (*ControllerListConfigurationResponse, *http.Response, error) {
+//	@return ListConfigurationResponse
+func (a *ConfigurationServiceAPIService) ListExecute(r ConfigurationServiceAPIListRequest) (*ListConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerListConfigurationResponse
+		localVarReturnValue *ListConfigurationResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "ConfigurationServiceAPIService.List")
@@ -437,7 +437,7 @@ func (r ConfigurationServiceAPIReadRequest) Fields(fields string) ConfigurationS
 	return r
 }
 
-func (r ConfigurationServiceAPIReadRequest) Execute() (*ControllerReadConfigurationResponse, *http.Response, error) {
+func (r ConfigurationServiceAPIReadRequest) Execute() (*ReadConfigurationResponse, *http.Response, error) {
 	return r.ApiService.ReadExecute(r)
 }
 
@@ -458,13 +458,13 @@ func (a *ConfigurationServiceAPIService) Read(ctx context.Context, id string) Co
 
 // Execute executes the request
 //
-//	@return ControllerReadConfigurationResponse
-func (a *ConfigurationServiceAPIService) ReadExecute(r ConfigurationServiceAPIReadRequest) (*ControllerReadConfigurationResponse, *http.Response, error) {
+//	@return ReadConfigurationResponse
+func (a *ConfigurationServiceAPIService) ReadExecute(r ConfigurationServiceAPIReadRequest) (*ReadConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerReadConfigurationResponse
+		localVarReturnValue *ReadConfigurationResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "ConfigurationServiceAPIService.Read")
@@ -533,15 +533,15 @@ type ConfigurationServiceAPIUpdateRequest struct {
 	ctx        context.Context
 	ApiService ConfigurationServiceAPI
 	id         string
-	body       *ControllerConfiguration
+	body       *Configuration
 }
 
-func (r ConfigurationServiceAPIUpdateRequest) Body(body ControllerConfiguration) ConfigurationServiceAPIUpdateRequest {
+func (r ConfigurationServiceAPIUpdateRequest) Body(body Configuration) ConfigurationServiceAPIUpdateRequest {
 	r.body = &body
 	return r
 }
 
-func (r ConfigurationServiceAPIUpdateRequest) Execute() (*ControllerUpdateConfigurationResponse, *http.Response, error) {
+func (r ConfigurationServiceAPIUpdateRequest) Execute() (*UpdateConfigurationResponse, *http.Response, error) {
 	return r.ApiService.UpdateExecute(r)
 }
 
@@ -562,13 +562,13 @@ func (a *ConfigurationServiceAPIService) Update(ctx context.Context, id string) 
 
 // Execute executes the request
 //
-//	@return ControllerUpdateConfigurationResponse
-func (a *ConfigurationServiceAPIService) UpdateExecute(r ConfigurationServiceAPIUpdateRequest) (*ControllerUpdateConfigurationResponse, *http.Response, error) {
+//	@return UpdateConfigurationResponse
+func (a *ConfigurationServiceAPIService) UpdateExecute(r ConfigurationServiceAPIUpdateRequest) (*UpdateConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []internal.FormFile
-		localVarReturnValue *ControllerUpdateConfigurationResponse
+		localVarReturnValue *UpdateConfigurationResponse
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "ConfigurationServiceAPIService.Update")
