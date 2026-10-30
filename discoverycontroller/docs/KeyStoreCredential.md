@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] [readonly] 
 **Notes** | Pointer to **string** |  | [optional] [readonly] 
 **Values** | Pointer to [**[]KeyStoreValue**](KeyStoreValue.md) |  | [optional] [readonly] 

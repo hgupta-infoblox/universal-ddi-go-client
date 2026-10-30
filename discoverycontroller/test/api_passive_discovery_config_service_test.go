@@ -41,7 +41,7 @@ func TestPassiveDiscoveryConfigServiceAPIService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		var source interface{}
+		var source string
 
 		resp, httpRes, err := apiClient.PassiveDiscoveryConfigServiceAPI.ListPassiveDiscoveryAccounts2(context.Background(), source).Execute()
 

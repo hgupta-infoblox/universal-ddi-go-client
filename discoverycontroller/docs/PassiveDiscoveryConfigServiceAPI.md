@@ -100,7 +100,7 @@ import (
 )
 
 func main() {
-	source := TODO // interface{} | 
+	source := "source_example" // string | 
 
 	apiClient := discoverycontroller.NewAPIClient()
 	resp, r, err := apiClient.PassiveDiscoveryConfigServiceAPI.ListPassiveDiscoveryAccounts2(context.Background(), source).Execute()
@@ -119,7 +119,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**source** | [**interface{}**](.md) |  | 
+**source** | **string** |  | 
 
 ### Other Parameters
 
@@ -195,7 +195,7 @@ Other parameters are passed through a pointer to a `PassiveDiscoveryConfigServic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a â€œflatâ€ resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
+**fields** | **string** |   A collection of response resources can be transformed by specifying a set of JSON tags to be returned. For a &#39;flat&#39; resource, the tag name is straightforward. If field selection is allowed on non-flat hierarchical resources, the service should implement a qualified naming scheme such as dot-qualification to reference data down the hierarchy. If a resource does not have the specified tag, the tag does not appear in the output resource.  Specify this parameter as a comma-separated list of JSON tag names.         | 
 
 ### Return type
 
