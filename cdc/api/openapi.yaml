@@ -615,6 +615,9 @@ paths:
       summary: Create an application destination server
       tags:
       - DestinationApi
+      x-tf-resource: cdc_destination_application
+      x-tf-datasource: cdc_destination_applications
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/application/{id}:
     delete:
@@ -698,6 +701,7 @@ paths:
       summary: Update an application destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/bloxone:
     get:
@@ -2511,6 +2515,9 @@ paths:
       summary: Create ETL FQDN filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_fqdn
+      x-tf-datasource: cdc_etl_filter_fqdns
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/fqdn/{id}:
     delete:
@@ -2592,6 +2599,7 @@ paths:
       summary: Update an ETL FQDN filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/hostname:
     delete:
@@ -2722,6 +2730,9 @@ paths:
       summary: Create an ETL hostname filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_hostname
+      x-tf-datasource: cdc_etl_filter_hostnames
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/hostname/{id}:
     delete:
@@ -2803,6 +2814,7 @@ paths:
       summary: Update an ETL hostname filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/ip_network:
     delete:
@@ -2933,6 +2945,9 @@ paths:
       summary: Create an ETL IP network filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_ip_network
+      x-tf-datasource: cdc_etl_filter_ip_networks
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/ip_network/{id}:
     delete:
@@ -3014,6 +3029,7 @@ paths:
       summary: Update an ETL IP network filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/local_zones:
     get:
@@ -3271,6 +3287,9 @@ paths:
       summary: Create an ETL ophid filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_ophid
+      x-tf-datasource: cdc_etl_filter_ophids
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/ophid/{id}:
     delete:
@@ -3352,6 +3371,7 @@ paths:
       summary: Update an ETL ophid filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/record_type:
     delete:
@@ -3700,6 +3720,9 @@ paths:
       summary: Create ETL regex filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_regex
+      x-tf-datasource: cdc_etl_filter_regexes
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/regex/{id}:
     delete:
@@ -3781,6 +3804,7 @@ paths:
       summary: Update an ETL regex filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/threat_class_property:
     delete:
@@ -3912,6 +3936,9 @@ paths:
       summary: Create an ETL Threat Class Property filter
       tags:
       - EtlFilterApi
+      x-tf-resource: cdc_etl_filter_threat_class_property
+      x-tf-datasource: cdc_etl_filter_threat_class_properties
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/etls/filters/threat_class_property/{id}:
     delete:
@@ -3995,6 +4022,7 @@ paths:
       summary: Update an ETL Threat Class Property filter
       tags:
       - EtlFilterApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/notification:
     post:
@@ -5334,10 +5362,8 @@ components:
       type: object
     serviceApplicationData:
       example:
-        variables:
-          key: "{}"
-        data:
-          key: "{}"
+        variables: "{}"
+        data: "{}"
         updated_at: 2000-01-23T04:56:07.000+00:00
         name: name
         created_at: 2000-01-23T04:56:07.000+00:00
@@ -5352,8 +5378,6 @@ components:
           readOnly: true
           type: string
         data:
-          additionalProperties:
-            type: object
           type: object
         description:
           type: string
@@ -5378,17 +5402,14 @@ components:
           readOnly: true
           type: string
         variables:
-          additionalProperties:
-            type: object
+          additionalProperties: false
           type: object
       type: object
     serviceApplicationDataCreateResponse:
       example:
         results:
-          variables:
-            key: "{}"
-          data:
-            key: "{}"
+          variables: "{}"
+          data: "{}"
           updated_at: 2000-01-23T04:56:07.000+00:00
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -5412,10 +5433,8 @@ components:
     serviceApplicationDataListResponse:
       example:
         results:
-        - variables:
-            key: "{}"
-          data:
-            key: "{}"
+        - variables: "{}"
+          data: "{}"
           updated_at: 2000-01-23T04:56:07.000+00:00
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -5424,10 +5443,8 @@ components:
           type: type
           enabled: true
           tags: "{}"
-        - variables:
-            key: "{}"
-          data:
-            key: "{}"
+        - variables: "{}"
+          data: "{}"
           updated_at: 2000-01-23T04:56:07.000+00:00
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -5445,10 +5462,8 @@ components:
     serviceApplicationDataReadResponse:
       example:
         results:
-          variables:
-            key: "{}"
-          data:
-            key: "{}"
+          variables: "{}"
+          data: "{}"
           updated_at: 2000-01-23T04:56:07.000+00:00
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -5464,10 +5479,8 @@ components:
     serviceApplicationDataUpdateResponse:
       example:
         results:
-          variables:
-            key: "{}"
-          data:
-            key: "{}"
+          variables: "{}"
+          data: "{}"
           updated_at: 2000-01-23T04:56:07.000+00:00
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
@@ -5868,8 +5881,7 @@ components:
       example:
         application: 0
         updated_at: 2000-01-23T04:56:07.000+00:00
-        context:
-          key: "{}"
+        context: "{}"
         name: name
         created_at: 2000-01-23T04:56:07.000+00:00
         description: description
@@ -5882,8 +5894,7 @@ components:
           format: int64
           type: integer
         context:
-          additionalProperties:
-            type: object
+          additionalProperties: false
           type: object
         created_at:
           format: date-time
@@ -5916,8 +5927,7 @@ components:
         results:
           application: 0
           updated_at: 2000-01-23T04:56:07.000+00:00
-          context:
-            key: "{}"
+          context: "{}"
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -5942,8 +5952,7 @@ components:
         results:
         - application: 0
           updated_at: 2000-01-23T04:56:07.000+00:00
-          context:
-            key: "{}"
+          context: "{}"
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -5953,8 +5962,7 @@ components:
           tags: "{}"
         - application: 0
           updated_at: 2000-01-23T04:56:07.000+00:00
-          context:
-            key: "{}"
+          context: "{}"
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -5973,8 +5981,7 @@ components:
         results:
           application: 0
           updated_at: 2000-01-23T04:56:07.000+00:00
-          context:
-            key: "{}"
+          context: "{}"
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -5991,8 +5998,7 @@ components:
         results:
           application: 0
           updated_at: 2000-01-23T04:56:07.000+00:00
-          context:
-            key: "{}"
+          context: "{}"
           name: name
           created_at: 2000-01-23T04:56:07.000+00:00
           description: description
@@ -8203,15 +8209,23 @@ components:
           - cdc_services
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8257,15 +8271,23 @@ components:
           - cdc_services
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8296,15 +8318,23 @@ components:
           - cdc_services
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8344,15 +8374,23 @@ components:
           - cdc_services
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8390,15 +8428,23 @@ components:
           - cdc_services
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8435,15 +8481,23 @@ components:
         - cdc_services
         source_log_types:
         - log_fields:
-          - log_fields
-          - log_fields
+          - name: name
+            id: id
+            required: true
+          - name: name
+            id: id
+            required: true
           log_type: log_type
           log_subtypes:
           - log_subtypes
           - log_subtypes
         - log_fields:
-          - log_fields
-          - log_fields
+          - name: name
+            id: id
+            required: true
+          - name: name
+            id: id
+            required: true
           log_type: log_type
           log_subtypes:
           - log_subtypes
@@ -8610,15 +8664,23 @@ components:
           tags: "{}"
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8735,15 +8797,23 @@ components:
           tags: "{}"
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -8869,15 +8939,23 @@ components:
           tags: "{}"
           source_log_types:
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
             - log_subtypes
           - log_fields:
-            - log_fields
-            - log_fields
+            - name: name
+              id: id
+              required: true
+            - name: name
+              id: id
+              required: true
             log_type: log_type
             log_subtypes:
             - log_subtypes
@@ -9078,15 +9156,23 @@ components:
         tags: "{}"
         source_log_types:
         - log_fields:
-          - log_fields
-          - log_fields
+          - name: name
+            id: id
+            required: true
+          - name: name
+            id: id
+            required: true
           log_type: log_type
           log_subtypes:
           - log_subtypes
           - log_subtypes
         - log_fields:
-          - log_fields
-          - log_fields
+          - name: name
+            id: id
+            required: true
+          - name: name
+            id: id
+            required: true
           log_type: log_type
           log_subtypes:
           - log_subtypes
@@ -9611,8 +9697,12 @@ components:
     serviceSourceLogType:
       example:
         log_fields:
-        - log_fields
-        - log_fields
+        - name: name
+          id: id
+          required: true
+        - name: name
+          id: id
+          required: true
         log_type: log_type
         log_subtypes:
         - log_subtypes
@@ -9620,7 +9710,7 @@ components:
       properties:
         log_fields:
           items:
-            type: string
+            $ref: '#/components/schemas/serviceSourceField'
           type: array
         log_subtypes:
           items:

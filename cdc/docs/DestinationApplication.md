@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Application** | Pointer to **int64** |  | [optional] 
-**Context** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Context** | Pointer to **map[string]interface{}** |  | [optional] 
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -61,20 +61,20 @@ HasApplication returns a boolean if a field has been set.
 
 ### GetContext
 
-`func (o *DestinationApplication) GetContext() map[string]map[string]interface{}`
+`func (o *DestinationApplication) GetContext() map[string]interface{}`
 
 GetContext returns the Context field if non-nil, zero value otherwise.
 
 ### GetContextOk
 
-`func (o *DestinationApplication) GetContextOk() (*map[string]map[string]interface{}, bool)`
+`func (o *DestinationApplication) GetContextOk() (*map[string]interface{}, bool)`
 
 GetContextOk returns a tuple with the Context field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContext
 
-`func (o *DestinationApplication) SetContext(v map[string]map[string]interface{})`
+`func (o *DestinationApplication) SetContext(v map[string]interface{})`
 
 SetContext sets Context field to given value.
 

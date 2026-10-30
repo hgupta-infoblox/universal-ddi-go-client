@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
-**Data** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Data** | Pointer to **map[string]interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] [readonly] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Tags** | Pointer to **map[string]interface{}** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **time.Time** |  | [optional] [readonly] 
-**Variables** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Variables** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -61,20 +61,20 @@ HasCreatedAt returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *ApplicationData) GetData() map[string]map[string]interface{}`
+`func (o *ApplicationData) GetData() map[string]interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ApplicationData) GetDataOk() (*map[string]map[string]interface{}, bool)`
+`func (o *ApplicationData) GetDataOk() (*map[string]interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ApplicationData) SetData(v map[string]map[string]interface{})`
+`func (o *ApplicationData) SetData(v map[string]interface{})`
 
 SetData sets Data field to given value.
 
@@ -261,20 +261,20 @@ HasUpdatedAt returns a boolean if a field has been set.
 
 ### GetVariables
 
-`func (o *ApplicationData) GetVariables() map[string]map[string]interface{}`
+`func (o *ApplicationData) GetVariables() map[string]interface{}`
 
 GetVariables returns the Variables field if non-nil, zero value otherwise.
 
 ### GetVariablesOk
 
-`func (o *ApplicationData) GetVariablesOk() (*map[string]map[string]interface{}, bool)`
+`func (o *ApplicationData) GetVariablesOk() (*map[string]interface{}, bool)`
 
 GetVariablesOk returns a tuple with the Variables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVariables
 
-`func (o *ApplicationData) SetVariables(v map[string]map[string]interface{})`
+`func (o *ApplicationData) SetVariables(v map[string]interface{})`
 
 SetVariables sets Variables field to given value.
 
