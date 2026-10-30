@@ -977,6 +977,7 @@ paths:
       summary: Create Http destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/http/{id}:
     delete:
@@ -1058,6 +1059,7 @@ paths:
       summary: Update Http destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/reporting:
     delete:
@@ -1189,6 +1191,7 @@ paths:
       summary: Create a NIOS reporting destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/reporting/{id}:
     delete:
@@ -1291,6 +1294,7 @@ paths:
       summary: Update a NIOS reporting destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/splunk:
     delete:
@@ -1421,6 +1425,7 @@ paths:
       summary: Create a Splunk destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/splunk/{id}:
     delete:
@@ -1502,6 +1507,7 @@ paths:
       summary: Update a Splunk destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/splunkcloud:
     delete:
@@ -1633,6 +1639,7 @@ paths:
       summary: Create a Splunk Cloud destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/splunkcloud/{id}:
     delete:
@@ -1715,6 +1722,7 @@ paths:
       summary: Update a Splunk Cloud destination server
       tags:
       - DestinationApi
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /v1/destinations/syslog:
     delete:
