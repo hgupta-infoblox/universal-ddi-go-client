@@ -972,6 +972,9 @@ paths:
       summary: Create the federated pool.
       tags:
       - federated_pool
+      x-tf-resource: federated_pool
+      x-tf-datasource: federated_pools
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /federation/federated_pool/{id}:
     delete:
@@ -1055,6 +1058,7 @@ paths:
       summary: Update the federated pool.
       tags:
       - federated_pool
+      x-sdk-default-tags: true
       x-codegen-request-body-name: body
   /federation/federated_pool/{id}/create_next_available_fld:
     post:
@@ -2141,10 +2145,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -2188,14 +2190,12 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
-          provider: null
+          provider: "{}"
           network_compliance:
             minimum_netmask_length: 3
             default_netmask_length: 7
@@ -2224,10 +2224,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -2311,10 +2309,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -2343,10 +2339,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -2535,6 +2529,7 @@ components:
             \ field. When reading, the _address_ field is always in the form “a.b.c.d”\
             ."
           type: string
+          x-omitempty: true
         cidr:
           description: "The CIDR of the delegation. This is required, if _address_\
             \ does not specify it in its input."
@@ -2606,6 +2601,7 @@ components:
           readOnly: true
           type: integer
       required:
+      - address
       - delegated_to
       title: Delegation
       type: object
@@ -2623,10 +2619,8 @@ components:
         created_at: 2000-01-23T04:56:07.000+00:00
         utilization: 2
         utilization_v6:
-          total:
-            raw_value: raw_value
-          used:
-            raw_value: raw_value
+          total: total
+          used: used
         tags: "{}"
         federated_pool_id: federated_pool_id
         protocol: protocol
@@ -2655,6 +2649,7 @@ components:
             \ field. When reading, the _address_ field is always in the form “a.b.c.d”\
             ."
           type: string
+          x-omitempty: true
         allocation_v4:
           $ref: '#/components/schemas/federationAllocation'
         cidr:
@@ -2731,6 +2726,7 @@ components:
         utilization_v6:
           $ref: '#/components/schemas/federationUtilizationV6'
       required:
+      - address
       - federated_realm
       title: FederatedBlock
       type: object
@@ -2753,14 +2749,12 @@ components:
         description: description
         utilization: 14
         utilization_v6:
-          total:
-            raw_value: raw_value
-          used:
-            raw_value: raw_value
+          total: total
+          used: used
         tags: "{}"
         protocol: protocol
         updated_at: 2000-01-23T04:56:07.000+00:00
-        provider: null
+        provider: "{}"
         network_compliance:
           minimum_netmask_length: 3
           default_netmask_length: 7
@@ -2816,7 +2810,11 @@ components:
           type: string
           x-omitempty: true
         provider:
-          $ref: '#/components/schemas/federationProviderType'
+          allOf:
+          - $ref: '#/components/schemas/federationProviderType'
+          description: The cloud provider type this pool is associated with.
+          type: object
+          x-omitempty: true
         region:
           description: "The region/locale this pool is associated with (e.g., 'us-west-1',\
             \ 'eu-central-1')."
@@ -2866,10 +2864,8 @@ components:
         id: id
         region: region
         utilization_v6:
-          total:
-            raw_value: raw_value
-          used:
-            raw_value: raw_value
+          total: total
+          used: used
         allocation_v4:
           forward_looking_delegation: 1
           reserved: 5
@@ -2953,6 +2949,7 @@ components:
             \ field. When reading, the _address_ field is always in the form “a.b.c.d”\
             ."
           type: string
+          x-omitempty: true
         cidr:
           description: "The CIDR of the delegation. This is required, if _address_\
             \ does not specify it in its input."
@@ -3006,18 +3003,13 @@ components:
           readOnly: true
           type: string
       required:
+      - address
       - federated_realms
       title: ForwardLookingDelegation
       type: object
     federationInteger128:
-      example:
-        raw_value: raw_value
-      properties:
-        raw_value:
-          format: byte
-          pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
-          type: string
-      type: object
+      format: byte
+      type: string
     federationListDelegationResponse:
       description: The response format to retrieve __Delegation__ objects.
       example:
@@ -3081,10 +3073,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3113,10 +3103,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3167,14 +3155,12 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
-          provider: null
+          provider: "{}"
           network_compliance:
             minimum_netmask_length: 3
             default_netmask_length: 7
@@ -3197,14 +3183,12 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
-          provider: null
+          provider: "{}"
           network_compliance:
             minimum_netmask_length: 3
             default_netmask_length: 7
@@ -3242,10 +3226,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -3263,10 +3245,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -3335,10 +3315,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3367,10 +3345,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -3907,6 +3883,7 @@ components:
             \ field. When reading, the _address_ field is always in the form “a.b.c.d”\
             ."
           type: string
+          x-omitempty: true
         cidr:
           description: "The CIDR of the overlapping block. This is required, if _address_\
             \ does not specify it in its input."
@@ -3961,6 +3938,7 @@ components:
           readOnly: true
           type: string
       required:
+      - address
       - federated_realm
       title: OverlappingBlock
       type: object
@@ -4022,10 +4000,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -4069,14 +4045,12 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
-          provider: null
+          provider: "{}"
           network_compliance:
             minimum_netmask_length: 3
             default_netmask_length: 7
@@ -4105,10 +4079,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -4220,6 +4192,7 @@ components:
             \ field. When reading, the _address_ field is always in the form “a.b.c.d”\
             ."
           type: string
+          x-omitempty: true
         cidr:
           description: "The CIDR of the reserved block. This is required field, if\
             \ _address_ does not specify it in its input."
@@ -4281,6 +4254,7 @@ components:
           readOnly: true
           type: string
       required:
+      - address
       - federated_realm
       title: ReservedBlock
       type: object
@@ -4353,10 +4327,8 @@ components:
           created_at: 2000-01-23T04:56:07.000+00:00
           utilization: 2
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           federated_pool_id: federated_pool_id
           protocol: protocol
@@ -4400,14 +4372,12 @@ components:
           description: description
           utilization: 14
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           tags: "{}"
           protocol: protocol
           updated_at: 2000-01-23T04:56:07.000+00:00
-          provider: null
+          provider: "{}"
           network_compliance:
             minimum_netmask_length: 3
             default_netmask_length: 7
@@ -4436,10 +4406,8 @@ components:
           id: id
           region: region
           utilization_v6:
-            total:
-              raw_value: raw_value
-            used:
-              raw_value: raw_value
+            total: total
+            used: used
           allocation_v4:
             forward_looking_delegation: 1
             reserved: 5
@@ -4525,15 +4493,15 @@ components:
     federationUtilizationV6:
       description: The __UtilizationV6__ represents IPv6 utilization metrics.
       example:
-        total:
-          raw_value: raw_value
-        used:
-          raw_value: raw_value
+        total: total
+        used: used
       properties:
         total:
-          $ref: '#/components/schemas/federationInteger128'
+          format: byte
+          type: string
         used:
-          $ref: '#/components/schemas/federationInteger128'
+          format: byte
+          type: string
       title: UtilizationV6
       type: object
   securitySchemes:

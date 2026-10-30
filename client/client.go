@@ -2,6 +2,7 @@ package client
 
 import (
 	"github.com/infobloxopen/universal-ddi-go-client/anycast"
+	"github.com/infobloxopen/universal-ddi-go-client/cdc"
 	"github.com/infobloxopen/universal-ddi-go-client/clouddiscovery"
 	"github.com/infobloxopen/universal-ddi-go-client/dfp"
 	"github.com/infobloxopen/universal-ddi-go-client/discoverycontroller"
@@ -9,6 +10,7 @@ import (
 	"github.com/infobloxopen/universal-ddi-go-client/dnsdata"
 	"github.com/infobloxopen/universal-ddi-go-client/dtc"
 	"github.com/infobloxopen/universal-ddi-go-client/fw"
+	"github.com/infobloxopen/universal-ddi-go-client/identity"
 	"github.com/infobloxopen/universal-ddi-go-client/inframgmt"
 	"github.com/infobloxopen/universal-ddi-go-client/infraprovision"
 	"github.com/infobloxopen/universal-ddi-go-client/ipam"
@@ -29,6 +31,7 @@ type APIClient struct {
 	DNSTrafficControlAPI        *dtc.APIClient
 	HostActivationAPI           *infraprovision.APIClient
 	InfraManagementAPI          *inframgmt.APIClient
+	IdentityAPI                 *identity.APIClient
 	KeysAPI                     *keys.APIClient
 	DNSForwardingProxyAPI       *dfp.APIClient
 	FWAPI                       *fw.APIClient
@@ -36,6 +39,7 @@ type APIClient struct {
 	RedirectAPI                 *redirect.APIClient
 	UpgradePolicyClientAPI      *upgradepolicy.APIClient
 	DiscoveryControllerAPI      *discoverycontroller.APIClient
+	CDCAPI                      *cdc.APIClient
 }
 
 // NewAPIClient creates a new Universal DDI API Client.
@@ -55,6 +59,7 @@ type APIClient struct {
 // - AnycastAPI
 // - UpgradePolicyClientAPI
 // - DiscoveryControllerAPI
+// - CDCAPI
 //
 // The client can be configured with a variadic option. The following options are available:
 // - WithClientName(string) sets the name of the client using the SDK.
@@ -73,6 +78,7 @@ func NewAPIClient(options ...option.ClientOption) *APIClient {
 		DNSTrafficControlAPI:        dtc.NewAPIClient(options...),
 		HostActivationAPI:           infraprovision.NewAPIClient(options...),
 		InfraManagementAPI:          inframgmt.NewAPIClient(options...),
+		IdentityAPI:                 identity.NewAPIClient(options...),
 		KeysAPI:                     keys.NewAPIClient(options...),
 		DNSForwardingProxyAPI:       dfp.NewAPIClient(options...),
 		FWAPI:                       fw.NewAPIClient(options...),
@@ -80,5 +86,6 @@ func NewAPIClient(options ...option.ClientOption) *APIClient {
 		RedirectAPI:                 redirect.NewAPIClient(options...),
 		UpgradePolicyClientAPI:      upgradepolicy.NewAPIClient(options...),
 		DiscoveryControllerAPI:      discoverycontroller.NewAPIClient(options...),
+		CDCAPI:                      cdc.NewAPIClient(options...),
 	}
 }
